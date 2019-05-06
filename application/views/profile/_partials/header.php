@@ -10,7 +10,7 @@
           <li><a href="plans.html">Learning Program</a></li>
           <li><a href="blog.html">Testimoni</a></li>
           <li><a href="<?php echo base_url('profile/contact') ?>">Contact</a></li>
-          <li><a href="features.html">Login</a></li>
+          <li><a href="<?php echo base_url('login'); ?>">Login</a></li>
         </ul>
         </div>
          <div class="clear"></div>
