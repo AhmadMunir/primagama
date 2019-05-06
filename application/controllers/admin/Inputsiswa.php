@@ -26,7 +26,7 @@
   		$lists = "<option value=''>Pilih</option>";
 
   		foreach($kelas as $data){
-  			$lists .= "<option value='".$data->id_kelas."'>".$data->kelas."</option>"; // Tambahkan tag option ke variabel $lists
+  			$lists .= "<option value='".$data->id_grade."'>".$data->kelas."</option>"; // Tambahkan tag option ke variabel $lists
   		}
 
   		$callback = array('list_kelas'=>$lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota
