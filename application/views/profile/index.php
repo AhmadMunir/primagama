@@ -14,8 +14,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	   <div class="main">
 	   	  <div class="wrap">
 	   	     <div class="content-top">
+	   	     	<!-- <div class="middle-top">
+		        <h2>NEWS OF THE WEEK</h2>
+				 
+			    <div class="clear"></div>
+			</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h3><a href="#">Lorem Ipsum is simply</a></h3>
+					<h3><a href="#">News</a></h3>
 					<p class="low-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit tempor incididunt</p>
 					<p class="thick">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 					<div class="button"><a href="#">Read More</a></div>
@@ -39,10 +44,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="button"><a href="#">Read More</a></div>
 				</div>
 				<div class="clear"></div>
-		 </div>
-	     <div class="content-middle">
+		 </div> -->
+	     <<div class="content-middle">
 			<div class="middle-top">
-		        <h2>Recent Work</h2>
+		        <h2>Kenapa Primagama?</h2>
 				 <ul id="filters" class="clearfix">
 					<li><span class="filter active" data-filter="app card icon logo web"> </span></li>
 					<li><span class="filter" data-filter="app"> </span></li>
@@ -52,32 +57,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		    <div class="container">
 		        <div id="portfoliolist" style="     " class="">
-		           <div class="portfolio logo1 mix_all" data-cat="logo" style=" ">
+		         <!--  <div class="portfolio logo1 mix_all" data-cat="logo" style=" ">
 					 <div class="portfolio-wrapper">
 						<p class="low-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit tempor incididunt</p>
 						<p class="thick">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 					 </div>
-				   </div>
-		 <div class="portfolio-right">
+				   </div> -->
+		 <div class="portfolio-center">
 		   <div class=portfolio-top>
 			<div class="product_box margin_r_10">
-				<a href="project.html"><img src="<?php echo base_url('images/pic.jpg')?>" alt="image"></a>
-        		<h3><a href="project.html">Project One</a></h3>
-        		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm. <a href="project.html">More...</a></p>
+				<a href="project.html"><img src="<?php echo base_url('images/fakta1.png')?>" alt="image"></a>
+        		<h3><a href="project.html"> Sistem </a></h3>
+        		<p>Primagama satu-satunya bimbingan belajar yang mempunyai sistem pelayanan pendidikan termodern dan terunggul. <a href="project.html">More...</a></p>
     		</div>
 		    <div class="product_box margin_r_10">
-				<a href="project.html"><img src="<?php echo base_url('images/pic1.jpg')?>" alt="image"></a>
-        		<h3><a href="project.html">Project Two</a></h3>
-        		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm. <a href="project.html">More...</a></p>
+				<a href="project.html"><img src="<?php echo base_url('images/fakta2.svg')?>" alt="image"></a>
+        		<h3><a href="project.html">SMART BOOK</a></h3>
+        		<p>Smart Book disusun sesuai dengan kurikulum pemerintah dengan sajian yang mudah dipahami oleh para siswa. <a href="project.html">More...</a></p>
     		</div>
 			<div class="product_box margin_r_last">
-				<a href="project.html"><img src="<?php echo base_url('images/pic2.jpg')?>" alt="image"></a>
-        		<h3><a href="project.html">Project Three</a></h3>
-        		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm. <a href="project.html">More...</a></p>
+				<a href="project.html"><img src="<?php echo base_url('images/fakta3.png')?>" alt="image"></a>
+        		<h3><a href="project.html">INSTRUKTUR</a></h3>
+        		<p>Primagama mempunyai Instruktur Smart yang handal, menguasai materi pelajaran dan mampu menyampaikan materi dengan gaya yang menyenangkan. <a href="project.html">More...</a></p>
     		</div>
 			<div class="clear"></div>
 		  </div>
-		  <div class=portfolio-top>
+		  <!-- <div class=portfolio-top>
 			<div class="product_box margin_r_10">
 				<a href="project.html"><img src="<?php echo base_url('images/pic3.jpg')?>" alt="image"></a>
         		<h3><a href="project.html">Project Four</a></h3>
@@ -95,7 +100,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     		</div>
     		<div class="clear"></div>
 		  </div>
-		</div>
+		</div> -->
 			<div class="clear"></div>
 		</div>
 		  <div class="clear"></div>
@@ -152,19 +157,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="wrap">
 			<div class="footer-top">
 				<div class="col_1_of_footer span_1_of_footer">
-					<h3>About Portfolio</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim venia sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+					<h3>Beranda</h3>
+					<p> Home </p>
+					<p>Kontak</p>
 				</div>
 				<div class="col_1_of_footer span_1_of_footer">
-					<h3>Recent Posts</h3>
-					<p class="txt2"><span class="txt3">soluta nobis eleifend option</span><br>Lorem ipsum dolor sit amet, consectetuer.</p>
-					<p class="txt2"><span class="txt3">soluta nobis eleifend option</span><br>Lorem ipsum dolor sit amet, consectetuer.</p>
-					<p class="txt2"><span class="txt3">soluta nobis eleifend option</span><br>Lorem ipsum dolor sit amet, consectetuer.</p>
-					<div class="link"><a href="#">View all Posts</a></div>
+					<h3>Home</h3>
+					<p> Primagama Siap </p>
+					<p>Kenapa Primagama</p>
 				</div>
 				<div class="col_1_of_footer span_1_of_footer">
-					<h3>Twitter Widget</h3>
+					<h3> Recent Testimoni </h3>
 					<div class="recent-tweet">
 						<div class="recent-tweet-icon">
 							<span> </span>
@@ -185,7 +188,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				</div>
 				<div class="col_1_of_footer span_1_of_footer">
-					<h3>Flickr Widget</h3>
+					<h3>Tokoh</h3>
 					<div class="gallery">
 						<ul>
 							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<?php echo base_url('images/g1.jpg')?>" alt=""/></a></li>

@@ -21,13 +21,10 @@
          <article style="position: absolute; width: 100%; opacity: 0;">
           <div class="banner-wrap">
              <div class="slider-left">
-              <img src="<?php echo base_url('images/1.png'); ?>" alt=""/>
+              <img src="<?php echo base_url('images/h1.png'); ?>" alt=""/>
            </div>
             <div class="slider-right">
-            <h3>consectetuer adipiscing :<br>Lorem ipsum dolor</h3>
-            <p class="top">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-              <p class="middle">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-            <div class="btn"><a href="plans.html">More Details</a></div>
+            <h3>"Kecerdasan dan karakter adalah tujuan sejati pendidikan" - Martin Luther King Jr.</h3>
            </div>
            <div class="clear"></div>
          </div>
@@ -35,13 +32,10 @@
          <article style="position: relative; width: 100%; opacity: 1;">
            <div class="banner-wrap">
              <div class="slider-left">
-              <img src="<?php echo base_url('images/2.png'); ?>" alt=""/>
+              <img src="<?php echo base_url('images/h2.png'); ?>" alt=""/>
            </div>
             <div class="slider-right">
-            <h3>consectetuer adipiscing :<br>Lorem ipsum dolor</h3>
-            <p class="top">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-              <p class="middle">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-            <div class="btn"><a href="plans.html">More Details</a></div>
+            <h3>Bersama Primagama Membangun Kecerdasan Anak Bangsa</h3>
           </div>
           <div class="clear"></div>
          </div>
@@ -49,13 +43,10 @@
          <article style="position: absolute; width: 100%; opacity: 0;">
           <div class="banner-wrap">
              <div class="slider-left">
-              <img src="<?php echo base_url('images/3.png'); ?>" alt=""/>
+              <img src="<?php echo base_url('images/h3.png'); ?>" alt=""/>
            </div>
             <div class="slider-right">
-            <h3>consectetuer adipiscing :<br>Lorem ipsum dolor</h3>
-            <p class="top">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-              <p class="middle">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-            <div class="btn"><a href="plans.html">More Details</a></div>
+            <h3>Sukses Bersama Primagama</h3>
            </div>
            <div class="clear"></div>
          </div>
@@ -63,13 +54,10 @@
          <article style="position: absolute; width: 100%; opacity: 0;">
           <div class="banner-wrap">
             <div class="slider-left">
-              <img src="<?php echo base_url('images/1.png')?>" alt=""/>
+              <img src="<?php echo base_url('images/h4.png')?>" alt=""/>
            </div>
             <div class="slider-right">
-            <h3>consectetuer adipiscing :<br>Lorem ipsum dolor</h3>
-            <p class="top">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-              <p class="middle">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-            <div class="btn"><a href="plans.html">More Details</a></div>
+            <h3>Siap Ujian</h3>
            </div>
            <div class="clear"></div>
          </div>
@@ -77,13 +65,10 @@
          <article style="position: absolute; width: 100%; opacity: 0;">
            <div class="banner-wrap">
              <div class="slider-left">
-              <img src="<?php echo base_url('images/2.png')?>" alt=""/>
+              <img src="<?php echo base_url('images/h2.png')?>" alt=""/>
            </div>
             <div class="slider-right">
-            <h3>consectetuer adipiscing :<br>Lorem ipsum dolor</h3>
-            <p class="top">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-              <p class="middle">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-            <div class="btn"><a href="plans.html">More Details</a></div>
+            <h3>Kita Bisa</h3>
            </div>
              <div class="clear"></div>
          </div>
