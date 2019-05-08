@@ -17,12 +17,16 @@
         'password' => $password
       );
 
+
       $cekadmin = $this->m_login->cek_admin("lgn_admin", $where)->num_rows();
       if($cekadmin > 0){
+        $data["ida"] = $this->m_login->getId($username);
+        $id = $ida->id_admin;
         $data_session = array(
           'nama' => $username,
           'status' => "login",
-          'jabatan' => "admin"
+          'jabatan' => "admin",
+          'id' => $id
         );
 
         $this->session->set_userdata($data_session);

@@ -15,11 +15,12 @@
         <div class="container-fluid">
 
 
-          <?php //$this->load->view('admin/_partial/breadcrumb.php')?>
+
 
           <div class="card-header">Input Data Siswa</div>
           <div class="card-body">
             <form method="post" action="<?php echo base_url().'admin/inputsiswa/tambah_siswa';?>">
+              <input type="hidden" name="id_siswa" value="<?php echo $kodeunik ?>">
               <div class="form-group">
                 <div class="form-row">
                   <div class="col-md-6">
@@ -36,12 +37,7 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class="form-group">
-                <div class="form-label-group">
-                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required">
-                  <label for="inputEmail">Email address</label>
-                </div>
-              </div> -->
+
               <div class="form-group">
                 <div class="form-row">
                   <div class="col-md-3">
@@ -87,7 +83,7 @@
                       <option value="">Pilih</option>
                       <?php
                       foreach ($jenjang as $data) { // Lakukan looping pada variabel siswa dari controller
-                        echo "<option value='".$data->id_jenjang."'>".$data->jenjang."</option>";
+                          echo "<option value='".$data->id_jenjang."'>".$data->jenjang."</option>";
                       }
                       ?>
                     </select>

@@ -10,6 +10,7 @@
   	}
 
   	public function index(){
+      $data['kodeunik'] = $this->M_siswa->kode();
   		$data['jenjang'] = $this->M_siswa->viewJenjang();
 
   		$this->load->view('admin/siswa/input_siswa', $data);
@@ -35,6 +36,7 @@
   	}
 
     public function tambah_siswa(){
+      $id_sis = $this->input->post('id_siswa');
       $namaL = $this->input->post('namaLenkap');
       $namaP = $this->input->post('namaPanggilan');
       $tempat = $this->input->post('tempat');
@@ -47,6 +49,7 @@
 
 
       $data = array(
+        'id_siswa' => $id_sis,
         'nama_lengkap' => $namaL,
         'nama_panggilan' => $namaP,
         'tempat' => $tempat,
