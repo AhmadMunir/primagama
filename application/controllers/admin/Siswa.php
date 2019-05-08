@@ -15,6 +15,13 @@ class Siswa extends CI_Controller
     $data['view_siswa'] = $this->m_siswa->getSiswa()->result();
     $this->load->view('admin/siswa/siswa', $data);
   }
+  public function delete($id=null)
+    {
+        if (!isset($id)) show_404();
+        
+        if ($this->m_siswa->delete($id)) {
+            redirect(site_url('admin/siswa'));
+        }
+    }
 }
-
  ?>

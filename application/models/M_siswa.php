@@ -36,4 +36,9 @@ class M_siswa extends CI_Model {
 		$kodejadi = "017820845".$kodemax;
 		return $kodejadi;
 	}
+
+	public function delete($id)
+    {
+        return $this->db->delete($this->_table, array("id_siswa" => $id));
+    }
 }

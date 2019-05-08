@@ -43,7 +43,9 @@
                     <?php
                       $no = 1;
 
-                      foreach($view_siswa as $u){?>
+                      foreach($view_siswa as $u){
+                        $id = $u->id_siswa;
+                        ?>
                         <tr>
                     <td><?php echo $no++?></td>
                     <td><?php echo $u->nama_lengkap?></td>
@@ -54,7 +56,7 @@
                     <td width="250">
                       <a href="#"
                        class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                      <a onclick=""
+                      <a onclick="deleteConfirm('<?php echo site_url('admin/Siswa/delete/'. $id) ?>')"
                        href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                     </td>
                   </tr>

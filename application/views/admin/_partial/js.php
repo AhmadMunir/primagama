@@ -16,4 +16,18 @@
   <!-- Demo scripts for this page-->
   <script src="<?php echo base_url('js/demo/datatables-demo.js')?>"></script>
   <script src="<?php echo base_url('js/demo/chart-area-demo.js')?>"></script>
+
+  
+    <script type="text/javascript">
+      function deleteConfirm(){
+        var del=confirm("yakin ?");
+        if (del==true){
+          alert("terhapus")
+        }else{
+          alert("batal")
+        }
+
+        return del;
+      }
+    </script>
   
