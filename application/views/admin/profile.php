@@ -62,7 +62,7 @@
                     <div class="col-md-4">
                         <div class="profile-work">
                             <p>Alamat</p>
-                            <?php echo $profile->alamat; ?><br/>
+                            <?php $alamat = $profile->alamat; echo ucwords($alamat)?><br/>
                             <!-- <p>SKILLS</p>
                             <a href="">Web Designer</a><br/>
                             <a href="">Web Developer</a><br/>
