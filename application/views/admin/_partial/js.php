@@ -20,11 +20,11 @@
   
     <script type="text/javascript">
       function deleteConfirm(){
-        var del=confirm("yakin ?");
+        var del=confirm("Apakah Anda Yakin Akan Menghapusnya?");
         if (del==true){
-          alert("terhapus")
+          alert("Data Dihapus :)")
         }else{
-          alert("batal")
+          alert("GAGAL!!!")
         }
 
         return del;

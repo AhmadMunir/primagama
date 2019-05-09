@@ -54,7 +54,7 @@
                     <td><?php echo $u->nama_program?></td>
                     <td><?php echo $u->nama_kelas?></td>
                     <td width="250">
-                      <a href="#"
+                      <a href="<?php echo site_url('admin/siswa/edit/'.$id) ?>"
                        class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
                       <a onclick="deleteConfirm('<?php echo site_url('admin/Siswa/delete/'. $id) ?>')"
                        href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
