@@ -104,6 +104,26 @@
                   </div>
                 </div>
               </div>
+
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="col-md-2">
+                    <div class="form-label-group">
+                      Program :
+                  </div>
+                  </div>
+                  <div class="col-md-3">
+                    <select name="program" id="program" style="width: 200px;">
+                      <option value="">Pilih</option>
+                      <?php
+                      foreach ($program as $data) { // Lakukan looping pada variabel siswa dari controller
+                          echo "<option value='".$data->id_program."'>".$data->nama_program."</option>";
+                      }
+                      ?>
+                    </select>
+                  </div>
+                </div>
+              </div>
               <div class="form-group">
                 <div class="form-row">
               <div class="col-md-2">

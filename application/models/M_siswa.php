@@ -13,6 +13,10 @@ class M_siswa extends CI_Model {
 		return $result;
 	}
 
+	public function viewprogram(){
+			return $this->db->get('tbl_program')->result();
+	}
+
 	public function input_siswa($data,$table){
 		$this->db->insert($table,$data);
 	}

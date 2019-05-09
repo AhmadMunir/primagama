@@ -34,6 +34,7 @@
                       <th>Kelas</th>
                       <th>Program</th>
                       <th>Kelas Primagama</th>
+                      <th>Pilihan</th>
                     </tr>
                   </thead>
 
@@ -50,6 +51,12 @@
                     <td><?php echo $u->kelas?></td>
                     <td><?php echo $u->nama_program?></td>
                     <td><?php echo $u->nama_kelas?></td>
+                    <td width="250">
+                      <a href="#"
+                       class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                      <a onclick=""
+                       href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                    </td>
                   </tr>
                   <?php } ?>
                   </tbody>

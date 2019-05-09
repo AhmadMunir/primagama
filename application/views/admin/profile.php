@@ -7,21 +7,13 @@
 </head>
 
 <body id="page-top">
-
-
  <?php $this->load->view('admin/_partial/navbar.php') ?>
   <div id="wrapper">
-
-
     <?php $this->load->view('admin/_partial/sidebar.php') ?>
 
     <div id="content-wrapper">
 
       <div class="container-fluid">
-
-
-
-
       <!-- profile -->
       <div class="container emp-profile">
             <form method="post">
@@ -87,7 +79,7 @@
                                                 <label>Nama</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p><?php echo $profile->nama_lengkap ?></p>
+                                                <p><?php echo ucwords($nama); ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
