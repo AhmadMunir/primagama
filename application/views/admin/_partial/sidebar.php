@@ -18,6 +18,17 @@
             <a class="dropdown-item" href="<?php echo site_url('admin/products') ?>">List Product</a>
         </div>
     </li>
+    <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'siswa' ? 'active': '' ?>">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Jadwal</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+            <a class="dropdown-item" href="<?php echo site_url('admin/requestjadwal') ?>">Lihat Jadwal</a>
+            <a class="dropdown-item" href="<?php echo site_url('admin/Jadwal') ?>">Request Jadwal</a>
+        </div>
+    </li>
     <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'kelas' ? 'active': '' ?>">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
@@ -30,18 +41,7 @@
             <a class="dropdown-item" href="<?php echo site_url('admin/products') ?>">List Product</a>
         </div>
     </li>
-    <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'kelas' ? 'active': '' ?>">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            <i class="fas fa-fw fa-calendar-alt"></i>
-            <span>Jadwal</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <a class="dropdown-item" href="<?php echo site_url('admin/siswa') ?>">Lihat Kelas</a>
-            <a class="dropdown-item" href="<?php echo site_url('admin/inputsiswa') ?>">Tambah Kelas</a>
-            <a class="dropdown-item" href="<?php echo site_url('admin/products') ?>">List Product</a>
-        </div>
-    </li>
+    
     <!-- <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-users"></i>
