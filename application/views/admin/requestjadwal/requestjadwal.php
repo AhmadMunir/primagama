@@ -22,43 +22,36 @@
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Daftar Siswa Primagama</div>
+              Jadwal Siswa di Primagama</div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>No</th>
-                      <th>Nama</th>
-                      <th>Sekolah</th>
+                      <th>Nama Lengkap</th>
+                      <th>Mapel</th>
+                      <th>Tanggal</th>
                       <th>Kelas</th>
-                      <th>Program</th>
-                      <th>Kelas Primagama</th>
-                      <th>Pilihan</th>
+                      <th>Ruang</th>
+                      <th>Jam</th>
+
                     </tr>
                   </thead>
-
+  
 
                   <tbody>
-                    <?php
+                   <?php
                       $no = 1;
 
-                      foreach($view_siswa as $u){
-                        $id = $u->id_siswa;
-                        ?>
+                      foreach($requestjadwal as $u){?>
                         <tr>
-                    <td><?php echo $no++?></td>
-                    <td><?php echo $u->nama_lengkap?></td>
-                    <td><?php echo $u->sekolah?></td>
+                    
+                     <td><?php echo $u->nama_Lengkap?></td>
+                    <td><?php echo $u->mapel?></td>
+                    <td><?php echo $u->tanggal?></td>
                     <td><?php echo $u->kelas?></td>
-                    <td><?php echo $u->nama_program?></td>
-                    <td><?php echo $u->nama_kelas?></td>
-                    <td width="250">
-                      <a href="#"
-                       class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                      <a onclick="deleteConfirm('<?php echo site_url('admin/Siswa/delete/'. $id) ?>')"
-                       href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
-                    </td>
+                    <td><?php echo $u->ruang?></td>
+                    <td><?php echo $u->jam?></td>
                   </tr>
                   <?php } ?>
                   </tbody>
