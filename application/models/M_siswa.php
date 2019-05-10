@@ -25,6 +25,16 @@ class M_siswa extends CI_Model {
 		return $this->db->get('view_siswa');
 	}
 
+	public function edit($where, $table){
+		return $this->db->get_where($table, $where);
+	}
+
+	public function update_siswa($where,$data,$table){
+		$this->db->where($where);
+		$this->db->update($table,$data);
+
+	}
+
 	public function kode(){
 		$this->db->select('Right(tbl_siswa.id_siswa,8) as kode',false);
 		$this->db->order_by('id_siswa', 'desc');

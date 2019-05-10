@@ -19,7 +19,7 @@
 
           <div class="card-header">Input Data Siswa</div>
           <div class="card-body">
-            <form method="post" action="<?php echo base_url().'admin/inputsiswa/tambah_siswa';?>">
+            <form method="post" action="<?php echo base_url().'admin/siswa/tambah_siswa';?>">
               <input type="hidden" name="id_siswa" value="<?php echo $kodeunik ?>">
               <div class="form-group">
                 <div class="form-row">

@@ -50,9 +50,15 @@
                     <td><?php echo $u->sekolah?></td>
                     <td><?php echo $u->kelas?></td>
                     <td><?php echo $u->nama_program?></td>
-                    <td><?php echo $u->nama_kelas?></td>
+                    <td><?php $kls = $u->nama_kelas;
+                        if ($kls == 'null') {
+                          echo "Belum Masuk Kelas";
+                        }else {
+                          echo $kls;
+                        }
+                    ?></td>
                     <td width="250">
-                      <a href="#"
+                      <a href="<?php echo base_url('admin/siswa/edit/'.$u->id_siswa) ?>"
                        class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
                       <a onclick=""
                        href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
@@ -68,8 +74,8 @@
 
         </div>
 
-        <?php $this->load->view('admin/_partial/footer.php') ?>
 
+        <!-- <?php// $this->load->view('admin/_partial/footer.php') ?> -->
       </div>
       <!-- /.content-wrapper -->
 
