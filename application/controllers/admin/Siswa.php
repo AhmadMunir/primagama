@@ -134,13 +134,13 @@ class Siswa extends CI_Controller
     );
 
     $this->m_siswa->update_siswa($where, $data, 'tbl_siswa');
-    redirect('admin/Siswa');
+    redirect('admin/siswa/detail/'.$id_sis);
   }
 
   public function detail($id){
       $where =  array('id_siswa' => $id);
       $data['tbl_siswa'] = $this->m_siswa->lht($where, 'tbl_siswa')->result();
-    $this->load->view('admin/siswa/detail', $data);
+      $this->load->view('admin/siswa/detail', $data);
   }
 
   // public function delete($id=null){

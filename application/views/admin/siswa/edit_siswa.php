@@ -21,10 +21,12 @@
           <!-- DataTables Example -->
           <div class="card mb-3">
             <div class="card-header">
-              <i class="fas fa-table"></i>
-              Daftar Siswa Primagama</div>
+              <i class="fas fa-pen"></i>
+              Edit Siswa Primagama</div>
             <div class="card-body">
-              <?php foreach ($tbl_siswa as $u) {?>
+              <?php foreach ($tbl_siswa as $u) {
+                $name = $u->nama_lengkap;
+                ?>
 
               <form method="post" action="<?php echo base_url().'admin/siswa/update';?>">
                 <input type="hidden" name="id_siswa" value=<?php echo $u->id_siswa; ?>>
@@ -32,8 +34,9 @@
                   <div class="form-row">
                     <div class="col-md-6">
                       <div class="form-label-group">
-                        <input type="text" id="namaLenkap" name="namaLenkap" value=<?php echo $u->nama_lengkap; ?> class="form-control" placeholder="Nama Lengkap" required="required" autofocus="autofocus">
+                        <input type="text" id="namaLenkap" name="namaLenkap" value="<?php echo $name;?>" class="form-control" placeholder="Nama Lengkap" required="required" autofocus="autofocus">
                         <label for="namaLenkap">Nama Lengkap</label>
+
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -141,9 +144,7 @@
                     </div>
                     <div class="col-md-6">
                       <select name="sekolah" id="sekolah" style="width: 600px;">
-                        <option value="
-
-                        <?php $sekolah = $u->id_sekolah;echo $sekolah; ?>">
+                        <option value="<?php echo $u->id_sekolah;?>">
                         <?php echo $sekol ?>
                         </option>
                       </select>
@@ -206,7 +207,7 @@
         <div class="form-group">
           <div class="form-row">
         <div class="col-md-6">
-          <input type="submit" class="btn-primary" value="Tambahkan">
+          <input type="submit" class="btn-primary col-md-4" value="Simpan Perubahan">
         </div>
               </div>
             </div>
