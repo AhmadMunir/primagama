@@ -63,16 +63,6 @@
               </div>
               <div class="form-group">
                 <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="text" id="sekolah" name="sekolah" class="form-control" placeholder="Asal Sekolah" required="required">
-                  <label for="sekolah">Asal Sekolah</label>
-                </div>
-              </div>
-            </div>
-          </div>
-              <div class="form-group">
-                <div class="form-row">
                   <div class="col-md-2">
                     <div class="form-label-group">
                       Jenjang :
@@ -99,6 +89,25 @@
                     </select>
 
                     <div id="loading" style="margin-top: 15px;">
+                      <img src="images/loading.gif" width="18"> <small>Loading...</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="col-md-2">
+                    <div class="form-label-group">
+                      Asal Sekolah :
+                  </div>
+                  </div>
+                  <div class="col-md-6">
+                    <select name="sekolah" id="sekolah" style="width: 600px;">
+                      <option value="">Pilih</option>
+                    </select>
+
+                    <div id="loading2" style="margin-top: 15px;">
                       <img src="images/loading.gif" width="18"> <small>Loading...</small>
                     </div>
                   </div>

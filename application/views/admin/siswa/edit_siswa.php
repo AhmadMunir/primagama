@@ -49,14 +49,14 @@
                   <div class="form-row">
                     <div class="col-md-3">
                       <div class="form-label-group">
-                        <input type="text" id="tempat" name="tempat" class="form-control" placeholder="Tempat" required="required">
+                        <input type="text" id="tempat" name="tempat" class="form-control" value=<?php echo $u->tempat; ?> placeholder="Tempat" required="required">
                         <label for="tempat">Tempat</label>
                       </div>
                     </div>
 
                     <div class="col-md-3">
                       <div class="form-label-group">
-                        <input type="date" id="tanggalLahir" name="tanggalLahir" class="form-control" placeholder="Tanggal Lahir" required="required">
+                        <input type="date" id="tanggalLahir" name="tanggalLahir" class="form-control" value=<?php echo $u->tanggal_lahir; ?> placeholder="Tanggal Lahir" required="required">
                         <label for="tanggalLahir">Tanggal Lahir</label>
                       </div>
                     </div>
@@ -64,20 +64,11 @@
                 </div>
                 <div class="form-group">
                   <div class="form-label-group">
-                    <input type="text" name="address" id="address" class="form-control" placeholder="Alamat" required="required">
+                    <input type="text" name="address" id="address" class="form-control" value=<?php echo $u->alamat; ?> placeholder="Alamat" required="required">
                     <label for="address">Alamat</label>
                   </div>
                 </div>
-                <div class="form-group">
-                  <div class="form-row">
-                <div class="col-md-6">
-                  <div class="form-label-group">
-                    <input type="text" id="sekolah" name="sekolah" class="form-control" placeholder="Asal Sekolah" required="required">
-                    <label for="sekolah">Asal Sekolah</label>
-                  </div>
-                </div>
-              </div>
-            </div>
+
                 <div class="form-group">
                   <div class="form-row">
                     <div class="col-md-2">
@@ -87,7 +78,18 @@
                     </div>
                     <div class="col-md-3">
                       <select name="jenjang" id="jenjang" style="width: 200px;">
-                        <option value="">Pilih</option>
+                        <option value="<?php echo $u->id_grade; ?>"><?php
+                          $grade = $u->id_grade;
+                          if ($grade < 7) {
+                            echo "SD";
+                          }elseif ($grade < 10) {
+                          echo "SMP";
+                        }elseif ($grade < 13) {
+                          echo "SMA";
+                        }else {
+                          echo "Lain-Lain";
+                        }
+                         ?></option>
                         <?php
                         foreach ($jenjang as $data) { // Lakukan looping pada variabel siswa dari controller
                             echo "<option value='".$data->id_jenjang."'>".$data->jenjang."</option>";
@@ -102,10 +104,51 @@
                     </div>
                     <div class="col-md-3">
                       <select name="kelas" id="kelas" style="width: 200px;">
-                        <option value="">Pilih</option>
+                        <option value="<?php echo $u->id_kelas; ?>">
+                          <?php
+                          $kls = $u->id_grade;
+                          if ($kls<13) {
+                            echo $kls;
+                          }else{
+                            echo "LL";
+                          }
+                           ?>
+                        </option>
                       </select>
 
                       <div id="loading" style="margin-top: 15px;">
+                        <img src="images/loading.gif" width="18"> <small>Loading...</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-row">
+                    <div class="col-md-2">
+                      <div class="form-label-group">
+                        Asal Sekolah :
+                    </div>
+                    <?php
+                      $id = $u->id_siswa;
+
+                      $sek = $this->db->query("call lihatnamasekolah('".$id."')");
+
+                      $raw = $sek->row();
+                      $sekol = $raw->nama_sekolah;
+                      $prog = $raw->nama_program;
+
+                     ?>
+                    </div>
+                    <div class="col-md-6">
+                      <select name="sekolah" id="sekolah" style="width: 600px;">
+                        <option value="
+
+                        <?php $sekolah = $u->id_sekolah;echo $sekolah; ?>">
+                        <?php echo $sekol ?>
+                        </option>
+                      </select>
+
+                      <div id="loading2" style="margin-top: 15px;">
                         <img src="images/loading.gif" width="18"> <small>Loading...</small>
                       </div>
                     </div>
@@ -121,7 +164,9 @@
                     </div>
                     <div class="col-md-3">
                       <select name="program" id="program" style="width: 200px;">
-                        <option value="">Pilih</option>
+                        <option value="<?php $program =  $u->id_program; echo $program; ?>">
+                          <?php echo $prog ?>
+                        </option>
                         <?php
                         foreach ($program as $data) { // Lakukan looping pada variabel siswa dari controller
                             echo "<option value='".$data->id_program."'>".$data->nama_program."</option>";
@@ -140,7 +185,8 @@
                 </div>
                 <div class="col-md-3">
                   <select name="jk" id="jk" >
-                    <option value="null">Pilih</option>
+                    <option value="<?php echo $u->jenis_kelamin; ?>"><?php echo $u->jenis_kelamin; ?></option>
+                    <option value="null"></option>
                     <option value="Laki-laki">Laki-laki</option>
                     <option value="Perempuan">Perempuan</option>
                   </select>
@@ -151,7 +197,7 @@
               <div class="form-row">
             <div class="col-md-6">
               <div class="form-label-group">
-                <input type="email" id="email" name="email" class="form-control" placeholder="E" required="required">
+                <input type="email" value="<?php echo $u->email ?>" id="email" name="email" class="form-control" placeholder="E" required="required">
                 <label for="email">E-mail</label>
               </div>
             </div>
@@ -174,7 +220,7 @@
 
           </div>
 
-          <?php $this->load->view('admin/_partial/footer.php') ?>
+          <!-- <?php// $this->load->view('admin/_partial/footer.php') ?> -->
         </div>
 
 

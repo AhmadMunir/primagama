@@ -18,7 +18,11 @@ class Siswa extends CI_Controller
 
   public function edit($id){
       $where =  array('id_siswa' => $id);
-      $data['tbl_siswa'] = $this->m_siswa->edit($where, 'tbl_siswa')->result();
+      $data['jenjang'] = $this->m_siswa->viewJenjang();
+      $data['program'] = $this->m_siswa->viewprogram();
+      $data['tbl_siswa'] = $this->m_siswa->lht($where, 'tbl_siswa')->result();
+    //  $data['program'] = $this->m_siswa->viewprogrambyId($where);
+
       $this->load->view('admin/siswa/edit_siswa', $data);
   }
 
@@ -31,13 +35,12 @@ class Siswa extends CI_Controller
   }
 
   public function listKelas(){
-    // Ambil data ID Provinsi yang dikirim via ajax post
+
     $id_jenjang = $this->input->post('id_jenjang');
 
     $kelas = $this->m_siswa->viewByJenjang($id_jenjang);
 
-    // Buat variabel untuk menampung tag-tag option nya
-    // Set defaultnya dengan tag option Pilih
+
     $lists = "<option value=''>Pilih</option>";
 
     foreach($kelas as $data){
@@ -45,6 +48,25 @@ class Siswa extends CI_Controller
     }
 
     $callback = array('list_kelas'=>$lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota
+
+    echo json_encode($callback); // konversi varibael $callback menjadi JSON
+  }
+
+  public function listSekolah(){
+    // Ambil data ID Provinsi yang dikirim via ajax post
+    $id_jenjang = $this->input->post('id_jenjang');
+
+    $tbl_siswa = $this->m_siswa->viewsekolahByJenjang($id_jenjang);
+
+    // Buat variabel untuk menampung tag-tag option nya
+    // Set defaultnya dengan tag option Pilih
+    $lists = "<option value=''>Pilih</option>";
+
+    foreach($tbl_siswa as $data){
+      $lists .= "<option value='".$data->id_sekolah."'>".$data->nama_sekolah."</option>"; // Tambahkan tag option ke variabel $lists
+    }
+
+    $callback = array('list_sekolah'=>$lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota
 
     echo json_encode($callback); // konversi varibael $callback menjadi JSON
   }
@@ -69,7 +91,7 @@ class Siswa extends CI_Controller
       'nama_panggilan' => $namaP,
       'tempat' => $tempat,
       'tanggal_lahir' => $tgl,
-      'sekolah' => $sekolah,
+      'id_sekolah' => $sekolah,
       'id_grade' => $kelas,
       'id_program' => $program,
       'jenis_kelamin' => $jk,
@@ -94,12 +116,11 @@ class Siswa extends CI_Controller
     $email = $this->input->post('email');
 
     $data = array(
-      'id_siswa' => $id_sis,
       'nama_lengkap' => $namaL,
       'nama_panggilan' => $namaP,
       'tempat' => $tempat,
       'tanggal_lahir' => $tgl,
-      'sekolah' => $sekolah,
+      'id_sekolah' => $sekolah,
       'id_grade' => $kelas,
       'id_program' => $program,
       'jenis_kelamin' => $jk,
@@ -107,6 +128,18 @@ class Siswa extends CI_Controller
       'email' => $email
     );
 
+    $where = array(
+      'id_siswa' => $id_sis
+    );
+
+    $this->m_siswa->update_siswa($where, $data, 'tbl_siswa');
+    redirect('admin/Siswa');
+  }
+
+  public function detail($id){
+      $where =  array('id_siswa' => $id);
+      $data['tbl_siswa'] = $this->m_siswa->lht($where, 'tbl_siswa')->result();
+    $this->load->view('admin/siswa/detail', $data);
   }
 }
 

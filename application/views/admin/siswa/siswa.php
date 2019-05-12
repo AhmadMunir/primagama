@@ -47,7 +47,7 @@
                         <tr>
                     <td><?php echo $no++?></td>
                     <td><?php echo $u->nama_lengkap?></td>
-                    <td><?php echo $u->sekolah?></td>
+                    <td><?php echo $u->nama_sekolah?></td>
                     <td><?php echo $u->kelas?></td>
                     <td><?php echo $u->nama_program?></td>
                     <td><?php $kls = $u->nama_kelas;
@@ -58,8 +58,8 @@
                         }
                     ?></td>
                     <td width="250">
-                      <a href="<?php echo base_url('admin/siswa/edit/'.$u->id_siswa) ?>"
-                       class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                      <a href="<?php echo base_url('admin/siswa/detail/'.$u->id_siswa) ?>"
+                       class="btn btn-small"><i class="fas fa-grip-horizontal"></i> Details</a>
                       <a onclick=""
                        href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                     </td>
