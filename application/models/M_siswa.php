@@ -50,6 +50,6 @@ class M_siswa extends CI_Model {
     }
 	public function delete($id)
     {
-        return $this->db->delete($this->_table, array("id_siswap " => $id));
+        return $this->db->delete($this->_table, array("id_siswa" => $id));
     }
 }
