@@ -142,34 +142,18 @@ class Siswa extends CI_Controller
       $data['tbl_siswa'] = $this->m_siswa->lht($where, 'tbl_siswa')->result();
     $this->load->view('admin/siswa/detail', $data);
   }
-}
 
-  public function edit($id = null)
-    {
-        if (!isset($id)) redirect('admin/siswa');
-       
-        $Siswa = $this->m_siswa;
-        $validation = $this->form_validation;
-        $validation->set_rules($Siswa->rules());
+  // public function delete($id=null){
+  //     if (!isset($id)) show_404();
 
-        if ($validation->run()) {
-            $Siswa->update();
-            $this->session->set_flashdata('Success', 'Berhasil disimpan');
-        }
-
-        $data["view_siswa"] = $siswa->getById($id);
-        if (!$data["view_siswa"]) show_404();
-        
-        $this->load->view('admin/siswa/edit_form', $data);
-    }
-
-  public function delete($id=null)
-    {
-        if (!isset($id)) show_404();
-        
-        if ($this->m_siswa->delete($id)) {
-            redirect(site_url('admin/siswa/siswa'));
-        }
-    }
+  //     if ($this->m_siswa->delete($id)) {
+  //       redirect(site_url('admin/siswa'));
+  //       }
+  //     }
+  public function delete($id){
+    $where = array('id_siswa' => $id);
+    $this->m_siswa->delete($where,'tbl_siswa');
+    redirect('admin/siswa');
+  }
 }
  ?>

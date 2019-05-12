@@ -16,18 +16,11 @@
   <!-- Demo scripts for this page-->
   <script src="<?php echo base_url('js/demo/datatables-demo.js')?>"></script>
   <script src="<?php echo base_url('js/demo/chart-area-demo.js')?>"></script>
-
-  
-    <script type="text/javascript">
-      function deleteConfirm(){
-        var del=confirm("Apakah Anda Yakin Akan Menghapusnya?");
-        if (del==true){
-          alert("Data Dihapus :)")
-        }else{
-          alert("GAGAL!!!")
-        }
-
-        return del;
-      }
-    </script>
+ 
+  <script>
+  function deleteConfirm(url){
+    $('#btn-delete').attr('href', url);
+    $('#deleteModal').modal();
+  }
+  </script>
   

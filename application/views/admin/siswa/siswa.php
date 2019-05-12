@@ -62,29 +62,26 @@
                     <td width="250">
                       <a href="<?php echo site_url('admin/siswa/edit/'.$id) ?>"
                        class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                      <a onclick="deleteConfirm('<?php echo site_url('admin/Siswa/delete/'. $id) ?>')"
                       <a href="<?php echo base_url('admin/siswa/detail/'.$u->id_siswa) ?>"
                        class="btn btn-small"><i class="fas fa-grip-horizontal"></i> Details</a>
-                      <a onclick=""
-                       href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                      <a href="<?php echo site_url ('admin/siswa/delete/'.$id )?>" 
+                        class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                     </td>
-                  </tr>
                   <?php } ?>
+                  </tr>
                   </tbody>
                 </table>
               </div>
             </div>
 
-          </div>
-
-        </div>
-
-
-        <!-- <?php// $this->load->view('admin/_partial/footer.php') ?> -->
+          <!-- Sticky Footer -->
+      <?php 
+        $this->load->view('admin/_partial/footer.php')
+      ?>
+      
       </div>
-      <!-- /.content-wrapper -->
-
-    </div>h
+      
+    </div>
     <?php $this->load->view('admin/_partial/scrolltop.php') ?>
 
 

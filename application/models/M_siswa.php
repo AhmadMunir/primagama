@@ -56,19 +56,8 @@ class M_siswa extends CI_Model {
 		return $kodejadi;
 	}
 
-	public function update()
-    {
-        $post = $this->input->post();
-        $this->id_siswa = $post["id"];
-        $this->nama_lengkap = $post["nl"];
-        $this->sekolah = $post["skl"];
-        $this->kelas = $post["kls"];
-        $this->nama_program = $post["np"];
-        $this->db->update($this->_table, $this, array('id_siswa' => $post['id']));
-
-    }
-	public function delete($id)
-    {
-        return $this->db->delete($this->_table, array("id_siswa" => $id));
-    }
+	public function delete($where,$table){
+	$this->db->where($where);
+	$this->db->delete($table);
+	}
 }
