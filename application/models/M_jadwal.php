@@ -18,6 +18,6 @@ class M_jadwal extends CI_Model {
 	}
 
 	public function getjadwal(){
-		return $this->db->get('view_jadwal');
+		return $this->db->get('tbl_request_jadwal');
 	}
 }

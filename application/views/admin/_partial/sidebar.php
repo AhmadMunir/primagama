@@ -25,8 +25,8 @@
             <span>Jadwal</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="<?php echo site_url('admin/requestjadwal') ?>">Lihat Jadwal</a>
-            <a class="dropdown-item" href="<?php echo site_url('admin/Jadwal') ?>">Request Jadwal</a>
+            <a class="dropdown-item" href="<?php echo site_url('admin/Jadwal') ?>">Lihat Jadwal</a>
+            <a class="dropdown-item" href="<?php echo site_url('admin/Requestjadwal') ?>">Request Jadwal</a>
         </div>
     </li>
     <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'kelas' ? 'active': '' ?>">

@@ -12,8 +12,8 @@ class Jadwal extends CI_Controller
       redirect(base_url("login"));
   }
   public function index(){
-    $data['view_jadwal'] = $this->m_jadwal->getJadwal()->result();
-    $this->load->view('admin/jadwal/jadwal', $data);
+    $data['request_jadwal'] = $this->m_jadwal->getJadwal()->result();
+    $this->load->view('admin/requestjadwal/jadwal', $data);
   }
 }
 
