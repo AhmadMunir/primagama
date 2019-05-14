@@ -49,33 +49,37 @@
                         <tr>
                     <td><?php echo $no++?></td>
                     <td><?php echo $u->nama_lengkap?></td>
-                    <td><?php echo $u->sekolah?></td>
+                    <td><?php echo $u->nama_sekolah?></td>
                     <td><?php echo $u->kelas?></td>
                     <td><?php echo $u->nama_program?></td>
-                    <td><?php echo $u->nama_kelas?></td>
+                    <td><?php $kls = $u->nama_kelas;
+                        if ($kls == 'null') {
+                          echo "Belum Masuk Kelas";
+                        }else {
+                          echo $kls;
+                        }
+                    ?></td>
                     <td width="250">
-                      <a href="<?php echo site_url('admin/siswa/edit/'.$id) ?>"
-                       class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                      <a onclick="deleteConfirm('<?php echo site_url('admin/Siswa/delete/'. $id) ?>')"
-                       href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                      <a href="<?php echo base_url('admin/siswa/detail/'.$u->id_siswa) ?>"
+                       class="btn btn-small"><i class="fas fa-grip-horizontal"></i> Details</a>
+                      <!-- <a href="<?php //echo site_url ('admin/siswa/delete/'.$id )?>" 
+                        class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a> -->
                     </td>
-                  </tr>
                   <?php } ?>
+                  </tr>
                   </tbody>
                 </table>
               </div>
             </div>
 
-          </div>
-
-        </div>
-
-        <?php $this->load->view('admin/_partial/footer.php') ?>
+          <!-- Sticky Footer -->
+      <?php
+        $this->load->view('admin/_partial/footer.php')
+      ?>
 
       </div>
-      <!-- /.content-wrapper -->
 
-    </div>h
+    </div>
     <?php $this->load->view('admin/_partial/scrolltop.php') ?>
 
 

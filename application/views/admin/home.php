@@ -90,7 +90,7 @@
         </div>
 
         <!-- Area Chart Example-->
-        <div class="card mb-3">
+        <!-- <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-chart-area"></i>
             Area Chart Example</div>
@@ -98,7 +98,7 @@
             <canvas id="myAreaChart" width="100%" height="30"></canvas>
           </div>
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div>
+        </div> -->
 
         <!-- DataTables Example -->
         <div class="card mb-3">
@@ -110,11 +110,12 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>Id Produk</th>
-                    <th>Nama</th>
-                    <th>Harga</th>
-                    <th>Gambar</th>
-                    <th>Deskripsi</th>
+                    <th>No</th>
+                    <th>Nama Lengkap</th>
+                    <th>Asal Sekolah</th>
+                    <th>Kelas</th>
+                    <th>Program</th>
+                    <th>Nama Kelas</th>
                   </tr>
                 </thead>
 
@@ -126,7 +127,7 @@
                       <tr>
                         <td><?php echo $no++?></td>
                         <td><?php echo $u->nama_lengkap?></td>
-                        <td><?php echo $u->sekolah?></td>
+                        <td><?php echo $u->nama_sekolah?></td>
                         <td><?php echo $u->kelas?></td>
                         <td><?php echo $u->nama_program?></td>
                         <td><?php echo $u->nama_kelas?></td>

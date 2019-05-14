@@ -19,7 +19,7 @@
 
           <div class="card-header">Input Data Siswa</div>
           <div class="card-body">
-            <form method="post" action="<?php echo base_url().'admin/inputsiswa/tambah_siswa';?>">
+            <form method="post" action="<?php echo base_url().'admin/siswa/tambah_siswa';?>">
               <input type="hidden" name="id_siswa" value="<?php echo $kodeunik ?>">
               <div class="form-group">
                 <div class="form-row">
@@ -63,16 +63,6 @@
               </div>
               <div class="form-group">
                 <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-label-group">
-                  <input type="text" id="sekolah" name="sekolah" class="form-control" placeholder="Asal Sekolah" required="required">
-                  <label for="sekolah">Asal Sekolah</label>
-                </div>
-              </div>
-            </div>
-          </div>
-              <div class="form-group">
-                <div class="form-row">
                   <div class="col-md-2">
                     <div class="form-label-group">
                       Jenjang :
@@ -101,6 +91,45 @@
                     <div id="loading" style="margin-top: 15px;">
                       <img src="images/loading.gif" width="18"> <small>Loading...</small>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="col-md-2">
+                    <div class="form-label-group">
+                      Asal Sekolah :
+                  </div>
+                  </div>
+                  <div class="col-md-6">
+                    <select name="sekolah" id="sekolah" style="width: 600px;">
+                      <option value="">Pilih</option>
+                    </select>
+
+                    <div id="loading2" style="margin-top: 15px;">
+                      <img src="images/loading.gif" width="18"> <small>Loading...</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="col-md-2">
+                    <div class="form-label-group">
+                      Program :
+                  </div>
+                  </div>
+                  <div class="col-md-3">
+                    <select name="program" id="program" style="width: 200px;">
+                      <option value="">Pilih</option>
+                      <?php
+                      foreach ($program as $data) { // Lakukan looping pada variabel siswa dari controller
+                          echo "<option value='".$data->id_program."'>".$data->nama_program."</option>";
+                      }
+                      ?>
+                    </select>
                   </div>
                 </div>
               </div>
