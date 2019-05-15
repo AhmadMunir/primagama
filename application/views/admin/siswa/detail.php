@@ -285,7 +285,7 @@
             <div class="col-md-4">
               <div class="form-label-group">
 
-                <input type="text" name="namaibu" value="<?php echo $bpk; ?>">
+                <input type="text" name="namaibu" value="<?php echo $ibu; ?>">
                 <label for="namaLenkap">Nama Ibu</label>
 
               </div>
@@ -298,7 +298,7 @@
             <div class="col-md-5 input_ortu">
               <div class="form-label-group">
 
-                <input type="text" name="payah" value="<?php echo $bpk; ?>">
+                <input type="text" name="payah" value="<?php echo $pbpk; ?>">
                 <label for="namaLenkap">Pekerjaan Ayah</label>
 
               </div>
@@ -306,7 +306,7 @@
             <div class="col-md-4">
               <div class="form-label-group">
 
-                <input type="text" name="pibu" value="<?php echo $bpk; ?>">
+                <input type="text" name="pibu" value="<?php echo $pibu; ?>">
                 <label for="namaLenkap">Pekerjaan Ibu</label>
 
               </div>
@@ -319,7 +319,7 @@
             <div class="col-md-5 input_ortu">
               <div class="form-label-group">
 
-                <input type="text" name="noayah" value="<?php echo $bpk; ?>">
+                <input type="text" name="noayah" value="<?php echo $nbpk; ?>">
                 <label for="namaLenkap">Nomor Hp Ayah</label>
 
               </div>
@@ -327,7 +327,7 @@
             <div class="col-md-4">
               <div class="form-label-group">
 
-                <input type="text" name="noibu" value="<?php echo $bpk; ?>">
+                <input type="text" name="noibu" value="<?php echo $nibu; ?>">
                 <label for="namaLenkap">Nomor Hp Ibu</label>
 
               </div>
