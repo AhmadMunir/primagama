@@ -65,11 +65,9 @@
                       <a href="<?php echo base_url('admin/siswa/detail/'.$u->id_siswa) ?>"
                        class="btn btn-small"><i class="fas fa-grip-horizontal"></i> Details</a>
                       <a href="<?php echo site_url ('admin/siswa/delete/'.$id )?>" 
-                        class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                        class="btn btn-small text-danger"><i class="fas fa-trash" data-toggle="modal" data-target="#deleteModal"></i> Hapus</a>
                       <a href="<?php echo base_url('admin/siswa/detail/'.$u->id_siswa) ?>"
                        class="btn btn-small"><i class="fas fa-grip-horizontal"></i> Details</a>
-                      <!-- <a href="<?php //echo site_url ('admin/siswa/delete/'.$id )?>" 
-                        class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a> -->
                     </td>
                   <?php } ?>
                   </tr>
