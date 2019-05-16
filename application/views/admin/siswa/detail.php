@@ -20,7 +20,33 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img src="<?php echo base_url("images/foto/"); echo $profile->foto; ?>" alt=""/>
+                          <?php
+                          foreach ($tbl_siswa as $k) {
+                            $id = $k->id_siswa;
+                          }?>
+                          <?php
+                               $sek = $this->db->query("call get_detailsiswa('".$id."')");
+                               $raw = $sek->row();
+
+                              $foto = $raw->foto;
+                              $nama = $raw->nama_lengkap;
+                              $kelas = $raw->nama_kelas;
+                              $program = $raw->nama_program;
+                              $sekolah = $raw->nama_sekolah;
+                              $grade = $raw->kelas;
+                              $id = $raw->id_siswa;
+                              $tmpt = $raw->tempat;
+                              $tgl = $raw->tanggal_lahir;
+                              $email = $raw->email;
+                              $notel = $raw->no_hp;
+                              $bpk = $raw->nama_ayah;
+                              $pbpk = $raw->pekerjaan_ayah;
+                              $nbpk = $raw->no_hpayah;
+                              $ibu = $raw->nama_ibu;
+                              $pibu = $raw->pekerjaan_ibu;
+                              $nibu = $raw->no_hpibu;
+                              ?>
+                            <img src="<?php echo base_url("images/foto/profile/siswa/"); echo $foto;?>" alt=""/>
                             <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
@@ -30,10 +56,12 @@
                     <div class="col-md-6">
                         <div class="profile-head">
                                     <h5>
-                                        <?php $nama=$profile->nama_lengkap; echo ucwords($nama)?>
+                                      <?php
+                                            echo $nama;
+                                         ?>
                                     </h5>
                                     <h6>
-                                        Admin
+                                        Siswa | <?php echo $program; ?>
                                     </h6>
                                     <!-- <p class="proile-rating">RANKINGS : <span>8/10</span></p> -->
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -41,26 +69,26 @@
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Orang Tua</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                        <!-- <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/> -->
+                        <a href="<?php echo base_url('admin/siswa/edit/'.$k->id_siswa) ?>"
+                         class="btn btn-small"><i class="fas fa-pencil-alt"></i> Edit Data</a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-work">
-                            <p>Alamat</p>
-                            <?php $alamat = $profile->alamat; echo ucwords($alamat)?><br/>
-                            <!-- <p>SKILLS</p>
-                            <a href="">Web Designer</a><br/>
-                            <a href="">Web Developer</a><br/>
-                            <a href="">WordPress</a><br/>
-                            <a href="">WooCommerce</a><br/>
-                            <a href="">PHP, .Net</a><br/> -->
+                            <p>Asal Sekolah</p>
+                            <?php echo ucwords($sekolah)?><br/>
+                            <p>Kelas</p>
+                            <?php echo ucwords($grade)?><br/>
+                            <p>Program yang diikuti</p>
+                            <?php echo ucwords($program)?><br/>
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -71,7 +99,7 @@
                                                 <label>User Id</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p><?php echo $profile->id_admin; ?></p>
+                                                <p><?php echo $id; ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -84,10 +112,10 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Tanggal Lahir</label>
+                                                <label>Tempat, Tanggal Lahir</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p><?php echo $profile->tgl_lahir ?></p>
+                                                <p><?php echo $tmpt; echo ", "; echo $tgl; ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -95,7 +123,7 @@
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p><?php echo $profile->email ?></p>
+                                                <p><?php echo $email?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -103,7 +131,7 @@
                                                 <label>Nomor Telepon</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p><?php echo $profile->no_hp ?></p>
+                                                <p><?php echo $notel ?></p>
                                             </div>
                                         </div>
 
@@ -111,50 +139,77 @@
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Experience</label>
+                                                <label>Nama Ayah</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Expert</p>
+                                                <p><?php if ($bpk == null) {
+                                                  echo "Data tidak Lengkap";
+                                                }else {
+                                                  echo $bpk;
+                                                } ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Hourly Rate</label>
+                                                <label>Pekerjaan ayah</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>10$/hr</p>
+                                                <p><?php if ($bpk == null) {
+                                                  echo "Data tidak Lengkap";
+                                                }else {
+                                                  echo $pbpk;
+                                                } ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Total Projects</label>
+                                                <label>Nomor Hp Ayah</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>230</p>
+                                                <p><?php if ($bpk == null) {
+                                                  echo "Data tidak Lengkap";
+                                                }else {
+                                                  echo $nbpk;
+                                                } ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>English Level</label>
+                                                <label>Nama Ibu</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Expert</p>
+                                                <p><?php if ($ibu == null) {
+                                                  echo "Data tidak Lengkap";
+                                                }else {
+                                                  echo $ibu;
+                                                } ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Availability</label>
+                                                <label>Pekerjaan Ibu</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>6 months</p>
+                                                <p><?php if ($ibu == null) {
+                                                  echo "Data tidak Lengkap";
+                                                }else {
+                                                  echo $pibu;
+                                                } ?></p>
                                             </div>
                                         </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <label>Your Bio</label><br/>
-                                        <p>Your detail description</p>
-                                    </div>
-                                </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Pekerjaan Ibu</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><?php if ($ibu == null) {
+                                                  echo "Data tidak Lengkap";
+                                                }else {
+                                                  echo $nibu;
+                                                } ?></p>
+                                            </div>
+                                        </div>
+
                             </div>
                         </div>
                     </div>

@@ -12,6 +12,7 @@
   	public function index(){
       $data['kodeunik'] = $this->M_siswa->kode();
   		$data['jenjang'] = $this->M_siswa->viewJenjang();
+      $data['program'] = $this->M_siswa->viewprogram();
 
   		$this->load->view('admin/siswa/input_siswa', $data);
   	}
@@ -44,6 +45,7 @@
       $alamat = $this->input->post('address');
       $sekolah = $this->input->post('sekolah');
       $kelas = $this->input->post('kelas');
+      $program = $this->input->post('program');
       $jk = $this->input->post('jk');
       $email = $this->input->post('email');
 
@@ -56,6 +58,7 @@
         'tanggal_lahir' => $tgl,
         'sekolah' => $sekolah,
         'id_grade' => $kelas,
+        'id_program' => $program,
         'jenis_kelamin' => $jk,
         'alamat' => $alamat,
         'email' => $email

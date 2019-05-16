@@ -9,8 +9,17 @@ class M_siswa extends CI_Model {
 	public function viewByJenjang($id_jenjang){
 		$this->db->where('id_jenjang', $id_jenjang);
 		$result = $this->db->get('kelas')->result(); // Tampilkan semua data kota berdasarkan id provinsi
-
 		return $result;
+	}
+	public function viewsekolahByJenjang($id_jenjang){
+		$this->db->where('id_jenjang', $id_jenjang);
+		$result = $this->db->get('tbl_sekolah')->result(); // Tampilkan semua data kota berdasarkan id provinsi
+		return $result;
+	}
+
+
+	public function viewprogram(){
+			return $this->db->get('tbl_program')->result();
 	}
 
 	public function input_siswa($data,$table){
@@ -19,6 +28,16 @@ class M_siswa extends CI_Model {
 
 	public function getSiswa(){
 		return $this->db->get('view_siswa');
+	}
+
+	public function lht($where, $table){
+		return $this->db->get_where($table, $where);
+	}
+
+	public function update_siswa($where,$data,$table){
+		$this->db->where($where);
+		$this->db->update($table,$data);
+
 	}
 
 	public function kode(){
@@ -35,5 +54,10 @@ class M_siswa extends CI_Model {
 		$kodemax = str_pad($kode, 8, "0", STR_PAD_LEFT);
 		$kodejadi = "017820845".$kodemax;
 		return $kodejadi;
+	}
+
+	public function delete($where,$table){
+	$this->db->where($where);
+	$this->db->delete($table);
 	}
 }

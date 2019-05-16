@@ -17,14 +17,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<a href="index.html"><img src="images/logo.png" alt=""/></a>
 			 </div>
 			 <div class="cssmenu">
-				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="plans.html">Plans & Pricing</a></li>
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="features.html">Features</a></li>
-					<li class="active"><a href="contact.html">Contact</a></li>
-				</ul>
-			  </div>
+        <ul>
+          <li class="active"><a href="<?php echo base_url('profile'); ?>">Home</a></li>
+          <li><a href="plans.html">Learning Program</a></li>
+          <li><a href="blog.html">Testimoni</a></li>
+          <li><a href="<?php echo base_url('profile/contact') ?>">Contact</a></li>
+          <li><a href="<?php echo base_url('login'); ?>">Login</a></li>
+        </ul>
+        </div>
+         <div class="clear"></div>
+   </div>
 			  <div class="clear"></div>
 		</div>
 	   </div>
@@ -39,8 +41,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="about-left">
 				<h3>Contact Us</h3>
 		    </div>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie</p>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie</p>
+			<p>Jika ingin menghubungi kami, anda bisa mengisi dan melengkapi form berikut:</p>
 		    <div class="contatct-form">
 			   <form>
 				  <input type="text" value="Name " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name ';}">
@@ -54,13 +55,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="rsidebar span_1_of_3">
 				 <div class="company_address">
 				     	<h3>Address</h3>
-						    	<p>500 Lorem Ipsum Dolor Sit,</p>
-						   		<p>22-56-2-9 Sit Amet, Lorem,</p>
-						   		<p>USA</p>
-				   		<p>Phone:(00) 222 666 444</p>
-				   		<p>Fax: (000) 000 00 00 0</p>
+						    	<p>Jl. Letnan Jend. Donald Isac Panjaitan No.234,</p>
+						   		<p>Dabasah, Kec. Bondowoso, Kabupaten Bondowoso</p>
+						   		<p>Jawa Timur</p>
+				   		<p>Phone:0852-3661-0634</p>
 				 	 	<p>Email: <span>info[at]mycompany.com</span></p>
-				   		<p>Follow on: <span>Facebook</span>, <span>Twitter</span></p>
+				   		<p>Follow on: <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fid-id.facebook.com%2Fprimagama.bondowoso"><span>Facebook</span></p>
 				   </div>
 		      </div>
 		     <div class="clear"></div>
@@ -71,19 +71,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="wrap">
 			<div class="footer-top">
 				<div class="col_1_of_footer span_1_of_footer">
-					<h3>About Portfolio</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim venia sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+					<h3>Beranda</h3>
+					<p> Home </p>
+					<p>Kontak</p>
 				</div>
 				<div class="col_1_of_footer span_1_of_footer">
-					<h3>Recent Posts</h3>
-					<p class="txt2"><span class="txt3">soluta nobis eleifend option</span><br>Lorem ipsum dolor sit amet, consectetuer.</p>
-					<p class="txt2"><span class="txt3">soluta nobis eleifend option</span><br>Lorem ipsum dolor sit amet, consectetuer.</p>
-					<p class="txt2"><span class="txt3">soluta nobis eleifend option</span><br>Lorem ipsum dolor sit amet, consectetuer.</p>
-					<div class="link"><a href="#">View all Posts</a></div>
+					<h3>Home</h3>
+					<p> Primagama Siap </p>
+					<p>Kenapa Primagama</p>
 				</div>
 				<div class="col_1_of_footer span_1_of_footer">
-					<h3>Twitter Widget</h3>
+					<h3> Recent Testimoni </h3>
 					<div class="recent-tweet">
 						<div class="recent-tweet-icon">
 							<span> </span>
@@ -104,18 +102,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				</div>
 				<div class="col_1_of_footer span_1_of_footer">
-					<h3>Flickr Widget</h3>
+					<h3>Tokoh</h3>
 					<div class="gallery">
 						<ul>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/g1.jpg" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/g2.jpg" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/g3.jpg" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/g4.jpg" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/g5.jpg" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/g6.jpg" alt=""/></a></li>
+							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<?php echo base_url('images/g1.jpg')?>" alt=""/></a></li>
+							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<?php echo base_url('images/g2.jpg')?>" alt=""/></a></li>
+							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<?php echo base_url('images/g3.jpg')?>" alt=""/></a></li>
+							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<?php echo base_url('images/g4.jpg')?>" alt=""/></a></li>
+							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<?php echo base_url('images/g5.jpg')?>" alt=""/></a></li>
+							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<?php echo base_url('images/g6.jpg')?>" alt=""/></a></li>
 							 <div id="small-dialog1" class="mfp-hide">
 								<div class="pop_up">
-								 	<img src="images/g_zoom.jpg" alt=""/>
+								 	<img src="<?php echo base_url('images/g_zoom.jpg')?>" alt=""/>
 									<h2>Photo View</h2>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 					  			</div>

@@ -29,7 +29,7 @@
 
   			$.ajax({
   				type: "POST", // Method pengiriman data bisa dengan GET atau POST
-  				url: "<?php echo base_url("admin/inputsiswa/listkelas"); ?>", // Isi dengan url/path file php yang dituju
+  				url: "<?php echo base_url("admin/siswa/listkelas"); ?>", // Isi dengan url/path file php yang dituju
   				data: {id_jenjang : $("#jenjang").val()}, // data yang akan dikirim ke file yang dituju
   				dataType: "json",
   				beforeSend: function(e) {
@@ -51,3 +51,36 @@
   		});
   	});
   	</script>
+    <script>
+    $(document).ready(function(){ // Ketika halaman sudah siap (sudah selesai di load)
+      // Kita sembunyikan dulu untuk loadingnya
+      $("#loading2").hide();
+
+      $("#jenjang").change(function(){ // Ketika user mengganti atau memilih data provinsi
+        $("#sekolah").hide(); // Sembunyikan dulu combobox kota nya
+        $("#loading2").show(); // Tampilkan loadingnya
+
+        $.ajax({
+          type: "POST", // Method pengiriman data bisa dengan GET atau POST
+          url: "<?php echo base_url("admin/siswa/listSekolah"); ?>", // Isi dengan url/path file php yang dituju
+          data: {id_jenjang : $("#jenjang").val()}, // data yang akan dikirim ke file yang dituju
+          dataType: "json",
+          beforeSend: function(e) {
+            if(e && e.overrideMimeType) {
+              e.overrideMimeType("application/json;charset=UTF-8");
+            }
+          },
+          success: function(response){ // Ketika proses pengiriman berhasil
+            $("#loading2").hide(); // Sembunyikan loadingnya
+
+            // set isi dari combobox kota
+            // lalu munculkan kembali combobox kotanya
+            $("#sekolah").html(response.list_sekolah).show();
+          },
+          error: function (xhr, ajaxOptions, thrownError) { // Ketika ada error
+            alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError); // Munculkan alert error
+          }
+        });
+      });
+    });
+    </script>
