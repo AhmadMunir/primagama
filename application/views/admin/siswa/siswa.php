@@ -34,7 +34,7 @@
                       <th>Kelas</th>
                       <th>Program</th>
                       <th>Kelas Primagama</th>
-                      <th>Pilihan</th>
+                      <th>Detail</th>
                     </tr>
                   </thead>
 
@@ -60,10 +60,18 @@
                         }
                     ?></td>
                     <td width="250">
+<<<<<<< HEAD
+
+=======
+                      <a href="<?php echo site_url('admin/siswa/edit/'.$id) ?>"
+                       class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
                       <a href="<?php echo base_url('admin/siswa/detail/'.$u->id_siswa) ?>"
                        class="btn btn-small"><i class="fas fa-grip-horizontal"></i> Details</a>
-                      <!-- <a href="<?php //echo site_url ('admin/siswa/delete/'.$id )?>" 
-                        class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a> -->
+                      <a href="<?php echo site_url ('admin/siswa/delete/'.$id )?>" 
+                        class="btn btn-small text-danger"><i class="fas fa-trash" data-toggle="modal" data-target="#deleteModal"></i> Hapus</a>
+>>>>>>> a5412cac50eef28cdb40ffd792873b73c47e65b6
+                      <a href="<?php echo base_url('admin/siswa/detail/'.$u->id_siswa) ?>"
+                       class="btn btn-small"><i class="fas fa-grip-horizontal"></i> Details</a>
                     </td>
                   <?php } ?>
                   </tr>
@@ -73,12 +81,26 @@
             </div>
 
           <!-- Sticky Footer -->
-      <?php
-        $this->load->view('admin/_partial/footer.php')
-      ?>
+<<<<<<< HEAD
 
       </div>
+=======
+      <?php 
+        $this->load->view('admin/_partial/footer.php')
+      ?>
+      
+      </div>
+      
+>>>>>>> a5412cac50eef28cdb40ffd792873b73c47e65b6
+      <?php
+      $this->load->view('admin/_partial/footer.php')
+      ?>
 
+<<<<<<< HEAD
+=======
+      </div>
+
+>>>>>>> a5412cac50eef28cdb40ffd792873b73c47e65b6
     </div>
     <?php $this->load->view('admin/_partial/scrolltop.php') ?>
 

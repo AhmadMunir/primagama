@@ -100,7 +100,7 @@ class Siswa extends CI_Controller
       'email' => $email
     );
     $this->m_siswa->input_siswa($data,'tbl_siswa');
-    redirect('admin/home');
+    redirect('admin/orangtua/input/'.$id_sis);
   }
 
   public function update(){
