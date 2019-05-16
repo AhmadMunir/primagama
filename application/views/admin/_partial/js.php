@@ -18,9 +18,19 @@
   <script src="<?php echo base_url('js/demo/chart-area-demo.js')?>"></script>
  
   <script>
-  function deleteConfirm(url){
-    $('#btn-delete').attr('href', url);
-    $('#deleteModal').modal();
-  }
-  </script>
-  
+        jQuery(document).ready(function($){
+            $('.delete-link').on('click',function(){
+                var getLink = $(this).attr('href');
+                swal({
+                        title: 'Alert',
+                        text: 'Hapus Data?',
+                        html: true,
+                        confirmButtonColor: '#d9534f',
+                        showCancelButton: true,
+                        },function(){
+                        window.location.href = getLink
+                    });
+                return false;
+            });
+        });
+    </script>
