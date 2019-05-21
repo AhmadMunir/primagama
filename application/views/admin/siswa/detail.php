@@ -12,7 +12,11 @@
     <?php $this->load->view('admin/_partial/sidebar.php') ?>
 
     <div id="content-wrapper">
-
+      <?php if ($this->session->flashdata('successbayar')): ?>
+      <div class="alert alert-success" role="alert">
+        <?php echo $this->session->flashdata('successbayar'); ?>
+      </div>
+      <?php endif; ?>
       <div class="container-fluid">
       <!-- profile -->
       <div class="container emp-profile">
@@ -70,6 +74,9 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Orang Tua</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="angsuran-tab" data-toggle="tab" href="#angsuran" role="tab" aria-controls="angsuran" aria-selected="false">Angsuran</a>
                                 </li>
                             </ul>
                         </div>
@@ -156,7 +163,7 @@
                                                 <label>Pekerjaan ayah</label>
                                             </div>
                                             <div class="col-md-6">
-                                              <p><?php if ($bpk == null) {?><a class="btn btn-small" href="#" data-toggle="modal" data-target="#updateortu">
+                                              <p><?php if ($ibu == null) {?><a class="btn btn-small" href="#" data-toggle="modal" data-target="#updateortu">
                                                 <?php echo "Klik Disini Untuk Melengkapi Data";?>
                                               </a>
                                             <?php } else {
@@ -169,7 +176,7 @@
                                                 <label>Nomor Hp Ayah</label>
                                             </div>
                                             <div class="col-md-6">
-                                              <p><?php if ($bpk == null) {?><a class="btn btn-small" href="#" data-toggle="modal" data-target="#updateortu">
+                                              <p><?php if ($nbpk == null) {?><a class="btn btn-small" href="#" data-toggle="modal" data-target="#updateortu">
                                                 <?php echo "Klik Disini Untuk Melengkapi Data";?>
                                               </a>
                                             <?php } else {
@@ -182,7 +189,7 @@
                                                 <label>Nama Ibu</label>
                                             </div>
                                             <div class="col-md-6">
-                                               <p><?php if ($bpk == null) {?><a class="btn btn-small" href="#" data-toggle="modal" data-target="#updateortu">
+                                               <p><?php if ($nibu == null) {?><a class="btn btn-small" href="#" data-toggle="modal" data-target="#updateortu">
                                                     <?php echo "Klik Disini Untuk Melengkapi Data";?>
                                                   </a>
                                                 <?php } else {
@@ -195,7 +202,7 @@
                                                 <label>Pekerjaan Ibu</label>
                                             </div>
                                             <div class="col-md-6">
-                                              <p><?php if ($bpk == null) {?><a class="btn btn-small" href="#" data-toggle="modal" data-target="#updateortu">
+                                              <p><?php if ($pbpk == null) {?><a class="btn btn-small" href="#" data-toggle="modal" data-target="#updateortu">
                                                 <?php echo "Klik Disini Untuk Melengkapi Data";?>
                                               </a>
                                             <?php } else {
@@ -208,7 +215,7 @@
                                                 <label>Pekerjaan Ibu</label>
                                             </div>
                                             <div class="col-md-6">
-                                              <p><?php if ($bpk == null) {?><a class="btn btn-small" href="#" data-toggle="modal" data-target="#updateortu">
+                                              <p><?php if ($pibu == null) {?><a class="btn btn-small" href="#" data-toggle="modal" data-target="#updateortu">
                                                 <?php echo "Klik Disini Untuk Melengkapi Data";?>
                                               </a>
                                             <?php } else {
@@ -216,6 +223,34 @@
                                                 } ?></p>
                                             </div>
                                         </div>
+
+                            </div>
+                            <div class="tab-pane fade" id="angsuran" role="tabpanel" aria-labelledby="angsuran-tab">
+                                        <!-- angsuran disini -->
+
+                              <table class="col-md-12 table table-bordered align-bottom">
+                                <thead>
+                                  <tr>
+                                    <th scope="row">Angsuran Ke -</th>
+                                    <th>Waktu</th>
+                                    <th>Jumlah Bayar</th>
+                                    <th>Sisa Angsuran</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <?php $no = 1;
+
+                                  foreach ($angByID as $ang) {
+                                  ?>
+                                  <tr>
+                                    <td class="align-middle"><?php echo $no++ ?></td>
+                                    <td><?php echo $ang->waktu ?></td>
+                                    <td><?php echo rupiah($ang->jumlah_bayar) ?></td>
+                                    <td><?php echo rupiah($ang->sisa_tagihan) ?></td>
+                                  </tr>
+                                  <?php } ?>
+                                </tbody>
+                              </table>
 
                             </div>
                         </div>
@@ -348,6 +383,12 @@
     margin-right: 20px;
   }
 </style>
+<?php
+  function rupiah($angka){
+    $hasil_rupiah = "Rp " . number_format($angka,2,',','.');
+    return $hasil_rupiah;
+  }
+ ?>
 </body>
 
 </html>

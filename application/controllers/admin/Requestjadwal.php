@@ -4,6 +4,7 @@
       parent::__construct();
 
       $this->load->model('M_jadwal');
+      $this->load->model('M_siswa');
 
       if($this->session->userdata('status') != "login")
         redirect(base_url("login"));
@@ -11,9 +12,10 @@
 
     public function index(){
       $data['requestjadwal'] = $this->M_jadwal->viewJadwal();
+        $data['jenjang'] = $this->m_siswa->viewJenjang();
 
 
-      $this->load->view('admin/Requestjadwal/requestjadwal', $data);
+      $this->load->view('admin/requestjadwal/requestjadwal', $data);
    }
 
       public function listKelas(){
@@ -35,22 +37,23 @@
       echo json_encode($callback); // konversi varibael $callback menjadi JSON
     }
 
+
     public function jadwal(){
-     
+
       $mpl = $this->input->post('mapel');
       $tgl = $this->input->post('tanggal');
       $kelas = $this->input->post('kelas');
-    
-     
+
+
       $data = array(
-       
+
         'mapel' => $mpl,
         'tanggal' => $tgl,
         'id_grade' => $kelas,
-     
+
       );
       $this->M_jadwal->request_jadwal($data,'tbl_request_jadwal');
-      redirect('admin/home');
+      redirect('admin/jadwal');
     }
 
   }

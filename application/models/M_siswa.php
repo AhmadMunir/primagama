@@ -60,4 +60,8 @@ class M_siswa extends CI_Model {
 	$this->db->where($where);
 	$this->db->delete($table);
 	}
+
+	public function get_angsuran($where, $table){
+		return $this->db->get_where($table, $where);
+	}
 }

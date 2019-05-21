@@ -33,7 +33,7 @@
                       <th>Kelas</th>
                     </tr>
                   </thead>
-  
+
 
                   <tbody>
                    <?php
@@ -55,8 +55,6 @@
 
         </div>
 
-        <?php $this->load->view('admin/_partial/footer.php') ?>
-
       </div>
       <!-- /.content-wrapper -->
 
@@ -66,7 +64,9 @@
 
       <?php $this->load->view('admin/_partial/modal.php') ?>
 
+
     <?php $this->load->view('admin/_partial/js.php') ?>
+
   </body>
 
 </html>

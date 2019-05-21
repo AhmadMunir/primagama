@@ -28,7 +28,7 @@
                       <label for="Mapel">Mapel</label>
                     </div>
                   </div>
-                 
+
                 </div>
               </div>
               <!-- <div class="form-group">
@@ -38,7 +38,7 @@
                 </div>
               </div> -->
               <div class="form-group">
-              
+
                   <div class="col-md-3">
                    </div>
 
@@ -59,7 +59,11 @@
                   <div class="col-md-3">
                     <select name="jenjang" id="jenjang" style="width: 200px;">
                       <option value="">Pilih</option>
-                      <option value="1">SMA</option>
+                      <?php
+                      foreach ($jenjang as $data) { // Lakukan looping pada variabel siswa dari controller
+                          echo "<option value='".$data->id_jenjang."'>".$data->jenjang."</option>";
+                      }
+                      ?>
                     </select>
                   </div>
                   <div class="col-md-1">
@@ -79,7 +83,7 @@
                   </div>
                 </div>
               </div>
-         
+
       <div class="form-group">
         <div class="form-row">
       <div class="col-md-6">

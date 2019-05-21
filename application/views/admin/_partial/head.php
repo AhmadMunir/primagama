@@ -14,3 +14,12 @@
 
   <!-- Custom styles for this template-->
   <link href="<?php echo base_url('css/admin/sb-admin.css')?>" rel="stylesheet">
+  <link href="<?php echo base_url('css/select2/select2.min.css'); ?>" rel="stylesheet">
+  <!-- <link href="<?php// echo base_url('css/ajaxlivesearch.min.css'); ?>" rel="stylesheet"> -->
+
+  <link rel="stylesheet" href="<?php echo base_url('css/als/css/fontello.css')?>">
+  <link rel="stylesheet" href="<?php echo base_url('css/als/css/animation.css')?>">
+  <!--[if IE 7]>
+  <link rel="stylesheet" href="css/fontello-ie7.css">
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/als/css/ajaxlivesearch.min.css')?>">

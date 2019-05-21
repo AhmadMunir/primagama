@@ -140,6 +140,7 @@ class Siswa extends CI_Controller
   public function detail($id){
       $where =  array('id_siswa' => $id);
       $data['tbl_siswa'] = $this->m_siswa->lht($where, 'tbl_siswa')->result();
+      $data['angByID'] = $this->m_siswa->get_angsuran($where, 'view_angsuran')->result();
       $this->load->view('admin/siswa/detail', $data);
   }
 
@@ -155,5 +156,6 @@ class Siswa extends CI_Controller
     $this->m_siswa->delete($where,'tbl_siswa');
     redirect('admin/siswa');
   }
+
 }
  ?>

@@ -103,7 +103,7 @@
                   </div>
                   </div>
                   <div class="col-md-6">
-                    <select name="sekolah" id="sekolah" style="width: 600px;">
+                    <select class="js-example-basic-single" name="sekolah" id="sekolah" style="width: 600px;">
                       <option value="">Pilih</option>
                     </select>
 
@@ -122,7 +122,7 @@
                   </div>
                   </div>
                   <div class="col-md-3">
-                    <select name="program" id="program" style="width: 200px;">
+                    <select class="js-example-basic-single" name="program" id="program" style="width: 200px;">
                       <option value="">Pilih</option>
                       <?php
                       foreach ($program as $data) { // Lakukan looping pada variabel siswa dari controller

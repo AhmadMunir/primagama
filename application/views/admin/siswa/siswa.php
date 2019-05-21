@@ -60,15 +60,11 @@
                         }
                     ?></td>
                     <td width="250">
-                      <a href="<?php echo site_url('admin/siswa/edit/'.$id) ?>"
-                       class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                      <a href="<?php echo base_url('admin/siswa/detail/'.$u->id_siswa) ?>"
-                       class="btn btn-small"><i class="fas fa-grip-horizontal"></i> Details</a>
-                      <a href="<?php echo site_url ('admin/siswa/delete/'.$id )?>" 
-                        class="btn btn-small text-danger"><i class="fas fa-trash" data-toggle="modal" data-target="#deleteModal"></i> Hapus</a>
-                      <a href="<?php echo base_url('admin/siswa/detail/'.$u->id_siswa) ?>"
-                       class="btn btn-small"><i class="fas fa-grip-horizontal"></i> Details</a>
+
                       
+                      <a href="<?php echo base_url('admin/siswa/detail/'.$u->id_siswa) ?>"
+                       class="btn btn-small"><i class="fas fa-grip-horizontal"></i> Details</a>
+
                     </td>
                   <?php } ?>
                   </tr>
@@ -81,17 +77,19 @@
 
 
       </div>
-      <?php 
-
-      <?php
-        $this->load->view('admin/_partial/footer.php')
-      ?>
+      <!-- <?php
+//        $this->load->view('admin/_partial/footer.php')
+      ?> -->
 
       </div>
-      <?php
-      $this->load->view('admin/_partial/footer.php')
-      ?>
 
+
+<!--
+>>>>>>> 609b415c9511d7301340ba4ffbac6df5b4186a84
+      <?php
+    //  $this->load->view('admin/_partial/footer.php')
+      ?>
+ -->
 
       </div>
 
