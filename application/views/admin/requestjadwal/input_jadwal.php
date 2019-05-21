@@ -28,7 +28,7 @@
                       <label for="Mapel">Mapel</label>
                     </div>
                   </div>
-                 
+
                 </div>
               </div>
               <!-- <div class="form-group">
@@ -57,9 +57,9 @@
                   </div>
                 </div>
               </div>
-            
+
                <div class="form-group">
-              
+
                <div class="form-row">
                   <div class="col-md-2">
                     <div class="form-label-group">
@@ -79,7 +79,7 @@
                       <label for="kelas">Kelas</label>
                     </div>
                   </div>
-                 
+
                 </div>
               </div>
                 <div class="form-group">
@@ -121,7 +121,7 @@
                 </div>
               </div>
 
-         
+
       <div class="form-group">
         <div class="form-row">
       <div class="col-md-6">

@@ -12,7 +12,7 @@ class M_jadwal_tetap extends CI_Model {
 
 		return $result;
 	}
-public function viewTentor(){
+  public function viewTentor(){
 			return $this->db->get('tbl_tentor')->result();  // Tampilkan semua data yang ada di tabel provinsi
 	}
 	public function input_jadwal($data,$table){
