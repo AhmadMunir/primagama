@@ -19,18 +19,26 @@
 
           <div class="card-header">Input jadwal</div>
           <div class="card-body">
-            <form method="post" action="<?php echo base_url().'admin/inputjadwal/tambah_jadwal';?>">
+            <form method="post" action="<?php echo base_url().'admin/jadwaltetap/tambah_jadwal';?>">
               <div class="form-group">
-                <div class="form-row">
-                  <div class="col-md-6">
-                    <div class="form-label-group">
-                      <input type="text" id="Mapel" name="mapel" class="form-control" placeholder="Mapel" required="required" autofocus="autofocus">
-                      <label for="Mapel">Mapel</label>
-                    </div>
-                  </div>
-
+              <div class="form-row">
+                <div class="col-md-2">
+                  <div class="form-label-group">
+                    Mapel :
+                </div>
+                </div>
+                <div class="col-md-3">
+                  <select name="mapel" id="mapel" style="width: 200px;">
+                    <option value="">Pilih</option>
+                    <?php
+                    foreach ($mapel as $data) { // Lakukan looping pada variabel siswa dari controller
+                        echo "<option value='".$data->id_mapel."'>".$data->nama_mapel."</option>";
+                    }
+                    ?>
+                  </select>
                 </div>
               </div>
+            </div>
               <!-- <div class="form-group">
                 <div class="form-label-group">
                   <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required">
@@ -67,21 +75,34 @@
                     </div>
                   </div>
                   <div class="col-md-3">
-                      <input type="time" id="jam" name="jam" class="form-control" placeholder="Jam" required="required">
+                      <select class="jam" name="jam">
+                        <option value="">-----Pilih-----</option>
+                        <option value="13:00-14:30">13:00-14:30</option>
+                        <option value="15:00-16:30">15:00-16:30</option>
+                        <option value="18:00-20:30">18:00-20:30</option>
+                      </select>
                     </div>
                   </div>
              </div>
-                  <div class="form-group">
-                <div class="form-row">
-                  <div class="col-md-6">
-                    <div class="form-label-group">
-                      <input type="text" id="kelas" name="kelas" class="form-control" placeholder="kelas" required="required" autofocus="autofocus">
-                      <label for="kelas">Kelas</label>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
+             <div class="form-group">
+             <div class="form-row">
+               <div class="col-md-2">
+                 <div class="form-label-group">
+                   Kelas :
+               </div>
+               </div>
+               <div class="col-md-3">
+                 <select name="kelas" id="kelas" style="width: 200px;">
+                   <option value="">Pilih</option>
+                   <?php
+                   foreach ($kelas as $data) { // Lakukan looping pada variabel siswa dari controller
+                       echo "<option value='".$data->id_kelas."'>".$data->nama_kelas."</option>";
+                   }
+                   ?>
+                 </select>
+               </div>
+             </div>
+           </div>
                 <div class="form-group">
                 <div class="form-row">
                   <div class="col-md-2">

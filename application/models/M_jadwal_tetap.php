@@ -12,8 +12,15 @@ class M_jadwal_tetap extends CI_Model {
 
 		return $result;
 	}
+  public function viewMapel(){
+			return $this->db->get('tbl_mapel')->result();
+	}
   public function viewTentor(){
 			return $this->db->get('tbl_tentor')->result();  // Tampilkan semua data yang ada di tabel provinsi
+	}
+
+  public function viewKelas(){
+			return $this->db->get('tbl_kelas')->result();  // Tampilkan semua data yang ada di tabel provinsi
 	}
 	public function input_jadwal($data,$table){
 		$this->db->insert($table,$data);

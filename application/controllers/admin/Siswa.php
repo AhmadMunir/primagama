@@ -6,8 +6,7 @@ class Siswa extends CI_Controller
   {
     parent::__construct();
     $this->load->model('m_siswa');
-    $this->load->helper('url');
-    $this->load->library('form_validation');
+    $this->load->model('m_pembayaran');
 
     if($this->session->userdata('status') != "login")
       redirect(base_url("login"));
@@ -22,7 +21,6 @@ class Siswa extends CI_Controller
       $data['jenjang'] = $this->m_siswa->viewJenjang();
       $data['program'] = $this->m_siswa->viewprogram();
       $data['tbl_siswa'] = $this->m_siswa->lht($where, 'tbl_siswa')->result();
-    //  $data['program'] = $this->m_siswa->viewprogrambyId($where);
 
       $this->load->view('admin/siswa/edit_siswa', $data);
   }
@@ -31,7 +29,7 @@ class Siswa extends CI_Controller
     $data['kodeunik'] = $this->m_siswa->kode();
     $data['jenjang'] = $this->m_siswa->viewJenjang();
     $data['program'] = $this->m_siswa->viewprogram();
-
+    $data['kode'] = $this->m_pembayaran->kode();
     $this->load->view('admin/siswa/input_siswa', $data);
   }
 
@@ -84,7 +82,15 @@ class Siswa extends CI_Controller
     $program = $this->input->post('program');
     $jk = $this->input->post('jk');
     $email = $this->input->post('email');
+    $biaya = $this->input->post('biaya');
+    $kodebia = $this->input->post('kode');
 
+    $bi = array(
+      'id_pembayaran' => $kodebia,
+      'id_siswa' =>$id_sis,
+      'jumlah_bayar' => 0,
+      'sisa_tagihan' => $biaya
+    );
 
     $data = array(
       'id_siswa' => $id_sis,
@@ -100,6 +106,7 @@ class Siswa extends CI_Controller
       'email' => $email
     );
     $this->m_siswa->input_siswa($data,'tbl_siswa');
+    $this->m_pembayaran->input($bi, 'tbl_pembayaran');
     redirect('admin/orangtua/input/'.$id_sis);
   }
 
@@ -144,17 +151,16 @@ class Siswa extends CI_Controller
       $this->load->view('admin/siswa/detail', $data);
   }
 
-  // public function delete($id=null){
-  //     if (!isset($id)) show_404();
-
-  //     if ($this->m_siswa->delete($id)) {
-  //       redirect(site_url('admin/siswa'));
-  //       }
-  //     }
   public function delete($id){
     $where = array('id_siswa' => $id);
     $this->m_siswa->delete($where,'tbl_siswa');
     redirect('admin/siswa');
+  }
+
+  public function get_biaya(){
+    $kode=$this->input->post('kode');
+    $data=$this->m_siswa->get_biaia($kode);
+    echo json_encode($data);
   }
 
 }

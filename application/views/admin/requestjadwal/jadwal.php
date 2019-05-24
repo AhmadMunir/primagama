@@ -1,4 +1,4 @@
-<!DOCTYPE hrml>
+q<!DOCTYPE hrml>
 <html lang="en">
   <head>
     <?php $this->load->view('admin/_partial/head.php') ?>
@@ -31,6 +31,7 @@
                       <th>Mapel</th>
                       <th>tanggal</th>
                       <th>Kelas</th>
+                      <th>Jumlah</th>
                     </tr>
                   </thead>
 
@@ -44,6 +45,7 @@
                     <td><?php echo $u->mapel?></td>
                     <td><?php echo $u->tanggal?></td>
                     <td><?php echo $u->id_grade?></td>
+                    <td><?php echo $u->jumlah ?>
                   </tr>
                   <?php } ?>
                   </tbody>

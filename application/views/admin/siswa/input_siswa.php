@@ -130,6 +130,9 @@
                       }
                       ?>
                     </select>
+                    <input type="hidden" name="biaya" id="biaya">
+                    <input type="hidden" name="kode" id="kode" value="<?php echo $kode ?>">
+
                   </div>
                 </div>
               </div>
@@ -186,6 +189,8 @@
       <?php $this->load->view('admin/_partial/modal.php') ?>
 
     <?php $this->load->view('admin/_partial/js2.php') ?>
+
+
   </body>
 
 </html>

@@ -9,7 +9,7 @@
     }
 
     public function index(){
-
+      $this->load->view('admin/pembayaran/rekap');
     }
 
     public function input(){
@@ -42,6 +42,6 @@
       redirect('admin/siswa/detail/'.$id_sis);
     }
 
-    
+
   }
  ?>

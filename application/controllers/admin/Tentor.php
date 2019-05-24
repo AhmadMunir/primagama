@@ -59,7 +59,7 @@
       );
 
       $this->m_tentor->input($data, 'tbl_tentor');
-      redirect('admin/tentor/detail');
+      redirect('admin/tentor/');
     }
 
     public function update(){

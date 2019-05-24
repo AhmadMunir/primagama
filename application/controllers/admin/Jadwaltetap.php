@@ -19,29 +19,13 @@ class Jadwaltetap extends CI_Controller
 
  public function input(){
   $data['kodeunik'] = $this->m_jadwal_tetap->kode();
+  $data['mapel'] = $this->m_jadwal_tetap->viewMapel();
   $data['tentor'] = $this->m_jadwal_tetap->viewTentor();
   $data['ruang'] = $this->m_jadwal_tetap->viewruang();
+  $data['kelas'] = $this->m_jadwal_tetap->viewKelas();
 
   $this->load->view('admin/requestjadwal/input_jadwal', $data);
   }
-
-    //public function listTentor(){
-
-  //$id_tentor = $this->input->post('id_tentor');
-
-  //$tentor = $this->M_jadwal_tetap->viewtentorById($id_tentor);
-
-
- // $lists = "<option value=''>Pilih</option>";
-
- // foreach($tentor as $data){
-  //  $lists .= "<option value='".$data->id_tentor."'>".$data->nama."</option>"; // Tambahkan tag option ke variabel $lists
- // }
-
- // $callback = array('list_tentor'=>$lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota
-
- // echo json_encode($callback); // konversi varibael $callback menjadi JSON
-//}
 
 
   public function tambah_jadwal(){
@@ -64,7 +48,7 @@ class Jadwaltetap extends CI_Controller
       'id_ruang' => $ruang,
 
     );
-    $this->M_jadwal_tetap->input_jadwal($data,'tbl_jadwal');
+    $this->m_jadwal_tetap->input_jadwal($data,'tbl_jadwal');
     redirect('admin/home');
   }
 }

@@ -64,4 +64,16 @@ class M_siswa extends CI_Model {
 	public function get_angsuran($where, $table){
 		return $this->db->get_where($table, $where);
 	}
+
+	public function get_biaia($kode){
+		$hsl=$this->db->query("call get_biaya('".$kode."')");
+		if($hsl->num_rows()>0){
+			foreach ($hsl->result() as $data) {
+				$hasil=array(
+					'biaya' => $data->biaya,
+					);
+			}
+		}
+		return $hasil;
+	}
 }

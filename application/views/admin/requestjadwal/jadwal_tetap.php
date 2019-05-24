@@ -31,29 +31,30 @@
                       <th>Mapel</th>
                       <th>Hari</th>
                       <th>Jam</th>
-                      <th>Jenjang</th>
                       <th>Kelas</th>
                       <th>Tentor</th>
                       <th>Ruang</th>
                     </tr>
                   </thead>
-  
+
 
                   <tbody>
-                   <?php
+                    <?php
                       $no = 1;
 
-                      foreach($request_jadwal as $u){?>
-                  <tr>
-                    <td><?php echo $u->id_mapel?></td>
+                      foreach($input_jadwal as $u){
+                        
+                        ?>
+                        <tr>
+                    <td><?php echo $no++?></td>
+                    <td><?php echo $u->nama_mapel?></td>
                     <td><?php echo $u->hari?></td>
-                     <td><?php echo $u->jam?></td>
-                      <td><?php echo $u->id_kelas?></td>
-                    <td><?php echo $u->id_tentor?></td>
-                     <td><?php echo $u->id_ruang?></td>
+                    <td><?php echo $u->nama_kelas?></td>
+                    <td><?php echo $u->nama?></td>
 
-                  </tr>
+
                   <?php } ?>
+                  </tr>
                   </tbody>
                 </table>
               </div>

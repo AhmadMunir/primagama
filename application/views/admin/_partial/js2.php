@@ -9,13 +9,6 @@
   <script src="<?php echo base_url('assets/chart.js/Chart.min.js')?>"></script>
   <script src="<?php echo base_url('assets/datatables/jquery.dataTables.js')?>"></script>
   <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap4.js')?>"></script>
-<!-- selec2 -->
-  <script src="<?php echo base_url('js/select2/select2.min.js') ?>"></script>
-  <script>
-  $(document).ready(function() {
-  $('.js-example-basic-single').select2();
-});
-  </script>
 
   <!-- Custom scripts for all pages-->
   <script src="<?php echo base_url('js/sb-admin.min.js')?>"></script>
@@ -92,37 +85,51 @@
     });
     </script>
 
-<!-- ajax live search -->
+    <script>
+    $(document).ready(function(){ // Ketika halaman sudah siap (sudah selesai di load)
+      // Kita sembunyikan dulu untuk loadingnya
 
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="<?php echo base_url('js/als/js/jquery-1.11.1.min.js')?>"></script>
+      $("#program").change(function(){ // Ketika user mengganti atau memilih data provinsi
 
-<!-- Live Search Script -->
-<script type="text/javascript" src="<?php echo base_url('js/als/js/ajaxlivesearch.min.js') ?>"></script>
+        $.ajax({
+            type : "POST",
+            url  : "<?php echo base_url('admin/siswa/get_biaya')?>",
+            dataType : "JSON",
+            data : {kode: $("#program").val()},
+            cache:false,
+            success: function(data){
+                $.each(data,function(biaya){
+                    $('[name="biaya"]').val(data.biaya);
+                });
 
-<script>
-jQuery(document).ready(function(){
-    jQuery(".mySearch").ajaxlivesearch({
-        loaded_at: <?php echo time(); ?>,
-        token: <?php echo "'" . $handler->getToken() . "'"; ?>,
-        max_input: <?php echo Config::getConfig('maxInputLength'); ?>,
-        onResultClick: function(e, data) {
-            // get the index 0 (first column) value
-            var selectedOne = jQuery(data.selected).find('td').eq('0').text();
-
-            // set the input value
-            jQuery('#ls_query').val(selectedOne);
-
-            // hide the result
-            jQuery("#ls_query").trigger('ajaxlivesearch:hide_result');
-        },
-        onResultEnter: function(e, data) {
-            // do whatever you want
-            // jQuery("#ls_query").trigger('ajaxlivesearch:search', {query: 'test'});
-        },
-        onAjaxComplete: function(e, data) {
-
-        }
+            }
+        });
+      });
     });
-})
-</script>
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- selec2 -->
+    <script src="<?php echo base_url('js/select2/select2.min.js') ?>"></script>
+    <script>
+    $(document).ready(function() {
+      $('.js-example-basic-single').select2();
+    });
+    </script>
