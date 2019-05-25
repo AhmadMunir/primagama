@@ -54,6 +54,18 @@
             <a class="dropdown-item" href="<?php echo site_url('admin/tentor/input') ?>">Tambah Tentor</a>
         </div>
     </li>
+
+    <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'mapel' ? 'active': '' ?>">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <i class="fas fa-fw fa-calculator"></i>
+            <span>Nilai</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <a class="dropdown-item" href="<?php echo site_url('admin/nilai') ?>">Lihat Nilai</a>
+            <a class="dropdown-item" href="<?php echo site_url('admin/nilai/form') ?>">Input Nilai</a>
+        </div>
+    </li>
     <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'Pembayaran' ? 'active': '' ?>">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
@@ -66,11 +78,7 @@
         </div>
     </li>
 
-    <!-- <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-users"></i>
-            <span>&nbsp;Siswa</span></a>
-    </li> -->
+
 
     <li class="nav-item">
         <a class="nav-link" href="#">
