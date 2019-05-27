@@ -42,15 +42,19 @@
                     <?php
                       $no = 1;
 
-                      foreach($input_jadwal as $u){
-                        
+                      foreach($view_jadwal as $u){
+                         $id = $u->id_jadwal;
                         ?>
                         <tr>
-                    <td><?php echo $no++?></td>
                     <td><?php echo $u->nama_mapel?></td>
                     <td><?php echo $u->hari?></td>
+                    <td><?php echo $u->jam?></td>
                     <td><?php echo $u->nama_kelas?></td>
                     <td><?php echo $u->nama?></td>
+                    <td><?php echo $u->nama_ruang?></td>
+
+
+
 
 
                   <?php } ?>

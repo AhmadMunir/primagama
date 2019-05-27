@@ -12,7 +12,7 @@ class Jadwaltetap extends CI_Controller
       redirect(base_url("login"));
   }
   public function index(){
-    $data['input_jadwal'] = $this->m_jadwal_tetap->getJadwal()->result();
+  $data['view_jadwal'] = $this->m_jadwal_tetap->getJadwal()->result();
     $this->load->view('admin/requestjadwal/jadwal_tetap', $data);
   }
 

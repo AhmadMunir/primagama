@@ -30,9 +30,10 @@ class M_jadwal_tetap extends CI_Model {
 	}
 
 
-	public function getjadwal(){
-		return $this->db->get('tbl_jadwal');
+	public function getJadwal(){
+		return $this->db->get('view_jadwal');
 	}
+
 	public function kode(){
 		$this->db->select('Right(tbl_jadwal.id_jadwal,8) as kode',false);
 		$this->db->order_by('id_jadwal');

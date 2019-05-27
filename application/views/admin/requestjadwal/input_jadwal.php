@@ -55,11 +55,11 @@
                   <div class="col-md-3">
                     <select name="hari" id="hari" style="width: 200px;">
                       <option value="">Pilih</option>
-                      <option value="1">Senin</option>
-                      <option value="2">Selasa</option>
-                      <option value="3">Rabu</option>
-                      <option value="4">Kamis</option>
-                      <option value="5">Jumat</option>
+                      <option value="Senin">Senin</option>
+                      <option value="Selasa">Selasa</option>
+                      <option value="Rabu">Rabu</option>
+                      <option value="Kamis">Kamis</option>
+                      <option value="Jumat">Jumat</option>
 
                     </select>
                   </div>
