@@ -65,7 +65,17 @@
                                          ?>
                                     </h5>
                                     <h6>
-                                        Siswa | <?php echo $program; ?>
+                                        Siswa | <?php
+                                          if ($kelas == 'null') {
+                                            echo "Belum Masuk kelas";
+                                              ?>
+                                              <a class="btn btn-small" href="#" data-toggle="modal" data-target="#kelasModal"><small style="color:red" >Masukkan Ke kelas</small></a>
+
+                                            <?php
+                                          }else {
+                                            echo $kelas;
+                                          }
+                                         ?>
                                     </h6>
                                     <!-- <p class="proile-rating">RANKINGS : <span>8/10</span></p> -->
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -377,6 +387,37 @@
     </form>
     </div>
   </div>
+  </div>
+
+  <!-- Update Kelas Modal-->
+    <div class="modal fade" id="kelasModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"> Siswa Masuk Kelas</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Ke Kelas mana Siswa Akan Masuk ? ? ? ?</div>
+        <form action="<?php echo base_url('admin/siswa/updatekls') ?>" method="post" >
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
+          <div class="col-md-6">
+            <select id="kelsa" name="kelsa">
+            <option value="99">Pilih Kelas</option>
+            <?php
+            foreach ($keles as $data) { // Lakukan looping pada variabel siswa dari controller
+                echo "<option value='".$data->id_kelas."'>".$data->nama_kelas."</option>";
+            }
+            ?>
+          </select>
+          </div>
+        <div class="modal-footer">
+          <input type="submit" name="update" value="Update">
+        </div>
+        <form>
+      </div>
+    </div>
   </div>
 <style>
   .input_ortu{

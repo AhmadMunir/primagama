@@ -28,7 +28,7 @@
                 </div>
                 </div>
                 <div class="col-md-3">
-                  <select name="mapel" id="mapel" style="width: 200px;">
+                  <select class="js-example-basic-single" name="mapel" id="mapel" style="width: 200px;">
                     <option value="">Pilih</option>
                     <?php
                     foreach ($mapel as $data) { // Lakukan looping pada variabel siswa dari controller
@@ -53,7 +53,7 @@
                   </div>
                   </div>
                   <div class="col-md-3">
-                    <select name="hari" id="hari" style="width: 200px;">
+                    <select  name="hari" id="hari" style="width: 200px;">
                       <option value="">Pilih</option>
                       <option value="Senin">Senin</option>
                       <option value="Selasa">Selasa</option>

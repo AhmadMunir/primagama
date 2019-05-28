@@ -9,6 +9,18 @@
     <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'siswa' ? 'active': '' ?>">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
+            <i class="fas fa-fw fa-fingerprint"></i>
+            <span>Absen</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <a class="dropdown-item" href="<?php echo site_url('admin/absen/') ?>">Lihat Absen</a>
+            <a class="dropdown-item" href="<?php echo site_url('admin/absen/input') ?>">Input Absen</a>
+            <a class="dropdown-item" href="<?php echo site_url('admin/products') ?>">List Product</a>
+        </div>
+    </li>
+    <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'siswa' ? 'active': '' ?>">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
             <i class="fas fa-fw fa-users"></i>
             <span>Siswa</span>
         </a>
@@ -21,12 +33,13 @@
     <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'siswa' ? 'active': '' ?>">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-            <i class="fas fa-fw fa-users"></i>
+            <i class="fas fa-fw fa-calendar"></i>
             <span>Jadwal</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-
-            <a class="dropdown-item" href="<?php echo site_url('admin/Jadwal') ?>">Lihat Jadwal</a>
+            <a class="dropdown-item" href="<?php echo site_url('admin/Jadwaltetap') ?>">Lihat Jadwal Tetap</a>
+            <a class="dropdown-item" href="<?php echo site_url('admin/jadwaltetap/input') ?>">Kelola Jadwal Tetap</a>
+            <a class="dropdown-item" href="<?php echo site_url('admin/Jadwal') ?>">Lihat Request Jadwal</a>
             <a class="dropdown-item" href="<?php echo site_url('admin/Requestjadwal') ?>">Request Jadwal</a>
 
         </div>

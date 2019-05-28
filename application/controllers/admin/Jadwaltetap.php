@@ -12,7 +12,8 @@ class Jadwaltetap extends CI_Controller
       redirect(base_url("login"));
   }
   public function index(){
-  $data['view_jadwal'] = $this->m_jadwal_tetap->getJadwal()->result();
+    $data['view_jadwal'] = $this->m_jadwal_tetap->getJadwal()->result();
+    $data['kelas'] = $this->m_jadwal_tetap->viewKelas();
     $this->load->view('admin/requestjadwal/jadwal_tetap', $data);
   }
 
@@ -49,7 +50,7 @@ class Jadwaltetap extends CI_Controller
 
     );
     $this->m_jadwal_tetap->input_jadwal($data,'tbl_jadwal');
-    redirect('admin/home');
+    redirect('admin/Jadwaltetap/');
   }
 }
 

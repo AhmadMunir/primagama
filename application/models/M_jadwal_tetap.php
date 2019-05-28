@@ -29,9 +29,13 @@ class M_jadwal_tetap extends CI_Model {
 			return $this->db->get('tbl_ruang')->result();
 	}
 
-
+  
 	public function getJadwal(){
-		return $this->db->get('view_jadwal');
+
+    $this->db->order_by("hari", "desc");
+
+    $query = $this->db->get('view_jadwal');
+		return $query;
 	}
 
 	public function kode(){

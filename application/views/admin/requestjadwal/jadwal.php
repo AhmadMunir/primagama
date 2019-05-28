@@ -1,4 +1,4 @@
-q<!DOCTYPE hrml>
+<!DOCTYPE hTml>
 <html lang="en">
   <head>
     <?php $this->load->view('admin/_partial/head.php') ?>

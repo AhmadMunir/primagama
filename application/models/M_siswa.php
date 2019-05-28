@@ -40,6 +40,12 @@ class M_siswa extends CI_Model {
 
 	}
 
+	public function update_kls($where,$data,$table){
+		$this->db->where($where);
+		$this->db->update($table,$data);
+
+	}
+
 	public function kode(){
 		$this->db->select('Right(tbl_siswa.id_siswa,8) as kode',false);
 		$this->db->order_by('id_siswa', 'desc');
@@ -59,6 +65,10 @@ class M_siswa extends CI_Model {
 	public function delete($where,$table){
 	$this->db->where($where);
 	$this->db->delete($table);
+	}
+
+	public function get_kelas(){
+		return $this->db->get('tbl_kelas');
 	}
 
 	public function get_angsuran($where, $table){

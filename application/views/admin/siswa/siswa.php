@@ -61,7 +61,7 @@
                     ?></td>
                     <td width="250">
 
-                      
+
                       <a href="<?php echo base_url('admin/siswa/detail/'.$u->id_siswa) ?>"
                        class="btn btn-small"><i class="fas fa-grip-horizontal"></i> Details</a>
 
@@ -72,10 +72,6 @@
                 </table>
               </div>
             </div>
-
-          <!-- Sticky Footer -->
-
-
       </div>
       <!-- <?php
 //        $this->load->view('admin/_partial/footer.php')

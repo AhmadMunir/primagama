@@ -144,10 +144,28 @@ class Siswa extends CI_Controller
     redirect('admin/siswa/detail/'.$id_sis);
   }
 
+  public function updatekls(){
+    $id_sis = $this->input->post('id');
+    $kls = $this->input->post('kelsa');
+
+
+    $data = array(
+      'id_kelas' => $kls,
+    );
+
+    $where = array(
+      'id_siswa' => $id_sis
+    );
+
+    $this->m_siswa->update_kls($where, $data, 'tbl_siswa');
+    redirect('admin/siswa/detail/'.$id_sis);
+  }
+
   public function detail($id){
       $where =  array('id_siswa' => $id);
       $data['tbl_siswa'] = $this->m_siswa->lht($where, 'tbl_siswa')->result();
       $data['angByID'] = $this->m_siswa->get_angsuran($where, 'view_angsuran')->result();
+      $data['keles'] = $this->m_siswa->get_kelas()->result();
       $this->load->view('admin/siswa/detail', $data);
   }
 
