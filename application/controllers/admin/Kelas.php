@@ -17,5 +17,18 @@
       $data['isi'] = $this->m_kelas->get_isikls($where);
       $this->load->view('admin/kelas/isi_kelas', $data);
     }
+
+    public function search(){
+      $keyword = $this->input->post('keyword');
+      $kelas = $this->m_kelas->search($keyword);
+
+      $hasil = $this->load->view('admin/kelas/search', array('kelas'=>$kelas), true);
+
+      $callback = array(
+        'hasil' => $hasil,
+      );
+
+      echo json_encode($callback);
+    }
   }
  ?>

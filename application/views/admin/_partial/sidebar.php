@@ -51,7 +51,7 @@
             <span>Kelas</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <a class="dropdown-item" href="<?php echo site_url('admin/siswa') ?>">Lihat Jadwal</a>
+          <a class="dropdown-item" href="<?php echo site_url('admin/kelas') ?>">Lihat Kelas</a>
             <a class="dropdown-item" href="<?php echo site_url('admin/inputsiswa') ?>">Tambah Jadwal</a>
             <a class="dropdown-item" href="<?php echo site_url('admin/products') ?>">List Jadwal</a>
         </div>

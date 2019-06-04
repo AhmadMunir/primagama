@@ -8,7 +8,7 @@
     }
 
     public function index(){
-      echo "string";
+      echo md5('doni');
     }
 
     public function input(){

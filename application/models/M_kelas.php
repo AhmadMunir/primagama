@@ -7,5 +7,15 @@
     public function get_isikls($where){
     return $this->db->get_where('view_siswa_detail', $where)->result();
     }
+
+    public function search($keyword){
+      $this->db->like('nama_kelas', $keyword);
+      $this->db->or_like('nama_program', $keyword);
+      $this->db->or_like('jenjang', $keyword);
+
+      $result = $this->db->get('view_kelas')->result();
+
+      return $result;
+    }
   }
 ?>
