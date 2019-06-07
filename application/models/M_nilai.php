@@ -72,6 +72,15 @@
       $result = $this->db->query($query, $data);
 
     }
+
+    public function shownilaisiswa($id_siswa){
+      $this->db->where('id_siswa', $id_siswa);
+      return $this->db->get('view_nilai_siswa')->result();
+    }
+
+    public function chartnilai($id_siswa){
+      
+    }
   }
 
  ?>

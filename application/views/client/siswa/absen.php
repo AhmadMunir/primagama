@@ -17,39 +17,42 @@
                     </div>
                     <!--/.span3-->
                     <div class="span9">
-                      <?php if ($this->session->flashdata('success')): ?>
-                      <div class="alert alert-success" role="alert">
-                        <?php echo $this->session->flashdata('success'); ?>
-                      </div>
-                      <?php endif; ?>
-                      <?php if ($this->session->flashdata('gagal')): ?>
-                      <div class="alert alert-danger" role="alert">
-                        <?php echo $this->session->flashdata('gagal'); ?>
-                      </div>
-                      <?php endif; ?>
-                      <div class="module">
-          							<div class="module-head">
-          								<h3>Jadwal Kelas Kamu</h3>
-          							</div>
-          							<div class="module-body">
+                        <div class="module">
+            							<div class="module-head">
+            								<h3>Absen</h3>
+            							</div>
                           <?php foreach ($siswa as $k){
                             $id_prog = $k->id_program;
                             $id_sis= $k->id_siswa;
                             $id_grade= $k->id_grade;
                             $kls = $k->nama_kelas;
                           }
-                             ?>
-                             <table class="table">
+
+
+                          ?>
+          							<div class="module-body table">
+                             <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped display" width="100%">
+                               <thead>
                                <tr>
                                  <th>No</th>
-                                 <th>Hari</th>
-                                 <th>Mata Pelajaran</th>
-                                 <th>Jam</th>
-                                 <th>Tentor</th>
+                                 <th>Hari, Tanggal</th>
+                                 <th>Jam Datang</th>
+                                 <th>Jam Pulang</th>
+                                 <th>Keterangan</th>
                                </tr>
-                               <tbody id="jadwaltetap">
+                             </thead>
+                               <tbody id="absen">
 
                                </tbody>
+                               <tfoot>
+                                 <tr>
+                                   <th>No</th>
+                                   <th>Hari, Tanggal</th>
+                                   <th>Jam Datang</th>
+                                   <th>Jam Pulang</th>
+                                   <th>Keterangan</th>
+                                 </tr>
+                               </tfoot>
                              </table>
 
 
@@ -58,6 +61,7 @@
 
                     </div>
                     <!--/.span9-->
+
                 </div>
             </div>
             <!--/.container-->
@@ -66,23 +70,20 @@
         <!-- footer -->
         <?php $this->load->view('client/_partials/footer') ?>
         <!-- /footer -->
-        <!-- script -->
-          <?php $this->load->view('client/_partials/script') ?>
-        <!-- /script -->
         <?php $this->load->view('client/_partials/modal') ?>
 
         <!-- ikut Modal-->
 
 
-        <script src="<?php echo base_url('js/jquery2.min.js') ?>" type="text/javascript"></script>
+<script src="<?php echo base_url('js/jquery2.min.js') ?>" type="text/javascript"></script>
 
         <script type="text/javascript">
       	$(document).ready(function(){ // Ketika halaman sudah siap (sudah selesai di load)
 
       			$.ajax({
       				type: "POST", // Method pengiriman data bisa dengan GET atau POST
-      				url: "<?php echo base_url("siswa/jadwaltetap/listjadwal"); ?>", // Isi dengan url/path file php yang dituju
-      				data: {nama_kelas :'<?php echo $k->nama_kelas; ?>' }, // data yang aka n dikirim ke file yang dituju
+      				url: "<?php echo base_url("siswa/absen/absen"); ?>", // Isi dengan url/path file php yang dituju
+      				data: {id_siswa :'<?php echo $k->id_siswa; ?>' }, // data yang aka n dikirim ke file yang dituju
       				dataType: "json",
       				beforeSend: function(e) {
       					if(e && e.overrideMimeType) {
@@ -94,7 +95,7 @@
 
       					// set isi dari combobox kota
       					// lalu munculkan kembali combobox kotanya
-      					$("#jadwaltetap").html(response.jdl).show();
+      					$("#absen").html(response.absen).show();
       				},
       				error: function (xhr, ajaxOptions, thrownError) { // Ketika ada error
       					alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError); // Munculkan alert error
@@ -102,6 +103,20 @@
       			});
       		});
       	</script>
+        <!-- script -->
+        <?php $this->load->view('client/_partials/script') ?>
+        <!-- /script -->
+
+        <script>
+          $(document).ready(function() {
+            $('.datatable-1').dataTable();
+            $('.dataTables_paginate').addClass("btn-group datatable-pagination");
+            $('.dataTables_paginate > a').wrapInner('<span />');
+            $('.dataTables_paginate > a:first-child').append('<i class="icon-chevron-left shaded"></i>');
+            $('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
+          } );
+        </script>
+
 
 
     </body>

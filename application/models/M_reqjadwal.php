@@ -31,7 +31,7 @@ class M_reqjadwal extends CI_Model {
   }
 
   public function getjadwalbyprogram($id_program){
-    $this->db->where('id_program', $id_program);
+    $this->db->where($id_program);
     return $this->db->get('view_reqjdl_siswa')->result();
   }
 

@@ -1,5 +1,5 @@
 <?php
-  class Jadwaltetap extends CI_Controller{
+  class Jadwalanak extends CI_Controller{
     public function __construct(){
       parent::__construct();
       $this->load->model('m_jadwal_tetap');
@@ -14,8 +14,8 @@
       $where = array(
         'username' => $nama
       );
-      $data['siswa'] = $this->m_siswa->lht($where, 'view_siswa')->result();
-      $this->load->view('client/siswa/jadwaltetap', $data);
+      $data['siswa'] = $this->m_siswa->lht($where, 'view_ortu')->result();
+      $this->load->view('client/ortu/jadwalanak', $data);
     }
 
     public function listjadwal(){

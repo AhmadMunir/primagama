@@ -65,8 +65,10 @@
    }
    public function showreqjadwalkamu(){
      $id_program = $this->input->post('id_program');
-
-     $req = $this->m_reqjadwal->getjadwalbyprogram($id_program);
+     $were = array(
+      'id_program' => $id_program
+     );
+     $req = $this->m_reqjadwal->getjadwalbyprogram($were);
 
      $lists = "<tr></tr>";
      $no = 1;
@@ -95,10 +97,13 @@
    public function ikut(){
      $id_mapel = $this->input->post('id_mapel');
 
-     $hasil = $this->load->view('client/siswa/modal', array('mapel'=>$id_mapel), true);
+     // $hasil = $this->load->view('client/siswa/modal', array('mapel'=>$id_mapel), true);
+
+     $reqs="<modal-body>".$id_mapel."</modal-body>";
+
 
      $callback = array(
-       'hasil' => $hasil,
+       'reqs' => $reqs,
      );
 
      echo json_encode($callback);

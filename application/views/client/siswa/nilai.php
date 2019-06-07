@@ -27,35 +27,51 @@
                         <?php echo $this->session->flashdata('gagal'); ?>
                       </div>
                       <?php endif; ?>
+
                       <div class="module">
-          							<div class="module-head">
-          								<h3>Jadwal Kelas Kamu</h3>
-          							</div>
-          							<div class="module-body">
-                          <?php foreach ($siswa as $k){
-                            $id_prog = $k->id_program;
-                            $id_sis= $k->id_siswa;
-                            $id_grade= $k->id_grade;
-                            $kls = $k->nama_kelas;
-                          }
-                             ?>
-                             <table class="table">
-                               <tr>
-                                 <th>No</th>
-                                 <th>Hari</th>
-                                 <th>Mata Pelajaran</th>
-                                 <th>Jam</th>
-                                 <th>Tentor</th>
-                               </tr>
-                               <tbody id="jadwaltetap">
-
-                               </tbody>
-                             </table>
-
-
-                        </div>
+                          <div class="module-head">
+                              <h3>
+                                  Chart - flot</h3>
+                          </div>
+                          <div class="module-body">
+                              <div class="chart">
+                                  <div id="placeholder" class="graph">
+                                  </div>
+                              </div>
+                          </div>
                       </div>
 
+                      <div class="module">
+            							<div class="module-head">
+            								<h3>Nilai Try Out Kamu</h3>
+                            <?php foreach ($siswa as $k){
+                              $id_prog = $k->id_program;
+                              $id_sis= $k->id_siswa;
+                              $id_grade= $k->id_grade;
+                            }
+                               ?>
+
+            							</div>
+            							<div class="module-body">
+                            <table class="table">
+                              <tr>
+                                <th>No</th>
+                                <th>Mapel</th>
+                                <th>TO 1</th>
+                                <th>TO 2</th>
+                                <th>TO 3</th>
+                                <th>TO 4</th>
+                                <th>TO 5</th>
+                              </tr>
+                              <tbody id="nilai">
+
+                              </tbody>
+                            </table>
+
+
+
+                          </div>
+                        </div>
                     </div>
                     <!--/.span9-->
                 </div>
@@ -71,18 +87,15 @@
         <!-- /script -->
         <?php $this->load->view('client/_partials/modal') ?>
 
-        <!-- ikut Modal-->
-
 
         <script src="<?php echo base_url('js/jquery2.min.js') ?>" type="text/javascript"></script>
-
-        <script type="text/javascript">
+      <script>
       	$(document).ready(function(){ // Ketika halaman sudah siap (sudah selesai di load)
 
       			$.ajax({
       				type: "POST", // Method pengiriman data bisa dengan GET atau POST
-      				url: "<?php echo base_url("siswa/jadwaltetap/listjadwal"); ?>", // Isi dengan url/path file php yang dituju
-      				data: {nama_kelas :'<?php echo $k->nama_kelas; ?>' }, // data yang aka n dikirim ke file yang dituju
+      				url: "<?php echo base_url("siswa/nilai/shownilaikamu"); ?>", // Isi dengan url/path file php yang dituju
+      				data: {id_siswa :'<?php echo $k->id_siswa; ?>'}, // data yang aka n dikirim ke file yang dituju
       				dataType: "json",
       				beforeSend: function(e) {
       					if(e && e.overrideMimeType) {
@@ -94,7 +107,7 @@
 
       					// set isi dari combobox kota
       					// lalu munculkan kembali combobox kotanya
-      					$("#jadwaltetap").html(response.jdl).show();
+      					$("#nilai").html(response.nilai).show();
       				},
       				error: function (xhr, ajaxOptions, thrownError) { // Ketika ada error
       					alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError); // Munculkan alert error
@@ -102,6 +115,8 @@
       			});
       		});
       	</script>
+
+    
 
 
     </body>

@@ -17,26 +17,16 @@
                     </div>
                     <!--/.span3-->
                     <div class="span9">
-                      <?php if ($this->session->flashdata('success')): ?>
-                      <div class="alert alert-success" role="alert">
-                        <?php echo $this->session->flashdata('success'); ?>
-                      </div>
-                      <?php endif; ?>
-                      <?php if ($this->session->flashdata('gagal')): ?>
-                      <div class="alert alert-danger" role="alert">
-                        <?php echo $this->session->flashdata('gagal'); ?>
-                      </div>
-                      <?php endif; ?>
+
                       <div class="module">
           							<div class="module-head">
           								<h3>Jadwal Kelas Kamu</h3>
           							</div>
           							<div class="module-body">
                           <?php foreach ($siswa as $k){
-                            $id_prog = $k->id_program;
-                            $id_sis= $k->id_siswa;
-                            $id_grade= $k->id_grade;
-                            $kls = $k->nama_kelas;
+                            $nama = $k->anak;
+                            $program =  $k->program;
+                            $kelas = $k->nama_kelas;
                           }
                              ?>
                              <table class="table">

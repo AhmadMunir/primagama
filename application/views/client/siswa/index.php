@@ -26,6 +26,7 @@
                                       $nama = $k->nama_lengkap;
                                       $program =  $k->nama_program;
                                       $kelas = $k->nama_kelas;
+                                      $id = $k->id_siswa;
                                     } ?>
                                     <label for="nama">Nama : <?php echo $nama ?></label><br>
                                     <label for="nama">Program : <?php echo $program ?></label><br>
@@ -34,8 +35,8 @@
                                   <td >
                                     <a href="<?php echo base_url('siswa/jadwaltetap'); ?>" class="btn-box small span5"><i class="icon-calendar"></i><b>Lihat Jadwal</b></a>
                                     <a href="<?php echo base_url('siswa/requestjadwal'); ?>" class="btn-box small span5"><i class="icon-pencil"></i><b>Request Jadwal</b></a>
-                                    <a href="#" class="btn-box small span5"><i class="icon-hdd"></i><b>Lihat Nilai</b></a>
-                                    <a href="#" class="btn-box small span5"><i class="icon-hand-up"></i><b>Lihat Absen</b></a>
+                                    <a href="<?php echo base_url('siswa/nilai'); ?>" class="btn-box small span5"><i class="icon-hdd"></i><b>Lihat Nilai</b></a>
+                                    <a href="<?php echo base_url('siswa/absen/'); ?>" class="btn-box small span5"><i class="icon-hand-up"></i><b>Lihat Absen</b></a>
                                   </td>
                                 </tr>
                               </table>

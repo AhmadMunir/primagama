@@ -29,6 +29,11 @@
       $this->db->insert_batch('tbl_absen', $data);
     }
 
+    public function getabsensiswa($id_sis){
+      $this->db->where('id_siswa', $id_sis);
+      return $this->db->get('tbl_absen');
+    }
+
   }
 
  ?>

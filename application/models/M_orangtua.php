@@ -4,5 +4,9 @@
       $this->db->where($where);
       $this->db->update($table, $data);
     }
+
+    public function lht($where, $table){
+  		return $this->db->get_where($table, $where);
+  	}
   }
 ?>

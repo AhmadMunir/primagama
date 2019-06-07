@@ -118,7 +118,7 @@
               </div>
 
               <div class="modal-body" id="modal-body">
-                <div class="modal-content"></div>
+                <div id="modal-content"></div>
               </div>
 
               <div class="modal-footer">
@@ -189,8 +189,21 @@
             url: "<?php echo base_url('siswa/requestjadwal/ikut'); ?>",
             type: 'POST',
             data: { id_mapel: id_mapel },
-            success: function(data) {
-              $('#modal-content').html();
+            dataType: "json",
+            beforeSend: function(e) {
+              if(e && e.overrideMimeType) {
+                e.overrideMimeType("application/json;charset=UTF-8");
+              }
+            },
+            success: function(response){ // Ketika proses pengiriman berhasil
+
+
+              // set isi dari combobox kota
+              // lalu munculkan kembali combobox kotanya
+              $("#modal-content").html(response.reqs).show();
+            },
+            error: function (xhr, ajaxOptions, thrownError) { // Ketika ada error
+              alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError); // Munculkan alert error
             }
           });
         });

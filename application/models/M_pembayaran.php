@@ -45,5 +45,10 @@
     public function input($data, $table){
       $this->db->insert($table, $data);
     }
+
+    public function showpembayaranbysiswa($id_sis){
+      $this->db->where('id_siswa', $id_sis);
+    	return $this->db->get('view_angsuran');
+    }
   }
 ?>
