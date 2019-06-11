@@ -36,7 +36,9 @@
                         case 'orangtua':
                           echo "Orang tua ".ucwords($m->panak);
                           break;
-
+                        case 'tentor':
+                          echo ucwords($m->nama);
+                          break;
                         default:
                           // code...
                           break;

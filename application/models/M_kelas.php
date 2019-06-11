@@ -17,5 +17,17 @@
 
       return $result;
     }
+
+    public function getKelasbytentor($id){
+      $this->db->distinct();
+      $this->db->select('id_kelas');
+      $this->db->where($id);
+      return $this->db->get('view_jadwal');
+    }
+
+    public function getKelasbyid($id){
+      $this->db->where('id_kelas', $id);
+      return $this->db->get('view_kelas')->result();
+    }
   }
 ?>

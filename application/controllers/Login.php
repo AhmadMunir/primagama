@@ -20,6 +20,7 @@
       $cekadmin = $this->m_login->cek_user("lgn_admin", $where)->num_rows();
       $ceksiswa = $this->m_login->cek_user("lgn_siswa", $where)->num_rows();
       $cekortu = $this->m_login->cek_user("lgn_ortu", $where)->num_rows();
+      $cektentor = $this->m_login->cek_user("lgn_tentor", $where)->num_rows();
       if($cekadmin > 0){
         $data["ida"] = $this->m_login->getId($username);
         $id = $ida->id_admin;
@@ -52,6 +53,14 @@
       );
       $this->session->set_userdata($data_session);
       redirect(base_url('ortu/home'));
+    } elseif ($cektentor > 0) {
+      $data_session = array(
+        'nama' => $username,
+        'status' => "login",
+        'jabatan' => "tentor"
+      );
+      $this->session->set_userdata($data_session);
+      redirect(base_url('tentor/home'));
     }
   }
 

@@ -73,19 +73,11 @@
               </div>
             </div>
       </div>
-      <!-- <?php
-//        $this->load->view('admin/_partial/footer.php')
-      ?> -->
 
       </div>
 
 
-<!--
->>>>>>> 609b415c9511d7301340ba4ffbac6df5b4186a84
-      <?php
-    //  $this->load->view('admin/_partial/footer.php')
-      ?>
- -->
+
 
       </div>
 

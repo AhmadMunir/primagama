@@ -49,6 +49,30 @@
         <?php
         break;
 
+        case 'tentor':?>
+        <div class="sidebar">
+        <ul class="widget widget-menu unstyled">
+            <li class="active"><a href="<?php echo base_url('tentor/home'); ?>"><i class="menu-icon icon-dashboard"></i>Dashboard
+            </a></li>
+            <li><a href="activity.html"><i class="menu-icon icon-user"></i>Profil</a>
+            </li>
+            <li><a href="message.html"><i class="menu-icon icon-cog"></i>Pengaturan <b class="label green pull-right">
+                11</b> </a></li>
+        </ul>
+        <!--/.widget-nav-->
+
+
+        <ul class="widget widget-menu unstyled">
+            <li><a href="<?php echo base_url('tentor/jadwalmengajar') ?>"><i class="menu-icon icon-calendar"></i> Jadwal Mengajar</a></li>
+            <li><a href="<?php echo base_url('tentor/Kelas') ?>"><i class="menu-icon icon-pencil"></i> Kelas</a></li>
+            <li><a href="<?php echo base_url('tentor/nilai') ?>"><i class="menu-icon icon-hdd"></i>Nilai</a></li>
+            
+
+        </ul>
+    </div>
+          <?php
+          break;
+
     default:
       // code...
       break;

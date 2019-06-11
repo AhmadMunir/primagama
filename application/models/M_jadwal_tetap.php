@@ -29,7 +29,6 @@ class M_jadwal_tetap extends CI_Model {
 			return $this->db->get('tbl_ruang')->result();
 	}
 
-
 	public function getJadwal(){
 
     $this->db->order_by("hari", "desc");
@@ -56,6 +55,11 @@ class M_jadwal_tetap extends CI_Model {
 
   public function getJadwalsiswa($kls){
     $this->db->where('nama_kelas', $kls );
+    return $this->db->get('view_jadwal');
+  }
+
+  public function getJadwalmengajar($id){
+    $this->db->where('id_tentor', $id );
     return $this->db->get('view_jadwal');
   }
 }
