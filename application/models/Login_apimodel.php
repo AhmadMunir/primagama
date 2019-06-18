@@ -9,9 +9,9 @@ class Login_apimodel extends CI_Model {
 
 	}
 
-    function Getuser($where) {
+    function Getuser($where, $tbl) {
         $this->db->select('*');
-        $this->db->from('lgn_siswa');
+        $this->db->from($tbl);
         $this->db->where($where);
         $data=$this->db->get();
         return $data;
