@@ -4,11 +4,12 @@
       parent::__construct();
       $this->load->model('m_jadwal_tetap');
       $this->load->model('m_reqjadwal');
+      $this->load->model('m_nilai');
+      $this->load->model('m_absen');
 
     }
     public function getjadwaltetap($kelas){
-      // $kls = $this->input->get('kls');
-      // $kls = "UNSMAA001";
+
       $kls = $kelas;
 
       $response = array();
@@ -46,5 +47,152 @@
       $callback = array('listmapel'=>$response);
       die(json_encode($callback));
     }
+
+    public function Requestjadwal(){
+      $id_sis = $this->input->post('id_siswa');
+      $mapel = $this->input->post('mapel');
+      $grade = $this->input->post('id_grade');
+      $tgl = $this->input->post('tanggal');
+
+      $data = array(
+        'id_mapel' => $mapel,
+        'id_siswa' => $id_sis,
+        'id_grade' => $grade,
+        'tanggal' => $tgl
+      );
+
+      $where = array(
+        'id_mapel' => $mapel,
+        'id_siswa' => $id_sis
+      );
+      $cekreq = $this->m_reqjadwal->cek_request("tbl_request_jadwal", $where)->num_rows();
+      if ($cekreq > 0) {
+        $callback = array('success' => '0', 'message' => 'Kamu sudah request Mapel ini');
+        die(json_encode($callback));
+      }else {
+        $this->m_reqjadwal->input('tbl_request_jadwal', $data);
+        $callback = array('success' => '1', 'message' => 'Request berhasil');
+        die(json_encode($callback));
+      }
+
+    }
+
+    public function getRequestjadwal(){
+      $id_program = $this->input->post('id_program');
+
+      $response = array();
+
+      $were = array('id_program' => $id_program);
+
+      $req = $this->m_reqjadwal->getjadwalbyprogram($were);
+
+      foreach ($req as $dita) {
+        $id_sis = $this->input->post('id_siswa');
+        $mapel = $dita->id_mapel;
+        $where = array(
+          'id_mapel' => $mapel,
+          'id_siswa' => "0"+$id_sis
+        );
+        $cekreq = $this->m_reqjadwal->cek_request("tbl_request_jadwal", $where)->num_rows();
+        if ($cekreq > 0) {
+          $ko = 1;
+        }else {
+          $ko = 0;
+        }
+        array_push($response, array(
+          'id_reqmapel' => $dita->id_mapel,
+          'nama_reqmapel' => $dita->nama_mapel,
+          'ada' => $ko,
+          'total_request' => $dita->total
+        ));
+      }
+
+      $callback = array('reqjadwal' => $response);
+      die(json_encode($callback));
+    }
+
+    public function getNilai(){
+      $id_sis = $this->input->post('id_siswa');
+
+      $nil = $this->m_nilai->shownilaisiswa($id_sis)->result();
+      $ceknilai = $this->m_nilai->shownilaisiswa($id_sis)->num_rows();
+
+      $response = array();
+
+      if ($ceknilai > 0) {
+
+        foreach ($nil as $k) {
+          array_push($response, array(
+            'nama_mapel'=> $k->nama_mapel,
+            'to1' => $k->to1,
+            'to2' => $k->to2,
+            'to3' => $k->to3,
+            'to4' => $k->to4,
+            'to5' => $k->to5));
+          }
+          $callback = array('success'=>'1', 'nilai'=>$response);
+      }else {
+        $callback = array('success'=>'0', 'message' => 'Nilai Belum Ada');
+      }
+      die(json_encode($callback));
+    }
+
+  public function getAbsen(){
+    $id_sis = $this->input->post('id_siswa');
+
+    $absn = $this->m_absen->getabsensiswa($id_sis)->result();
+    $cekabsen = $this->m_absen->getabsensiswa($id_sis)->num_rows();
+
+    $response = array();
+
+    if ($cekabsen > 0) {
+      foreach ($absn as $k) {
+        $tgl = $k->tgl;
+
+        $tanggal = date("d-m-Y", strtotime($tgl));
+
+        $hari = date('l',strtotime($tgl));
+        switch ($hari) {
+          case 'Sunday':
+            $day = 'Minggu';
+            break;
+          case 'Monday':
+            $day = 'Senin';
+            break;
+          case 'Tuesday':
+            $day = 'Selasa';
+            break;
+          case 'Wednesday':
+            $day = 'Rabu';
+            break;
+          case 'Thursday':
+            $day = 'Kamis';
+            break;
+          case 'Friday':
+            $day = 'Jum`at';
+            break;
+          case 'Saturday':
+            $day = 'Sabtu';
+            break;
+          default:
+            $day = 'xxx';
+            break;
+        }
+        array_push($response, array(
+          'waktu' =>$day.", ".$tanggal,
+          'jam_datang' => $k->jam_datang,
+          'jam_pulang' => $k->jam_pulang,
+          'keterangan'=> $k->keterangan
+        ));
+        $callback = array('success'=>'0', 'absen' => $response);
+      }
+    }else {
+        $callback = array('success' => '0', 'message' => 'Data Absen Belum Ada');
+    }
+
+    die(json_encode($callback));
+  }
+
+
   }
  ?>

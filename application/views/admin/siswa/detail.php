@@ -282,7 +282,7 @@
   <?php $this->load->view('admin/_partial/scrolltop.php') ?>
 
 
-    <?php $this->load->view('admin/_partial/modal.php') ?>
+  <?php $this->load->view('admin/_partial/modal.php') ?>
 
   <?php $this->load->view('admin/_partial/js.php') ?>
 

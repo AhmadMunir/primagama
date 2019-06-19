@@ -33,7 +33,13 @@
 </style>
 </head>
 <body>
+
 <div class="login-form">
+	<?php if ($this->session->flashdata('gagal')): ?>
+	<div class="alert alert-danger" role="alert">
+		<?php echo $this->session->flashdata('gagal'); ?>
+	</div>
+	<?php endif; ?>
     <form action="<?php echo base_url('login/login') ?>" method="post">
         <h2 class="text-center">Log in</h2>
         <div class="form-group">
