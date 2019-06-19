@@ -75,11 +75,11 @@
 
     public function shownilaisiswa($id_siswa){
       $this->db->where('id_siswa', $id_siswa);
-      return $this->db->get('view_nilai_siswa')->result();
+      return $this->db->get('view_nilai_siswa');
     }
 
     public function chartnilai($id_siswa){
-      
+
     }
   }
 

@@ -51,7 +51,7 @@
                            // $id = $u->id_jadwal;
                           ?>
                           <tr>
-                      <td><?php echo $no?></td>
+                      <td><?php echo $no++?></td>
                       <td><?php echo $a['nama_mapel']?></td>
                       <td><?php echo $a['hari']?></td>
                       <td><?php echo $a['jam']?></td>

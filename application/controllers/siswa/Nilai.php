@@ -20,7 +20,7 @@
     public function shownilaikamu(){
       $id_sis = $this->input->post('id_siswa');
 
-      $nil = $this->m_nilai->shownilaisiswa($id_sis);
+      $nil = $this->m_nilai->shownilaisiswa($id_sis)->result();
 
       $nilai = "<tr></tr>";
       $no=1;
