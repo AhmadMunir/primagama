@@ -164,10 +164,12 @@ if (session_id() == '') {
   <!-- /.content-wrapper -->
 
 </div>
+<?php $this->load->view('admin/_partial/footer.php') ?>
 <?php $this->load->view('admin/_partial/scrolltop.php') ?>
 
 
   <?php $this->load->view('admin/_partial/modal.php') ?>
+  <?php $this->load->view('admin/_partial/js.php') ?>
 
 <!-- <?php //$this->load->view('admin/_partial/js2.php') ?> -->
 

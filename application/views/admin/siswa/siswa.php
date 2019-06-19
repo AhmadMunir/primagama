@@ -1,4 +1,4 @@
-<!DOCTYPE hrml>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <?php $this->load->view('admin/_partial/head.php') ?>
@@ -72,7 +72,7 @@
                 </table>
               </div>
             </div>
-      </div>
+          </div>
 
       </div>
 
@@ -86,6 +86,7 @@
       </div>
 
     </div>
+    <?php $this->load->view('admin/_partial/footer.php') ?>
     <?php $this->load->view('admin/_partial/scrolltop.php') ?>
 
 

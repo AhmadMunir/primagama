@@ -50,5 +50,8 @@
       $this->db->where('id_siswa', $id_sis);
     	return $this->db->get('view_angsuran');
     }
+    public function getPembayaran(){
+    return $this->db->get('view_angsuran');
+    }
   }
 ?>

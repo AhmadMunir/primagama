@@ -11,8 +11,6 @@
 
     public function index(){
       $data['input_jadwal'] = $this->M_jadwal_tetap->viewJadwal();
-
-
       $this->load->view('admin/requestjadwal/input_jadwal', $data);
    }
 

@@ -61,6 +61,7 @@
       <!-- /.content-wrapper -->
 
     </div>
+    <?php $this->load->view('admin/_partial/footer.php') ?>
     <?php $this->load->view('admin/_partial/scrolltop.php') ?>
 
 

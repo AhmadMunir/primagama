@@ -15,7 +15,7 @@
         <div class="container-fluid">
 
 
-          <?php //$this->load->view('admin/_partial/breadcrumb.php')?>
+          <?php $this->load->view('admin/_partial/breadcrumb.php')?>
 
           <div class="card-header">Input jadwal</div>
           <div class="card-body">
@@ -164,12 +164,13 @@
       <!-- /.content-wrapper -->
 
     </div>
+    <?php $this->load->view('admin/_partial/footer.php') ?>
     <?php $this->load->view('admin/_partial/scrolltop.php') ?>
 
 
       <?php $this->load->view('admin/_partial/modal.php') ?>
 
-    <?php $this->load->view('admin/_partial/js2.php') ?>
+    <?php $this->load->view('admin/_partial/js.php') ?>
   </body>
 
 </html>
