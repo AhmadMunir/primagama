@@ -24,6 +24,38 @@
       return $return;
       }
     }
+     public function get_kelas(){
+      return $this->db->get('view_kelas')->result();
+    }
+     public function getNilai(){
+
+    $this->db->order_by("nama_lengkap", "desc");
+
+    $query = $this->db->get('view_nilai_siswa1');
+    return $query;
+  }
+   public function getAbsen(){
+
+    $this->db->order_by("tgl", "desc");
+
+    $query = $this->db->get('view_absen');
+    return $query;
+  }
+   public function get_isiabsen($where){
+    return $this->db->get_where('view_absen', $where)->result();
+    }
+     public function search($keyword){
+      $this->db->like('nama_kelas', $keyword);
+      $this->db->or_like('nama_program', $keyword);
+      $this->db->or_like('jenjang', $keyword);
+
+      $result = $this->db->get('view_kelas')->result();
+
+      return $result;
+    }
+  public function viewKelas(){
+      return $this->db->get('tbl_kelas')->result();
+    }
 
     public function insert_multiple($data){
       $this->db->insert_batch('tbl_absen', $data);

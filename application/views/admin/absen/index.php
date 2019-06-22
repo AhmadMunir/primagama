@@ -33,7 +33,7 @@
 <br>
         <!-- Icon Cards-->
         <div class="view" id="view">
-        <?php $this->load->view('admin/nilai/search', array('view_kelas'=>$kelas)); ?>
+        <?php $this->load->view('admin/absen/search', array('view_kelas'=>$kelas)); ?>
       </div>
 
 
@@ -61,7 +61,7 @@
       $(this).html("SEARCHING........").attr("disable", "disable");
 
       $.ajax({
-        url: "<?php echo base_url('admin/nilai/search'); ?>",
+        url: "<?php echo base_url('admin/absen/search'); ?>",
         type: 'POST',
         data: {keyword: $("#keyword").val()},
         dataType: "json",

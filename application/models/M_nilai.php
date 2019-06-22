@@ -75,11 +75,37 @@
 
     public function shownilaisiswa($id_siswa){
       $this->db->where('id_siswa', $id_siswa);
-      return $this->db->get('view_nilai_siswa');
+      return $this->db->get('view_nilai_siswa1')->result();
+    }
+      public function getNilai(){
+
+    $this->db->order_by("nama_lengkap", "desc");
+
+    $query = $this->db->get('view_nilai_siswa1');
+    return $query;
+  }
+   public function get_kelas(){
+      return $this->db->get('view_kelas')->result();
+    }
+     public function get_isinilai($where){
+    return $this->db->get_where('view_nilai_siswa', $where)->result();
+    }
+     public function search($keyword){
+      $this->db->like('nama_kelas', $keyword);
+      $this->db->or_like('nama_program', $keyword);
+      $this->db->or_like('jenjang', $keyword);
+
+      $result = $this->db->get('view_kelas')->result();
+
+      return $result;
+    }
+   
+public function viewKelas(){
+      return $this->db->get('tbl_kelas')->result();
     }
 
     public function chartnilai($id_siswa){
-
+      
     }
   }
 

@@ -8,7 +8,29 @@
     }
 
     public function index(){
-      echo md5('doni');
+      $data['kelas'] = $this->m_absen->get_kelas();
+      $this->load->view('admin/absen/index', $data);
+    }
+
+    public function detail($kls = null){
+      if (!isset($kls)) redirect('admin/absen');
+
+      $where = array('id_kelas' => $kls);
+      $data['isi'] = $this->m_absen->get_isiabsen($where);
+      $this->load->view('admin/absen/isi_absen', $data);
+    }
+
+    public function search(){
+      $keyword = $this->input->post('keyword');
+      $kelas = $this->m_absen->search($keyword);
+
+      $hasil = $this->load->view('admin/absen/search', array('kelas'=>$kelas), true);
+
+      $callback = array(
+        'hasil' => $hasil,
+      );
+
+      echo json_encode($callback);
     }
 
     public function input(){
