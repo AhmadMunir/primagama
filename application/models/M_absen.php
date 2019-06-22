@@ -34,6 +34,11 @@
       return $this->db->get('tbl_absen');
     }
 
+    public function getAbsenbybulan($id_siswa, $bulan){
+      $this->db->where('id_siswa', $id_siswa);
+      $this->db->where('MONTH(tgl)', $bulan);
+      return $this->db->get('tbl_absen');
+    }
   }
 
  ?>
