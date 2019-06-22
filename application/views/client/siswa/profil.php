@@ -17,7 +17,7 @@
 
     </head>
     <body>
-      <?php $this->load->view('client/_partials/navbar') ?>
+      <!-- <?php $this->load->view('client/_partials/navbar') ?> 
         <!-- /navbar -->
         <div class="wrapper">
             <div class="container">

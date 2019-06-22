@@ -30,5 +30,9 @@
 
       echo json_encode($callback);
     }
+     public function kelasrequest(){
+       $data['kelasreq'] = $this->m_kelas->reqkelas()->result();
+       $this->load->view('admin/kelas/kelasreqjadwal', $data);
+     }
   }
  ?>

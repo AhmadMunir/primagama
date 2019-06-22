@@ -62,3 +62,4 @@
     </div>
     <!-- /navbar-inner -->
 </div>
+<script src="<?php echo base_url('assets/bootstrap/client/js/bootstrap.min.js')?>" type="text/javascript"></script>
