@@ -180,6 +180,26 @@ class Siswa extends CI_Controller
     $data=$this->m_siswa->get_biaia($kode);
     echo json_encode($data);
   }
+  public function updateFoto(){
+    $post = $this->input->post();
 
+    if(!empty($FILES["image"]["name"])){
+      $this->foto=$this->_uploadImage();
+    } else {
+      $this->foto = $post["default.jpg"];
+    }
+
+    $data = array(
+      'foto' => $poto,
+    );
+
+    $where = array(
+      'id_siswa' => $id_sis
+    );
+
+    $this->m_siswa->update_siswa($where, $data, 'tbl_siswa');
+    redirect('admin/siswa/detail/'.$id_sis);
+  }
+  
 }
- ?>
+?>

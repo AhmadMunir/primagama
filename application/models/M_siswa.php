@@ -91,4 +91,19 @@ class M_siswa extends CI_Model {
 		$this->db->where('username', $where);
 		return $this->db->get('view_siswa_detail');
 	}
+	public function _uploadImage(){
+    $config['upload_path']  = './images/foto/profile/siswa/';
+    $config['allowed_types']= 'gif|jpg|png';
+    $config['file_name']  = $this->id_siswa;
+    $config['overwrite']  = true;
+    $config['max_size']   =1024; //1MB
+
+    $this->load->library('upload',$config);
+
+    if ($this->upload->do_upload('image')) {
+      return $this->upload->data("file_name");
+    }
+    return "default.jpg";
+  }
+
 }
