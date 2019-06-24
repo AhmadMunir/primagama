@@ -28,7 +28,7 @@ class M_siswa extends CI_Model {
 	}
 
 	public function getSiswa(){
-		return $this->db->get('view_siswa');
+		return $this->db->get('view_siswa_detail');
 	}
 
 	public function lht($where, $table){

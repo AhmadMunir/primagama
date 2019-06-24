@@ -96,6 +96,7 @@
                         <a href="<?php echo base_url('admin/siswa/edit/'.$k->id_siswa) ?>"
                          class="btn btn-small"><i class="fas fa-pencil-alt"></i> &nbspEdit Data</a>
                          <a class="btn btn-small" href="#" data-toggle="modal" data-target="#delete"><i class="fas fa-trash"></i> &nbsp Hapus</a>
+                         <a href="<?php echo base_url('admin/pembayaran/bayarbysiswa/'.$id) ?>"class="btn btn-small"><i class="fas fa-print"></i> &nbsp Cetak Bukti</a>
                     </div>
                 </div>
                 <div class="row">
@@ -245,6 +246,7 @@
                                     <th>Waktu</th>
                                     <th>Jumlah Bayar</th>
                                     <th>Sisa Angsuran</th>
+                                    <th>Cetak</th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -257,6 +259,9 @@
                                     <td><?php echo $ang->waktu ?></td>
                                     <td><?php echo rupiah($ang->jumlah_bayar) ?></td>
                                     <td><?php echo rupiah($ang->sisa_tagihan) ?></td>
+                                    <td>
+                                      <a href="<?php echo base_url('admin/pembayaran/bayarbyid/'.$ang->id_pembayaran) ?>"class="btn btn-small"><i class="fas fa-print"></i> &nbsp Print</a>
+                                    </td>
                                   </tr>
                                   <?php } ?>
                                 </tbody>
@@ -282,7 +287,7 @@
   <?php $this->load->view('admin/_partial/scrolltop.php') ?>
 
 
-    <?php $this->load->view('admin/_partial/modal.php') ?>
+  <?php $this->load->view('admin/_partial/modal.php') ?>
 
   <?php $this->load->view('admin/_partial/js.php') ?>
 

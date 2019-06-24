@@ -61,6 +61,9 @@
       );
       $this->session->set_userdata($data_session);
       redirect(base_url('tentor/home'));
+    }else {
+      $this->session->set_flashdata('gagal', 'Login Gagal!');
+      redirect('Login');
     }
   }
 

@@ -39,4 +39,9 @@ class M_reqjadwal extends CI_Model {
     return $this->db->get_where($table,$where);
   }
 
+  public function getreq(){
+    $this->db->where('total >=', 3);
+    return $this->db->get('view_reqjdl_siswa');
+  }
+
 }
