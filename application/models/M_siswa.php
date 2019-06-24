@@ -18,6 +18,7 @@ class M_siswa extends CI_Model {
 	}
 
 
+
 	public function viewprogram(){
 			return $this->db->get('tbl_program')->result();
 	}

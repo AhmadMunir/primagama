@@ -22,8 +22,10 @@
                         <div class="profile-img">
                             <img src="<?php echo base_url("images/foto/"); echo $profile->foto; ?>" alt=""/>
                             <div class="file btn btn-lg btn-primary">
-                                Change Photo
-                                <input type="file" name="file"/>
+                                
+                                <a href="<?php echo site_url('admin/siswa/updateGambar')?>"
+                      class="btn btn-small">
+                      <i class="fas fa-edit"></i>Change Photo</a>
                             </div>
                         </div>
                     </div>
