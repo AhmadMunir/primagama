@@ -22,13 +22,10 @@
             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
-                <span class="badge badge-danger">9+</span>
+                <span class="count badge badge-danger">0</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+
             </div>
         </li>
 
@@ -52,12 +49,11 @@
                 <i class="fas fa-user-circle fa-fw"></i> <?php echo $this->session->nama ?>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-              <a class="dropdown-item" href="<?php echo base_url('admin/profile') ?>/index/<?php  echo $this->session->nama ?>">Profil</a>
+              <a class="dropdown-item" href="<?php echo base_url('admin/profile') ?>/index/<?php  echo $this->session->id ?>">Profil</a>
                 <a class="dropdown-item" href="#">Settings</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
             </div>
         </li>
     </ul>
-
 </nav>

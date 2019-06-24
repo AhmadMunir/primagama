@@ -20,11 +20,11 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img src="<?php echo base_url("images/foto/"); echo $profile->foto; ?>" alt=""/>
+                            <img src="<?php echo base_url("images/foto/profile/admin/"); echo $profile->foto; ?>" alt=""/>
                             <div class="file btn btn-lg btn-primary">
-                                
-                                <a href="<?php echo site_url('admin/siswa/updateGambar')?>"
-                      class="btn btn-small">
+
+
+                            <a href="#" data-toggle="modal" data-target="#updatefoto" class="btn">
                       <i class="fas fa-edit"></i>Change Photo</a>
                             </div>
                         </div>
@@ -172,6 +172,29 @@
     </div>
     <!-- /.content-wrapper -->
 
+  </div>
+
+  <div class="modal fade" id="updatefoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ganti Foto Profil</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="<?php echo base_url('admin/profile/editfoto') ?>" method="post" enctype="multipart/form-data" >
+          <input type="hidden" name="id" value="<?php  echo $this->session->id ?>">
+          <input type="file" name="foto">
+      </div>
+      <div class="modal-footer">
+        <input type="submit" value="Simpan">
+      </form>
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
   </div>
 
   <?php $this->load->view('admin/_partial/scrolltop.php') ?>

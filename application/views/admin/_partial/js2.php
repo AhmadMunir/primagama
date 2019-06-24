@@ -82,6 +82,25 @@
           }
         });
       });
+      // $(document).ready(function(){
+      //   function load_unseen_notif(view = '')
+      //   {
+      //     $.ajax({
+      //       url:"<?php echo base_url() ?>admin/notif/getNotifReqJadwal",
+      //       method:"POST",
+      //       data: {view:view},
+      //       dataType:"json",
+      //       success:function(data)
+      //       {
+      //         $('.dropdown-menu').html(data.notif);
+      //     if(data.unseen_notification > 0)
+      //     {
+      //      $('.count').html(data.unseen);
+      //       }
+      //     }
+      //   });
+      // }
+      //   load_unseen_notif();
     });
     </script>
 
@@ -108,6 +127,37 @@
     });
     </script>
 
+    <script>
+      $(document).ready(function(){
+        function load_unseen_notif(view = '')
+        {
+          $.ajax({
+            url:"<?php echo base_url() ?>admin/Notifadmin/getNotifReqJadwal",
+            method:"POST",
+            data: {view:view},
+            dataType:"json",
+            success:function(data)
+            {
+              $('.dropdown-menu').html(data.notif);
+          if(data.unseen_notif > 0)
+          {
+           $('.count').html(data.unseen);
+            }
+          }
+        });
+      }
+        load_unseen_notif();
+
+      $(document).on('click', '.dropdown-toggle', function(){
+        $('.count').html('');
+        load_unseen_notification('view');
+      });
+
+      setInterval(function(){
+       load_unseen_notification();;
+     }, 5000);
+    });
+    </script>
 
 
 
