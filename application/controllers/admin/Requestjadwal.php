@@ -3,20 +3,22 @@
     public function __construct(){
       parent::__construct();
 
-      $this->load->model('M_jadwal');
+
       $this->load->model('M_siswa');
+      $this->load->model('m_reqjadwal');
+      $this->load->model('m_jadwal_tetap');
 
       if($this->session->userdata('status') != "login")
         redirect(base_url("login"));
     }
 
-    public function index(){
-      $data['requestjadwal'] = $this->M_jadwal->viewJadwal();
-        $data['jenjang'] = $this->m_siswa->viewJenjang();
-
-
-      $this->load->view('admin/requestjadwal/requestjadwal', $data);
-   }
+   //  public function index(){
+   //    $data['requestjadwal'] = $this->M_jadwal->viewJadwal();
+   //      $data['jenjang'] = $this->m_siswa->viewJenjang();
+   //
+   //
+   //    $this->load->view('admin/requestjadwal/requestjadwal', $data);
+   // }
 
       public function listKelas(){
       // Ambil data ID Provinsi yang dikirim via ajax post
@@ -56,5 +58,34 @@
       redirect('admin/jadwal');
     }
 
+    public function index(){
+      $data['req'] = $this->m_reqjadwal->getreq()->result();
+      $this->load->view('admin/requestjadwal/requestjadwal',$data);
+    }
+    public function buatkelas($mapel){
+      $data['mapel'] = $mapel;
+      $data['tentor'] = $this->m_jadwal_tetap->viewTentor();
+      $data['ruang'] = $this->m_jadwal_tetap->viewruang();
+      $this->load->view('admin/requestjadwal/buat_jadwal', $data);
+    }
+
+    public function buatreqkelas(){
+      $mapel = $this->input->post('mapel');
+      $jam = $this->input->post('jam');
+      $tanggal =  $this->input->post('tanggal');
+      $tentor = $this->input->post('tentor');
+      $ruang = $this->input->post('ruang');
+
+      $data = array(
+        'id_mapel' => $mapel,
+        'jam' => $jam,
+        'id_ruang' => $ruang,
+        'tanggal' => $tanggal,
+        'id_tentor' =>$tentor
+      );
+
+      $this->m_jadwal_tetap->input_jadwal($data, 'tbl_kelas_reqjadwal');
+      redirect('admin/requestjadwal');
+    }
   }
  ?>

@@ -29,5 +29,9 @@
       $this->db->where('id_kelas', $id);
       return $this->db->get('view_kelas')->result();
     }
+
+    public function reqkelas(){
+      return $this->db->get('view_kelas_request');
+    }
   }
 ?>

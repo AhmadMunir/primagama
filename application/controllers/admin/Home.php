@@ -12,5 +12,8 @@
         $data['view_siswa'] = $this->m_siswa->getSiswa()->result();
       $this->load->view('admin/home', $data);
     }
+    
   }
+
  ?>
+

@@ -9,11 +9,31 @@ class Nilai extends CI_Controller{
     $this->load->model('m_jadwal_tetap');
   }
 
-  public function index(){
+   public function index(){
+      $data['kelas'] = $this->m_nilai->get_kelas();
+      $this->load->view('admin/nilai/index', $data);
+    }
 
-    $data['siswa'] = $this->m_nilai->view();
-    $this->load->view('admin/nilai/index.php', $data);
-  }
+    public function detail($kls = null){
+      if (!isset($kls)) redirect('admin/nilai');
+
+      $where = array('id_kelas' => $kls);
+      $data['isi'] = $this->m_nilai->get_isinilai($where);
+      $this->load->view('admin/nilai/isi_nilai', $data);
+    }
+
+    public function search(){
+      $keyword = $this->input->post('keyword');
+      $kelas = $this->m_nilai->search($keyword);
+
+      $hasil = $this->load->view('admin/nilai/search', array('kelas'=>$kelas), true);
+
+      $callback = array(
+        'hasil' => $hasil,
+      );
+
+      echo json_encode($callback);
+    }
 
   public function form(){
 

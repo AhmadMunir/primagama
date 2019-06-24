@@ -20,17 +20,18 @@
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              Daftar Siswa Primagama</div>
+              Kelas Request Jadwal</div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Kode Mapel</th>
                       <th>Nama Mapel</th>
-                      <th>Jumlah Request</th>
-                      <th>Tindakan</th>
+                      <th>Nama Tentor</th>
+                      <th>Ruang</th>
+                      <th>Tanggal</th>
+                      <th>Jam</th>
 
                     </tr>
                   </thead>
@@ -40,15 +41,17 @@
                     <?php
                       $no = 1;
 
-                      foreach($req as $u){
+                      foreach($kelasreq as $u){
 
                         ?>
                         <tr>
                     <td><?php echo $no++;?></td>
-                    <td><?php echo $u->id_mapel;?></td>
                     <td><?php echo $u->nama_mapel;?></td>
-                    <td><?php echo $u->total;?></td>
-                    <td><a href="<?php echo base_url('admin/Requestjadwal/buatkelas/').$u->id_mapel ?>">Buat kelas</a>
+                    <td><?php echo $u->nama_tentor;?></td>
+                    <td><?php echo $u->nama_ruang;?></td>
+                    <td><?php echo $u->tanggal;?></td>
+                    <td><?php echo $u->jam;?></td>
+
 </tr>
                   <?php } ?>
 

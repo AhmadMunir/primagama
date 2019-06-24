@@ -174,23 +174,11 @@
           </div>
 
           </div>
-
-        </div>
-
-
-
-      </div>
-      <!-- /.content-wrapper -->
-
+       </div></div>
+  <!-- /.content-wrapper -->
     </div>
     <?php $this->load->view('admin/_partial/scrolltop.php') ?>
-
-
-      <?php $this->load->view('admin/_partial/modal.php') ?>
-
-    <?php $this->load->view('admin/_partial/js2.php') ?>
-
-
-  </body>
-
+   <?php $this->load->view('admin/_partial/modal.php') ?>
+  <?php $this->load->view('admin/_partial/js2.php') ?>
+ </body>
 </html>
