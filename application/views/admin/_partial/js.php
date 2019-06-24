@@ -16,7 +16,7 @@
   <!-- Demo scripts for this page-->
   <script src="<?php echo base_url('js/demo/datatables-demo.js')?>"></script>
   <script src="<?php echo base_url('js/demo/chart-area-demo.js')?>"></script>
- 
+
   <script>
         jQuery(document).ready(function($){
             $('.delete-link').on('click',function(){
@@ -33,4 +33,36 @@
                 return false;
             });
         });
+    </script>
+
+    <script>
+      $(document).ready(function(){
+        function load_unseen_notif(view = '')
+        {
+          $.ajax({
+            url:"<?php echo base_url() ?>admin/Notifadmin/getNotifReqJadwal",
+            method:"POST",
+            data: {view:view},
+            dataType:"json",
+            success:function(data)
+            {
+              $('.dropdown-menu').html(data.notif);
+          if(data.unseen > 0)
+          {
+           $('.count').html(data.unseen);
+            }
+          }
+        });
+      }
+        load_unseen_notif();
+
+      $(document).on('click', '.dropdown-toggle', function(){
+        $('.count').html('');
+        load_unseen_notif('view');
+      });
+
+      setInterval(function(){
+       load_unseen_notif();
+     }, 5000);
+    });
     </script>

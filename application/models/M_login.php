@@ -5,7 +5,8 @@
     }
 
     public function getId($username){
-      return $this->db->query("SELECT id_admin FROM lgn_admin WHERE username = '$username'");
+      $this->db->where('id_admin', $username);
+      return $this->db->get('tbl_admin');
     }
 
     public function cek_siswa($table, $where){
