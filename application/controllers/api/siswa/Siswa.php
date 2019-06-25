@@ -137,148 +137,6 @@
       die(json_encode($callback));
     }
 
-  // public function getAbsen(){
-  //   $id_sis = $this->input->post('id_siswa');
-  //   $bulan = 06;
-  //   // $absn = $this->m_absen->getAbsenbybulan($id_sis, $bulan)->result();
-  //   // $cekabsen = $this->m_absen->getAbsenbybulan($id_sis, $bulan)->num_rows();
-  //
-  //   $response = array();
-  //   $jan = array();
-  //   $feb = array();
-  //   $mar = array();
-  //   $apr = array();
-  //   $mei = array();
-  //   $jun = array();
-  //   $jul = array();
-  //   $ags = array();
-  //   $sep = array();
-  //   $okt = array();
-  //   $nov = array();
-  //   $des = array();
-  //
-  //
-  //
-  //
-  //
-  //   for ($i=1; $i <12 ; $i++) {
-  //     $absn = $this->m_absen->getAbsenbybulan($id_sis, '0'+$i)->result();
-  //     $cekabsen = $this->m_absen->getAbsenbybulan($id_sis, '0'+$i)->num_rows();
-  //
-  //     switch ($i) {
-  //       case 1:
-  //         // code...
-  //         break;
-  //       case 6:
-  //       if ($cekabsen >0) {
-  //         foreach ($absn as $k) {
-  //           $tgl = $k->tgl;
-  //
-  //           $tanggal = date("d-m-Y", strtotime($tgl));
-  //
-  //           $hari = date('l',strtotime($tgl));
-  //           switch ($hari) {
-  //             case 'Sunday':
-  //               $day = 'Minggu';
-  //               break;
-  //             case 'Monday':
-  //               $day = 'Senin';
-  //               break;
-  //             case 'Tuesday':
-  //               $day = 'Selasa';
-  //               break;
-  //             case 'Wednesday':
-  //               $day = 'Rabu';
-  //               break;
-  //             case 'Thursday':
-  //               $day = 'Kamis';
-  //               break;
-  //             case 'Friday':
-  //               $day = 'Jum`at';
-  //               break;
-  //             case 'Saturday':
-  //               $day = 'Sabtu';
-  //               break;
-  //             default:
-  //               $day = 'xxx';
-  //               break;
-  //         }
-  //
-  //         array_push($jun, array(
-  //           'waktu' =>$day.", ".$tanggal,
-  //           'jam_datang' => $k->jam_datang,
-  //           'jam_pulang' => $k->jam_pulang,
-  //           'keterangan'=> $k->keterangan
-  //         ));
-  //       }
-  //     }else{
-  //       $jun = 'Belum ada data absen pada bulan ini';
-  //     }
-  //         break;
-  //
-  //       default:
-  //         // code...
-  //         break;
-  //     }
-  //   }
-  //
-  //
-  //   // if ($cekabsen > 0) {
-  //   //   foreach ($absn as $k) {
-  //   //     $tgl = $k->tgl;
-  //   //
-  //   //     $tanggal = date("d-m-Y", strtotime($tgl));
-  //   //
-  //   //     $hari = date('l',strtotime($tgl));
-  //   //     switch ($hari) {
-  //   //       case 'Sunday':
-  //   //         $day = 'Minggu';
-  //   //         break;
-  //   //       case 'Monday':
-  //   //         $day = 'Senin';
-  //   //         break;
-  //   //       case 'Tuesday':
-  //   //         $day = 'Selasa';
-  //   //         break;
-  //   //       case 'Wednesday':
-  //   //         $day = 'Rabu';
-  //   //         break;
-  //   //       case 'Thursday':
-  //   //         $day = 'Kamis';
-  //   //         break;
-  //   //       case 'Friday':
-  //   //         $day = 'Jum`at';
-  //   //         break;
-  //   //       case 'Saturday':
-  //   //         $day = 'Sabtu';
-  //   //         break;
-  //   //       default:
-  //   //         $day = 'xxx';
-  //   //         break;
-  //   //     }
-  //   //     array_push($response, array(
-  //   //       'waktu' =>$day.", ".$tanggal,
-  //   //       'jam_datang' => $k->jam_datang,
-  //   //       'jam_pulang' => $k->jam_pulang,
-  //   //       'keterangan'=> $k->keterangan
-  //   //     ));
-  //   //     $callback = array('success'=>'0', 'absen' => $response);
-  //   //   }
-  //   // }else {
-  //   //     // $callback = array('success' => '0', 'message' => 'Data Absen Belum Ada');
-  //       $callback = array('success' => '1', 'jan' => $jan, 'feb' => $feb,
-  //                                           'mar' => $mar,
-  //                                           'apr' => $apr,
-  //                                           'mei' => $mei,
-  //                                           'jun' => $jun,
-  //                                           'jul' => $jul,
-  //                                           'ags' => $ags,
-  //                                           'sep' => $sep,
-  //                                           );
-  //
-  //
-  //   die(json_encode($callback));
-  // }
     public function getAbsenbybulan(){
 
       $absen = array();
@@ -340,6 +198,16 @@
               die(json_encode($callback));
     }
 
+    public function getProfile(){
+      $response = array();
+      $id = $this->input->post('id');
+      $detail = $this->m_siswa->getSiswaDetail($id);
+      foreach ($detail as $k) {
+        array_push($response, array(
+          ''
+        ));
+      }
+    }
 
   }
  ?>

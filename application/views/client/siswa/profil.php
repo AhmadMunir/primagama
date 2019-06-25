@@ -17,7 +17,7 @@
 
     </head>
     <body>
-      <!-- <?php $this->load->view('client/_partials/navbar') ?> 
+      <!-- <?php //$this->load->view('client/_partials/navbar') ?>
         <!-- /navbar -->
         <div class="wrapper">
             <div class="container">
@@ -75,8 +75,10 @@
                                                   ?>
                                                 <img src="<?php echo base_url("images/foto/profile/siswa/"); echo $foto;?>" alt=""/>
                                                 <div class="file btn btn-lg btn-primary">
-                                                    Change Photo
-                                                    <input type="file" name="file"/>
+
+
+                                                <a href="#" data-toggle="modal" data-target="#updatefoto" class="btn">
+                                          <i class="fas fa-edit"></i>Change Photo</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -360,7 +362,35 @@
             $('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
           } );
         </script>
-
+        <?php
+          function rupiah($angka){
+            $hasil_rupiah = "Rp " . number_format($angka,2,',','.');
+            return $hasil_rupiah;
+          }
+         ?>
+        <div class="modal fade" id="updatefoto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ganti Foto Profil</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="<?php echo base_url('siswa/profil/editfoto') ?>" method="post" enctype="multipart/form-data" >
+                <input type="hidden" name="id" value="<?php  echo $id ?>">
+                <input type="file" name="foto">
+            </div>
+            <div class="modal-footer">
+              <input type="submit" value="Simpan">
+            </form>
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+        </div>
 
 
     </body>
+    </html>

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class M_siswa extends CI_Model {
+class M_setting extends CI_Model {
 
 	public function viewJenjang(){
 		return $this->db->get('jenjang')->result(); // Tampilkan semua data yang ada di tabel provinsi
@@ -90,11 +90,6 @@ class M_siswa extends CI_Model {
 
 	public function getSiswaDetail($where){
 		$this->db->where('username', $where);
-		return $this->db->get('view_siswa_detail');
-	}
-
-	public function getSiswaDetailid($where){
-		$this->db->where('id_siswa', $where);
 		return $this->db->get('view_siswa_detail');
 	}
 }
