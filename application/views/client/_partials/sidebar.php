@@ -12,8 +12,8 @@
             <li><a href="<?php echo base_url('siswa/profil/detail/'.$u->id_siswa) ?>"><i class="menu-icon icon-user"></i>Profil </a>
             </li>
             <?php } ?>
-            <li><a href="message.html"><i class="menu-icon icon-cog"></i>Pengaturan <b class="label green pull-right">
-                11</b> </a></li>
+            <li><a href="<?php echo base_url('siswa/setting/index/'.$u->id_siswa) ?>"><i class="menu-icon icon-cog"></i>Pengaturan <b>
+                </b> </a></li>
         </ul>
         <!--/.widget-nav-->
 
