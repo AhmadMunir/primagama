@@ -19,7 +19,8 @@
       $this->load->view('client/tentor/profile', $data);
     }
 
-   public function detail($id){
+   public function detail($id_tentor){
+    $id=decrypt_url($id_tentor);
       $where =  array('id_tentor' => $id);
       $data['tbl_tentor'] = $this->m_tentor->lht($where, 'tbl_tentor')->result();
       //$data['angByID'] = $this->m_tentor->get_angsuran($where, 'view_angsuran')->result();
@@ -31,6 +32,7 @@
         // );
         // $data['siswa'] = $this->m_tentor->lht($whare, 'view_tentor')->result();
         $this->load->view('client/tentor/profile', $data);
+      
   }
     public function get_biaya(){
       $kode=$this->input->post('kode');
@@ -65,8 +67,10 @@
       $where = array('id_tentor' => $id);
       $this->m_tentor->update_foto('tbl_tentor', $data, $where );
 
-        redirect(base_url('tentor/profile/detail/'.$id));
+        redirect(base_url('tentor/profile/detail/'.encrypt_url($id)));
 
     }
+
+
   }
  ?>

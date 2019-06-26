@@ -34,6 +34,7 @@
                           <div class="module-head">
                             <h3></h3>
                           </div>
+
                          
 
                           
@@ -63,6 +64,8 @@
                                                   ?>
                                                 <img src="<?php echo base_url("images/foto/profile/tentor/"); echo $foto;?>" alt=""/>
                                                 <div class="file btn btn-lg btn-primary">
+
+                                                   
 
 
                                                 <a href="#" data-toggle="modal" data-target="#updatefoto" class="btn">
