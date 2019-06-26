@@ -54,7 +54,10 @@
       'id_program' => $program,
       'jenis_kelamin' => $jk,
       'alamat' => $alamat,
-      'email' => $email
+      'email' => $email,
+      'passLama' =>$passwordlama,
+      'passBaru' =>$passwordBaru,
+      'passKonf' =>$passwordKonfirmasi
     );
 
     $where = array(
@@ -104,8 +107,9 @@
                 redirect('siswa/home');
             }
         } else {
-            $this->session->set_flashdata('msg', show_err_msg(validation_errors()));
-            redirect('siswa/home');
+           // $this->session->set_flashdata('msg', show_err_msg(validation_errors()));
+           redirect('siswa/home');
+
         }
     }
  
