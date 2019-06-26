@@ -19,7 +19,8 @@
       $this->load->view('client/siswa/profil', $data);
     }
 
-   public function detail($id){
+   public function detail($id_siswa){
+      $id=decrypt_url($id_siswa);
       $where =  array('id_siswa' => $id);
       $data['tbl_siswa'] = $this->m_siswa->lht($where, 'tbl_siswa')->result();
       $data['angByID'] = $this->m_siswa->get_angsuran($where, 'view_angsuran')->result();
@@ -30,7 +31,8 @@
           'username' => $nama
         );
         $data['siswa'] = $this->m_siswa->lht($whare, 'view_siswa')->result();
-        $this->load->view('client/siswa/profil', $data);
+         $this->load->view('client/siswa/profil', $data);
+        
   }
     public function get_biaya(){
       $kode=$this->input->post('kode');
@@ -65,7 +67,7 @@
       $where = array('id_siswa' => $id);
       $this->m_profile->update_foto('tbl_siswa', $data, $where );
 
-        redirect(base_url('siswa/profil/detail/'.$id));
+        redirect(base_url('siswa/profil/detail/'.encrypt_url($id)));
 
     }
   }

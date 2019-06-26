@@ -7,11 +7,11 @@ $jbtn = $this->session->jabatan;
         <ul class="widget widget-menu unstyled">
             <li class="active"><a href="<?php echo base_url('siswa/home'); ?>"><i class="menu-icon icon-dashboard"></i>Dashboard
             </a></li>
-            <?php
+            <!-- <?php
                       foreach($siswa as $u){
                         $id = $u->id_siswa;
-                        ?>
-            <li><a href="<?php echo base_url('siswa/profil/detail/'.$u->id_siswa) ?>"><i class="menu-icon icon-user"></i>Profil </a>
+                        ?> -->
+            <li><a href="<?php echo base_url('siswa/profil/detail/'.encrypt_url($id)) ?>"><i class="menu-icon icon-user"></i>Profil </a>
             </li>
             <?php } ?>
             <li><a href="<?php echo base_url('siswa/setting/index/'.$u->id_siswa) ?>"><i class="menu-icon icon-cog"></i>Pengaturan <b>
@@ -35,7 +35,7 @@ $jbtn = $this->session->jabatan;
           <ul class="widget widget-menu unstyled">
               <li class="active"><a href="<?php echo base_url('ortu/home'); ?>"><i class="menu-icon icon-dashboard"></i>Dashboard
               </a></li>
-              <li><a href="<?php echo base_url('ortu/profileanak/anak/'.$this->session->anak) ?>"><i class="menu-icon icon-user"></i>Profil</a>
+              <li><a href="<?php echo base_url('ortu/profileanak/anak/'.encrypt_url($id)) ?>"><i class="menu-icon icon-user"></i>Profil</a>
             </li>
              
               <li><a href="message.html"><i class="menu-icon icon-cog"></i>Pengaturan <b class="label green pull-right">
