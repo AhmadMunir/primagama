@@ -78,7 +78,7 @@
 
 
                                                 <a href="#" data-toggle="modal" data-target="#updatefoto" class="btn">
-                                          <i class="fas fa-edit"></i>Change Photo</a>
+                                                  <i class="fas fa-edit"></i>Change Photo</a>
                                                 </div>
                                             </div>
                                         </div>
