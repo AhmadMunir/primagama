@@ -25,5 +25,31 @@
       $this->db->where($where);
       $this->db->delete($table);
     }
+
+   
+  public function getTentorDetail($where){
+    $this->db->where('username', $where);
+    return $this->db->get('view_siswa_detail');
   }
+
+  public function getSiswaDetailid($where){
+    $this->db->where('id_tentor', $where);
+    return $this->db->get('view_tntr_dtl');
+  }
+
+  public function getTentor(){
+    return $this->db->get('view_tentor');
+  }
+
+  private $_table = "tbl_tentor";
+
+    public function getdata($email){
+      return $this->db->get_where($this->_table, ["id_tentor" => $email])->row();
+    }
+
+    public function update_foto($table, $data, $where){
+      $this->db->update($table, $data, $where);
+    }
+}
+  
 ?>

@@ -59,8 +59,10 @@
         <ul class="widget widget-menu unstyled">
             <li class="active"><a href="<?php echo base_url('tentor/home'); ?>"><i class="menu-icon icon-dashboard"></i>Dashboard
             </a></li>
-            <li><a href="activity.html"><i class="menu-icon icon-user"></i>Profil</a>
+             
+            <li><a href="<?php echo base_url('tentor/profile/detail/'.$this->session->id) ?>"><i class="menu-icon icon-user"></i>Profil</a>
             </li>
+
             <li><a href="message.html"><i class="menu-icon icon-cog"></i>Pengaturan <b class="label green pull-right">
                 11</b> </a></li>
         </ul>
