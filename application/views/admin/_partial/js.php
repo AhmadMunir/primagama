@@ -46,7 +46,7 @@
             dataType:"json",
             success:function(data)
             {
-              $('.dropdown-menu').html(data.notif);
+              $('.mu').html(data.notif);
           if(data.unseen > 0)
           {
            $('.count').html(data.unseen);

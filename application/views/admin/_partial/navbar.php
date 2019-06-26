@@ -24,7 +24,7 @@
                 <i class="fas fa-bell fa-fw"></i>
                 <span class="count badge badge-danger">0</span>
             </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
+            <div class="mu dropdown-menu dropdown-menu-right" id="count" aria-labelledby="alertsDropdown">
 
             </div>
         </li>

@@ -92,4 +92,9 @@ class M_siswa extends CI_Model {
 		$this->db->where('username', $where);
 		return $this->db->get('view_siswa_detail');
 	}
+
+	public function getSiswaDetailid($where){
+		$this->db->where('id_siswa', $where);
+		return $this->db->get('view_siswa_detail');
+	}
 }

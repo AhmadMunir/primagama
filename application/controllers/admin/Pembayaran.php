@@ -3,14 +3,14 @@
     public function __construct(){
       parent::__construct();
       $this->load->model('m_pembayaran');
-      $this->load->library('pdfgenerator');
+      $this->load->library('PdfGenerator');
 
       if($this->session->userdata('status') != "login")
         redirect(base_url("login"));
     }
 
     public function index(){
-      $data['view_angsuran'] = $this->m_pembayaran->getPembayaran()->result();    
+      $data['view_angsuran'] = $this->m_pembayaran->getPembayaran()->result();
       $this->load->view('admin/pembayaran/rekap', $data);
     }
 
@@ -50,7 +50,7 @@
         $pdf->AddPage();
         // setting jenis font yang akan digunakan
         $pdf->SetFont('Arial','B',14);
-        // mencetak string 
+        // mencetak string
         $pdf->Cell(280,7,'REKAP TAGIHAN PESERTA DIDIK',0,1,'C');
         $pdf->SetFont('Arial','B',14);
         $pdf->Cell(280,7,'PRIMAGAMA BONDOWOSO',0,1,'C');
@@ -73,13 +73,13 @@
             $pdf->Cell(45,6,$row->nama_lengkap,1,0);
             $pdf->Cell(22,6,$row->kelas,1,0);
             $pdf->Cell(45,6,$row->nama_program,1,0);
-            $pdf->Cell(40,6,$row->jumlah_bayar,1,0); 
-            $pdf->Cell(40,6,$row->sisa_tagihan,1,1); 
+            $pdf->Cell(40,6,$row->jumlah_bayar,1,0);
+            $pdf->Cell(40,6,$row->sisa_tagihan,1,1);
 
         }
         $pdf->Output();
   }
-   
+
    public function bayarbyid($id_bayar)
   {
     $pdf = new FPDF('l','mm','A4');
@@ -87,7 +87,7 @@
         $pdf->AddPage();
         // setting jenis font yang akan digunakan
         $pdf->SetFont('Arial','B',14);
-        // mencetak string 
+        // mencetak string
         $pdf->Cell(280,7,'BUKTI PEMBAYARAN PESERTA DIDIK',0,1,'C');
         $pdf->SetFont('Arial','B',14);
         $pdf->Cell(280,7,'PRIMAGAMA BONDOWOSO',0,1,'C');
@@ -111,8 +111,8 @@
             $pdf->Cell(45,6,$row->nama_lengkap,1,0);
             $pdf->Cell(22,6,$row->kelas,1,0);
             $pdf->Cell(45,6,$row->nama_program,1,0);
-            $pdf->Cell(40,6,$row->jumlah_bayar,1,0); 
-            $pdf->Cell(40,6,$row->sisa_tagihan,1,1); 
+            $pdf->Cell(40,6,$row->jumlah_bayar,1,0);
+            $pdf->Cell(40,6,$row->sisa_tagihan,1,1);
         }
         $pdf->Output();
   }
@@ -124,7 +124,7 @@
         $pdf->AddPage();
         // setting jenis font yang akan digunakan
         $pdf->SetFont('Arial','B',14);
-        // mencetak string 
+        // mencetak string
         $pdf->Cell(280,7,'REKAP PEMBAYARAN PESERTA DIDIK',0,1,'C');
         $pdf->SetFont('Arial','B',14);
         $pdf->Cell(280,7,'PRIMAGAMA BONDOWOSO',0,1,'C');
@@ -148,8 +148,8 @@
             $pdf->Cell(45,6,$row->nama_lengkap,1,0);
             $pdf->Cell(22,6,$row->kelas,1,0);
             $pdf->Cell(45,6,$row->nama_program,1,0);
-            $pdf->Cell(40,6,$row->jumlah_bayar,1,0); 
-            $pdf->Cell(40,6,$row->sisa_tagihan,1,1); 
+            $pdf->Cell(40,6,$row->jumlah_bayar,1,0);
+            $pdf->Cell(40,6,$row->sisa_tagihan,1,1);
         }
         $pdf->Output();
   }

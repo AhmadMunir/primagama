@@ -53,7 +53,7 @@
                             <img src="<?php echo base_url("images/foto/profile/siswa/"); echo $foto;?>" alt=""/>
                             <div class="file btn btn-lg btn-primary">
                                 Change Photo
-                                <input type="file" name="file"/>
+                                <input type="file" name="file" href="<?php echo base_url('admin/siswa/updateFoto/'.$k->id_siswa) ?>">
                             </div>
                         </div>
                     </div>
