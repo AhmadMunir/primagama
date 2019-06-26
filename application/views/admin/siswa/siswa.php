@@ -62,7 +62,7 @@
                     <td width="250">
 
 
-                      <a href="<?php echo base_url('admin/siswa/detail/'.$u->id_siswa) ?>"
+                      <a href="<?php echo base_url('admin/siswa/detail/'.encrypt_url($u->id_siswa)) ?>"
                        class="btn btn-small"><i class="fas fa-grip-horizontal"></i> Details</a>
 
                     </td>
