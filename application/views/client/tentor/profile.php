@@ -44,9 +44,9 @@
                                         <div class="col-md-4">
                                             <div class="profile-img">
                                                 <?php
-                                              foreach ($tbl_tentor as $k) {
-                                                $id = $k->id_tentor;
-                                              }?>
+                                                    foreach ($tbl_tentor as $k) {
+                                                    $id = $k->id_tentor;
+                                                }?>
                                               <?php
                                                    $sek = $this->db->query("call get_detailtentor('".$id."')");
                                                    $raw = $sek->row();
