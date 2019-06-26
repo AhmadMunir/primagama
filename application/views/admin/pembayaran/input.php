@@ -43,7 +43,7 @@ if (session_id() == '') {
 
     <div class="container-fluid">
 
-
+      <?php $this->load->view('admin/_partial/breadcrumb.php') ?>
 
 
       <div class="card-header">Input Pembayaran</div>
