@@ -35,10 +35,9 @@ $jbtn = $this->session->jabatan;
           <ul class="widget widget-menu unstyled">
               <li class="active"><a href="<?php echo base_url('ortu/home'); ?>"><i class="menu-icon icon-dashboard"></i>Dashboard
               </a></li>
-              <li><a href="activity.html"><i class="menu-icon icon-user"></i>Profil Anak</a>
-              </li>
-              <li><a href="activity.html"><i class="menu-icon icon-user"></i>Profil</a>
-              </li>
+              <li><a href="<?php echo base_url('ortu/profileanak/anak/'.$this->session->anak) ?>"><i class="menu-icon icon-user"></i>Profil</a>
+            </li>
+             
               <li><a href="message.html"><i class="menu-icon icon-cog"></i>Pengaturan <b class="label green pull-right">
                   11</b> </a></li>
           </ul>

@@ -185,13 +185,6 @@ class Siswa extends CI_Controller
 
   public function updateFoto(){
     $post = $this->input->post();
-
-  public function save(){
-    $post = $this->input->post();
-    $this->produk_id =uniqid();
-    $this->gambar = $this->_uploadImage();
-    $this->deskripsi = $post["deskripsi"];
-    $this->db->insert($this->_table,$this);
   }
   
     private function _uploadImage()
@@ -233,18 +226,3 @@ class Siswa extends CI_Controller
   
 }
 ?>
-public function updateGambar()
-   {
-    $post = $this->input->post();
-    if (!empty($_FILES["image"]["name"])) {
-          $this->image = $this->_uploadImage();
-          } else {
-          $this->image = $post["images/foto/profile/siswa/default.png"];
-        }
-     
-
-    $this->db->update($this->_table,$this, array('id_siswa'=> $post['id']));
-
-  }
-}
- ?>

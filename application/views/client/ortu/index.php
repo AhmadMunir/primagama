@@ -21,12 +21,13 @@
                               <table class="span12">
                                 <tr >
                                   <td class="span4">
-                                    <img src="<?php echo base_url('images/foto/profile/siswa/default.png'); ?>" id="foto" alt="foto_profile"/>
-                                    <?php foreach ($siswa as $k){
-                                      $nama = $k->anak;
-                                      $program =  $k->program;
+                                    <?php foreach ($foto as $k){
+                                      $nama = $k->nama_lengkap;
+                                      $program =  $k->nama_program;
                                       $kelas = $k->nama_kelas;
+                                      $foto = $k->foto;
                                     } ?>
+                                    <img src="<?php echo base_url("images/foto/profile/siswa/".$foto);?>" alt=""/>
                                     <label for="nama">Nama Anak Anda : <?php echo $nama ?></label><br>
                                     <label for="nama">Program : <?php echo $program ?></label><br>
                                     <label for="nama">Kelas : <?php echo $kelas ?></label><br>

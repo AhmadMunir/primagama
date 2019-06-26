@@ -16,11 +16,16 @@
         'username' => $username,
         'password' => MD5($password)
       );
+      $wher = array(
+        'username' => $username,
+       
+      );
 
       $cekadmin = $this->m_login->cek_user("lgn_admin", $where)->num_rows();
       $cekadmin2 = $this->m_login->cek_user("lgn_admin", $where)->result();
       $ceksiswa = $this->m_login->cek_user("lgn_siswa", $where)->num_rows();
       $cekortu = $this->m_login->cek_user("lgn_ortu", $where)->num_rows();
+      $cekortu2 = $this->m_login->cek_user("view_ortu", $wher)->result();
       $cektentor = $this->m_login->cek_user("lgn_tentor", $where)->num_rows();
       $cektentor2 = $this->m_login->cek_user("lgn_tentor", $where)->result();
       if($cekadmin > 0){
@@ -51,10 +56,16 @@
           $this->session->set_userdata($data_session);
           redirect(base_url('siswa/home'));
     } elseif ($cekortu > 0) {
+      foreach ($cekortu2 as $k) {
+          $id = $k->id_ortu;
+          $anak = $k->id_siswa;
+        }
       $data_session = array(
         'nama' => $username,
         'status' => 'login',
-        'jabatan' => 'orangtua'
+        'jabatan' => 'orangtua',
+        'id' =>$id,
+        'anak'=>$anak
       );
       $this->session->set_userdata($data_session);
       redirect(base_url('ortu/home'));
