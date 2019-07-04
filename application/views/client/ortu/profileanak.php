@@ -32,15 +32,7 @@
                           <div class="module-head">
                             <h3>Absen</h3>
                           </div>
-                          <?php foreach ($tbl_siswa as $k){
-                            $id_prog = $k->id_program;
-                            $id_sis= $k->id_siswa;
-                            $id_grade= $k->id_grade;
-                            $kls = $k->nama_kelas;
-                          }
 
-
-                          ?>
                         <div class="module-body">
                           <div class="container emp-profile">
                                 <form method="post">
@@ -48,10 +40,17 @@
                                         <div class="col-md-4">
                                             <div class="profile-img">
                                               <?php
-                                              foreach ($tbl_siswa as $k) {
-                                                $id = $k->id_siswa;
-                                              }?>
+                                              // foreach ($siswa as $k) {
+                                              //   $id = $k->id_siswa;
+                                              // }
+                                            foreach ($siswa as $key) {
+                                              $id = $key->id_siswa;
+                                            }
+                                          
+                                              ?>
+
                                               <?php
+
                                                    $sek = $this->db->query("call get_detailsiswa('".$id."')");
                                                    $raw = $sek->row();
 

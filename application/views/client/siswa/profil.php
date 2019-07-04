@@ -32,15 +32,7 @@
             							<div class="module-head">
             								<h3>Absen</h3>
             							</div>
-                          <?php foreach ($siswa as $k){
-                            $id_prog = $k->id_program;
-                            $id_sis= $k->id_siswa;
-                            $id_grade= $k->id_grade;
-                            $kls = $k->nama_kelas;
-                          }
-
-
-                          ?>
+                          
           							<div class="module-body">
                           <div class="container emp-profile">
                                 <form method="post">

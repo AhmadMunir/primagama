@@ -69,16 +69,14 @@
         redirect(base_url('ortu/profileanak/anak/'.$id));
 
     }
-    public function anak($id){
+    public function anak($id_siswa){
+      $id = decrypt_url($id_siswa);
+      
       $where =  array('id_siswa' => $id);
-      $data['tbl_siswa'] = $this->m_siswa->lht($where, 'view_siswa_detail')->result();
+      $data['siswa'] = $this->m_siswa->lht($where, 'view_siswa_detail')->result();
       $data['angByID'] = $this->m_siswa->get_angsuran($where, 'view_angsuran')->result();
       $data['keles'] = $this->m_siswa->get_kelas()->result();
       $this->load->view('client/ortu/profileanak', $data);
   }
   }
  ?>
-
-
-
-
