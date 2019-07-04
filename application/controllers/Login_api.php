@@ -32,6 +32,7 @@ class Login_api extends CI_Controller {
         $kelas = $key->nama_kelas;
         $id_kelas = $key->id_kelas;
         $program = $key->id_program;
+        $foto = $key->foto;
       }
 
 
@@ -43,6 +44,7 @@ class Login_api extends CI_Controller {
 				$response->username = $hasil[0]['username'];
         $response->kelas = $kelas;
         $response->id_kelas = $id_kelas;
+        $response->foto= $foto;
 				die(json_encode($response));
 
 		}elseif ($cekortu->num_rows() > 0) {
@@ -51,6 +53,9 @@ class Login_api extends CI_Controller {
       foreach ($detail as $k) {
         $anak = $k->panak;
         $id_siswa = $k->id_siswa;
+        $kelas = $k->nama_kelas;
+        $program = $k->program;
+        $sekolah = $k->nama_sekolah;
       }
 
       $response->success = 2;
@@ -58,6 +63,10 @@ class Login_api extends CI_Controller {
       $response->message = "Selamat Datang Orang Tua ".$anak;
       $response->username = $hasil2[0]['username'];
       $response->anak = $anak;
+      $response->id_siswa = $id_siswa;
+      $response->program = $program;
+      $response->kelas = $kelas;
+      $response->sekolah = $sekolah;
       die(json_encode($response));
     }
 		else {

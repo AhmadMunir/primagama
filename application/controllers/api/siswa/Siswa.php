@@ -199,14 +199,46 @@
     }
 
     public function getProfile(){
-      $response = array();
+
       $id = $this->input->post('id');
-      $detail = $this->m_siswa->getSiswaDetail($id);
-      foreach ($detail as $k) {
-        array_push($response, array(
-          ''
-        ));
+      $dtl = $this->m_siswa->getSiswaDetailid($id)->num_rows();
+      $detil = $this->m_siswa->getSiswaDetailid($id)->result();
+      $detail = array();
+      if ($dtl > 0) {
+        foreach ($detil as $k) {
+          $tmp = $k->tempat;
+          $tgl = $k->tanggal_lahir;
+          $ttl = $tmp.', '. $tgl;
+          $success = '1';
+          array_push($detail, array(
+            'id_siswa' => $k->id_siswa,
+            'nama_lengkap' => $k->nama_lengkap,
+            'nama_panggilan' => $k->nama_panggilan,
+            'ttl' => $ttl,
+            'jk' => $k->jenis_kelamin,
+            'alamat' => $k->alamat,
+            'email' => $k->email,
+            'program' => $k->nama_program,
+            'kelas' => $k->nama_kelas,
+            'sekolah' => $k->nama_sekolah,
+            'grade' => $k->kelas,
+            'username' => $k->username,
+            'foto' => $k->foto,
+            'nama_a'=> $k->nama_ayah,
+            'nama_i'=>$k->nama_ibu,
+            'payah' =>$k->pekerjaan_ayah,
+            'pibu' =>$k->pekerjaan_ibu,
+            'nayah' => $k->no_hpayah,
+            'nibu' => $k->no_hpibu
+          ));
       }
+    } else {
+      $success = '0';
+      $detail = 'Terjadi Erorr';
+
+    }
+    $callback = array('success' => $success, 'detail' => $detail);
+    die(json_encode($callback));
     }
 
   }

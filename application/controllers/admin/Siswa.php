@@ -187,7 +187,7 @@ class Siswa extends CI_Controller
   public function updateFoto(){
     $post = $this->input->post();
   }
-  
+
     private function _uploadImage()
 {
     $config['upload_path']          = './images /upload/';
@@ -203,7 +203,7 @@ class Siswa extends CI_Controller
     if ($this->upload->do_upload('gambar')) {
         return $this->upload->data("file_name");
     }
-    
+
     return "default.jpg";
 
 
@@ -224,7 +224,7 @@ class Siswa extends CI_Controller
     $this->m_siswa->update_siswa($where, $data, 'tbl_siswa');
     redirect('admin/siswa/detail/'.encrypt_url($id));
   }
-  
-  
+
+
 }
 ?>

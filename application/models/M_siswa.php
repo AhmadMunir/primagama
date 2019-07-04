@@ -97,4 +97,9 @@ class M_siswa extends CI_Model {
 		$this->db->where('id_siswa', $where);
 		return $this->db->get('view_siswa_detail');
 	}
+
+	public function getSiswaDetailortu($where){
+		$this->db->where('id_ortu', $where);
+		return $this->db->get('view_siswa_detail');
+	}
 }

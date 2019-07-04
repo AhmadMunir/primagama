@@ -73,9 +73,13 @@
 
     }
 
+    // public function shownilaisiswa($id_siswa){
+    //   $this->db->where('id_siswa', $id_siswa);
+    //   return $this->db->get('view_nilai_siswa')->result();
+    // }
     public function shownilaisiswa($id_siswa){
       $this->db->where('id_siswa', $id_siswa);
-      return $this->db->get('view_nilai_siswa1')->result();
+      return $this->db->get('view_nilai_siswa');
     }
       public function getNilai(){
 
@@ -99,13 +103,13 @@
 
       return $result;
     }
-   
+
 public function viewKelas(){
       return $this->db->get('tbl_kelas')->result();
     }
 
     public function chartnilai($id_siswa){
-      
+
     }
   }
 
