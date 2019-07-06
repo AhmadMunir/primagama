@@ -31,17 +31,19 @@
       $id_sis = $this->input->post('id_sis');
       $jml = $this->input->post('jml');
       $sisa = $this->input->post('sisaL');
+      $admin = $this->session->id;
 
       $data = array(
         'id_pembayaran' => $id,
         'id_siswa' => $id_sis,
         'jumlah_bayar' => $jml,
-        'sisa_tagihan' => $sisa
+        'sisa_tagihan' => $sisa,
+        'id_admin' => $admin
       );
 
       $this->m_pembayaran->input($data, 'tbl_pembayaran');
       $this->session->set_flashdata('successbayar', 'Pembayaran Berhasil, Silahkan Cek Tab Angsuran!');
-      redirect('admin/siswa/detail/'.$id_sis);
+      redirect('admin/siswa/detail/'.encrypt_url($id_sis));
     }
     public function pdf()
   {

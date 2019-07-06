@@ -62,4 +62,9 @@ class M_jadwal_tetap extends CI_Model {
     $this->db->where('id_tentor', $id );
     return $this->db->get('view_jadwal');
   }
+
+  public function cek($where){
+    $this->db->where($where);
+    return $this->db->get('view_jadwal');
+  }
 }
