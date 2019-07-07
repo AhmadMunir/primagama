@@ -73,7 +73,7 @@ $jbtn = $this->session->jabatan;
         <ul class="widget widget-menu unstyled">
             <li><a href="<?php echo base_url('tentor/jadwalmengajar') ?>"><i class="menu-icon icon-calendar"></i> Jadwal Mengajar</a></li>
             <li><a href="<?php echo base_url('tentor/Kelas') ?>"><i class="menu-icon icon-pencil"></i> Kelas</a></li>
-            <li><a href="<?php echo base_url('tentor/nilai') ?>"><i class="menu-icon icon-hdd"></i>Nilai</a></li>
+            <li><a href="<?php echo base_url('tentor/kelas/kelasnilai') ?>"><i class="menu-icon icon-hdd"></i>Nilai</a></li>
 
 
         </ul>
