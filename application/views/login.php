@@ -1,62 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootstrap Simple Login Form</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<style type="text/css">
-	.login-form {
-		width: 340px;
-    	margin: 50px auto;
-	}
-    .login-form form {
-    	margin-bottom: 15px;
-        background: #f7f7f7;
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-        padding: 30px;
-    }
-    .login-form h2 {
-        margin: 0 0 15px;
-    }
-    .form-control, .btn {
-        min-height: 38px;
-        border-radius: 2px;
-    }
-    .btn {
-        font-size: 15px;
-        font-weight: bold;
-    }
-</style>
+    <title>Login Primagama</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->  
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->  
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
 </head>
 <body>
-
-<div class="login-form">
-	<?php if ($this->session->flashdata('gagal')): ?>
-	<div class="alert alert-danger" role="alert">
-		<?php echo $this->session->flashdata('gagal'); ?>
-	</div>
-	<?php endif; ?>
+   
+   <div class="login-form">
+    <?php if ($this->session->flashdata('gagal')): ?>
+    <div class="alert alert-danger" role="alert">
+        <?php echo $this->session->flashdata('gagal'); ?>
+    </div>
+    <?php endif; ?>
     <form action="<?php echo base_url('login/login') ?>" method="post">
-        <h2 class="text-center">Log in</h2>
-        <div class="form-group">
+       
+
+  
+    
+    
+        <div class="container-login100">    
+           
+                <div  class="login100-pic js-tilt" data-tilt>
+                 <img src="images/img-01.png" alt="IMG">
+
+                </div>
+                 <form class="login100-form validate-form">
+                    <span class="login100-form-title">
+                        Primagama Login
+                    </span>
+  <div class="form-group">
             <input name="username" type="text" class="form-control" placeholder="Username" required="required">
-        </div>
-        <div class="form-group">
+            <div class="form-group">
             <input name="password" type="password" class="form-control" placeholder="Password" required="required">
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block">Log in</button>
         </div>
-        <div class="clearfix">
-            <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
-            <a href="#" class="pull-right">Forgot Password?</a>
         </div>
+
+
+                
+                   
+        
     </form>
 
 </div>
+</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    
+<!--===============================================================================================-->  
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+    <script src="vendor/tilt/tilt.jquery.min.js"></script>
+    <script >
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+<!--===============================================================================================-->
+    <script src="js/main.js"></script>
+
+
 </body>
-</html>
+</html>     
