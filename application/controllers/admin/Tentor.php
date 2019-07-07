@@ -10,13 +10,13 @@
 
     public function index(){
       $data['view_tentor'] = $this->m_tentor->get_tentor()->result();
-      $this->load->view('client/tentor/index.php', $data);
+      $this->load->view('admin/tentor/index.php', $data);
     }
 
     public function detail($id){
       $where = array('id_tentor' => $id);
       $data['tbl_tentor'] = $this->m_tentor->lht($where, 'tbl_tentor')->result();
-      $this->load->view('client/tentor/detail', $data);
+      $this->load->view('admin/tentor/detail', $data);
     }
 
     public function delete($id){
@@ -28,7 +28,7 @@
 
     public function input(){
       $data['tbl_mapel'] = $this->m_tentor->get_mapel();
-      $this->load->view('client/tentor/input', $data);
+      $this->load->view('admin/tentor/input', $data);
     }
 
     public function edit($id){
@@ -105,7 +105,7 @@
     if ($this->upload->do_upload('gambar')) {
         return $this->upload->data("file_name");
     }
-    
+
     return "default.jpg";
 
 
@@ -126,22 +126,7 @@
     $this->m_tentor->update_tentor($where, $data, 'tbl_tentor');
     redirect('admin/tentor/detail/'.$id_tentor);
   }
-  
+
 }
 
-public function updateGambar()
-   {
-    $post = $this->input->post();
-    if (!empty($_FILES["image"]["name"])) {
-          $this->image = $this->_uploadImage();
-          } else {
-          $this->image = $post["images/foto/profile/tentor/default.png"];
-        }
-     
-
-    $this->db->update($this->_table,$this, array('id_siswa'=> $post['id']));
-
-  }
-}
-  }
  ?>
