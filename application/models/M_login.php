@@ -29,5 +29,15 @@
       return $tentor;
     }
 
+public function cek_ortu($table, $where){
+      return $this->db->get_where($table,$where);
+    }
+
+    public function getOrtu($username){
+      $tentor=$this->db->query("SELECT id_siswa FROM view_ortu WHERE username = '$username'");
+
+      return $tentor;
+    }
+
   }
  ?>

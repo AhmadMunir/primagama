@@ -15,7 +15,7 @@
         'username' => $nama
       );
       $wher = array(
-        'id_ortu' => $id
+        'id_siswa' => $id
       );
       $data['siswa'] = $this->m_siswa->lht($where, 'view_ortu')->result();
       $data['foto'] = $this->m_siswa->lht($wher, 'view_siswa_detail')->result();

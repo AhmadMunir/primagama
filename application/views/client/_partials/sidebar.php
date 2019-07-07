@@ -38,7 +38,7 @@ $jbtn = $this->session->jabatan;
               <li><a href="<?php echo base_url('ortu/profileanak/anak/'.encrypt_url($this->session->anak)) ?>"><i class="menu-icon icon-user"></i>Profil</a>
             </li>
 
-              <li><a href="message.html"><i class="menu-icon icon-cog"></i>Pengaturan <b class="label green pull-right">
+              <li><a href="<?php echo base_url('ortu/setting/index/'.encrypt_url($id)) ?>"><i class="menu-icon icon-cog"></i>Pengaturan <b class="label green pull-right">
                   11</b> </a></li>
           </ul>
           <!--/.widget-nav-->
