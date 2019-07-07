@@ -19,6 +19,15 @@
       return $siswa;
     }
 
+ public function cek_tentor($table, $where){
+      return $this->db->get_where($table,$where);
+    }
+
+    public function getTentor($username){
+      $tentor=$this->db->query("SELECT id_tentor FROM view_tntr_dtl WHERE username = '$username'");
+
+      return $tentor;
+    }
 
   }
  ?>

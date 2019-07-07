@@ -29,10 +29,10 @@
    
   public function getTentorDetail($where){
     $this->db->where('username', $where);
-    return $this->db->get('view_siswa_detail');
+    return $this->db->get('view_tntr_dtl');
   }
 
-  public function getSiswaDetailid($where){
+  public function getTentorDetailid($where){
     $this->db->where('id_tentor', $where);
     return $this->db->get('view_tntr_dtl');
   }
