@@ -3,6 +3,7 @@
     public function __construct(){
       parent::__construct();
       $this->load->model('m_siswa');
+      $this->load->model('m_login');
       //
       if($this->session->userdata('status') != "login")
         redirect(base_url("login"));
@@ -10,25 +11,26 @@
 
 
 
-    public function index($id){
+    public function index($ids){
+      $id = decrypt_url($ids);
       $nama = $this->session->nama;
       $whiri = array(
         'username' => $nama
       );
       $data['siswa'] = $this->m_siswa->lht($whiri, 'view_siswa')->result();
       $where =  array('id_siswa' => $id);
-      $data['tbl_siswa'] = $this->m_siswa->lht($where, 'tbl_siswa')->result();
+      $data['tbl_siswa'] = $this->m_siswa->lht($where, 'view_siswa_detail')->result();
       $data['angByID'] = $this->m_siswa->get_angsuran($where, 'view_angsuran')->result();
       $data['keles'] = $this->m_siswa->get_kelas()->result();
-     
+
       // $data['siswa'] = $this->m_siswa->lht($where, 'view_siswa')->result();
       $this->load->view('client/siswa/setting', $data);
-      
+
     }
 
-   
 
-  
+
+
 
   public function update_siswa(){
     $id_sis = $this->input->post('id_siswa');
@@ -78,46 +80,77 @@
         return $query->row();
     }
 
- public function updatePassword()
-    {
-        $this->form_validation->set_rules('passLama', 'Password Lama', 'trim|required|min_length[5]|max_length[25]');
-        $this->form_validation->set_rules('passBaru', 'Password Baru', 'trim|required|min_length[5]|max_length[25]');
-        $this->form_validation->set_rules('passKonf', 'Password Konfirmasi', 'trim|required|min_length[5]|max_length[25]');
- 
-        $id = $this->session->userdata('id');
-        if ($this->form_validation->run() == true) {
-            if (password_verify($this->input->post('passLama'), $this->session->userdata('password'))) {
-                if ($this->input->post('passBaru') != $this->input->post('passKonf')) {
-                    $this->session->set_flashdata('msg', show_err_msg('Password Baru dan Konfirmasi Password harus sama'));
-                    redirect('siswa/home');
-                } else {
-                    $data = ['password' => get_hash($this->input->post('passBaru'))];
-                    $result = $this->Setting->update($data, $id);
-                    if ($result > 0) {
-                        $this->updateProfil();
-                        $this->session->set_flashdata('msg', show_succ_msg('Password Berhasil diubah'));
-                        redirect('siswa/home');
-                    } else {
-                        $this->session->set_flashdata('msg', show_err_msg('Password Gagal diubah'));
-                        redirect('siswa/home');
-                    }
-                }
-            } else {
-                $this->session->set_flashdata('msg', show_err_msg('Password Salah'));
-                redirect('siswa/home');
-            }
-        } else {
-           // $this->session->set_flashdata('msg', show_err_msg(validation_errors()));
-           redirect('siswa/home');
+ public function updateprofile(){
+      $id = $this->session->id;
+      $nama = $this->input->post('name');
+      $email = $this->input->post('email');
+      $passbaru = $this->input->post('passBaru');
+      $no = $this->input->post('nohp');
+      $passkon = $this->input->post('passKonf');
+      $passlama = $this->input->post('passLama');
+      $ide = encrypt_url($id);
+      $where = array(
+        'id_siswa' => $id
+      );
+      $cekpass = $this->m_login->cek_user("lgn_siswa", $where)->result();
+      foreach ($cekpass as $key) {
+        $pass = $key->password;
+      }
+      if (MD5($passlama)==$pass) {
+        if ($passbaru == $passkon ) {
+          if ($passbaru != null) {
+            $where = array('id_siswa' => $id);
+            $datalog = array(
+              'username' => $nama,
+              'password' => MD5($passbaru)
+            );
 
+            $datasis = array(
+              'email' => $email,
+              'no_hp' => $no
+            );
+            $data_session =array(
+              'id' => $id,
+              'nama' => $nama,
+              'status' => "login",
+              'jabatan' => "siswa",
+              'pss' => $passbaru
+            );
+            $this->session->set_userdata($data_session);
+            $this->m_siswa->update_siswa($where, $datasis, 'tbl_siswa');
+            $this->m_siswa->update_siswa($where, $datalog, 'lgn_siswa');
+            $this->session->set_flashdata('sukses', 'SUKSES! Perubahan Tersimpan');
+            redirect('siswa/setting/index/'.$ide);
+          }else {
+            $where = array('id_siswa' => $id);
+            $datalog = array(
+              'username' => $nama
+            );
+
+            $datasis = array(
+              'email' => $email,
+              'no_hp' => $no
+            );
+
+            $this->m_siswa->update_siswa($where, $datasis, 'tbl_siswa');
+            $this->m_siswa->update_siswa($where, $datalog, 'lgn_siswa');
+            $this->session->set_flashdata('sukses', 'SUKSES! Perubahan Tersimpan');
+            redirect('siswa/setting/index/'.$ide);
+
+          }
+        }else {
+          $this->session->set_flashdata('error1', 'Error!!! Password Baru dan Password Konfirmasi tidak sama!');
+          redirect('siswa/setting/index/'.$ide);
         }
+      }else {
+        $this->session->set_flashdata('error', 'Error!!! Password lama tidak sama!');
+        redirect('siswa/setting/index/'.$ide);
+      }
+
     }
- 
-
-
 
     }
 
 
-  
+
  ?>

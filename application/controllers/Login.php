@@ -18,12 +18,13 @@
       );
       $wher = array(
         'username' => $username,
-       
+
       );
 
       $cekadmin = $this->m_login->cek_user("lgn_admin", $where)->num_rows();
       $cekadmin2 = $this->m_login->cek_user("lgn_admin", $where)->result();
       $ceksiswa = $this->m_login->cek_user("lgn_siswa", $where)->num_rows();
+      $ceksiswa2 = $this->m_login->cek_user("lgn_siswa", $where)->result();
       $cekortu = $this->m_login->cek_user("lgn_ortu", $where)->num_rows();
       $cekortu2 = $this->m_login->cek_user("view_ortu", $wher)->result();
       $cektentor = $this->m_login->cek_user("lgn_tentor", $where)->num_rows();
@@ -44,9 +45,11 @@
         redirect(base_url('admin/home'));
 
       } elseif($ceksiswa > 0){
-          // $data["ida"] = $this->m_login->getId($username);
-          // $id = $ida->id_admin;
+          foreach ($ceksiswa2 as $key) {
+            $id_sis = $key->id_siswa;
+          }
           $data_session = array(
+            'id' => $id_sis,
             'nama' => $username,
             'status' => "login",
             'jabatan' => "siswa",

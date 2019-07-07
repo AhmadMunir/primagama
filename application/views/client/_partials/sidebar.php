@@ -14,7 +14,7 @@ $jbtn = $this->session->jabatan;
             <li><a href="<?php echo base_url('siswa/profil/detail/'.encrypt_url($id)) ?>"><i class="menu-icon icon-user"></i>Profil </a>
             </li>
             <?php } ?>
-            <li><a href="<?php echo base_url('siswa/setting/index/'.$u->id_siswa) ?>"><i class="menu-icon icon-cog"></i>Pengaturan <b>
+            <li><a href="<?php echo base_url('siswa/setting/index/'.encrypt_url($u->id_siswa)) ?>"><i class="menu-icon icon-cog"></i>Pengaturan <b>
                 </b> </a></li>
         </ul>
         <!--/.widget-nav-->
