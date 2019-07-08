@@ -160,7 +160,7 @@ class Siswa extends CI_Controller
     );
 
     $this->m_siswa->update_kls($where, $data, 'tbl_siswa');
-    redirect('admin/siswa/detail/'.$id_sis);
+    redirect('admin/siswa/detail/'.encrypt_url($id_sis));
   }
 
   public function detail($id_siswa){
@@ -194,7 +194,7 @@ class Siswa extends CI_Controller
     $config['allowed_types']        = 'gif|jpg|png';
     $config['file_name']            = $this->profile_id;
     $config['overwrite']            = true;
-    $config['max_size']             = 1024; // 1MB
+    $config['max_size']             = 10240; // 1MB
     // $config['max_width']            = 1024;
     // $config['max_height']           = 768;
 
