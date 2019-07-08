@@ -26,7 +26,7 @@
       $lists = "<tr></tr>";
       $no = 1;
       foreach ($jdwl as $key) {
-        $lists .= "<tr><td>".$no."</td><td>".$key->hari."</td><td>".$key->nama_mapel."</td><td>".$key->jam."</td><td>".$key->nama_kelas."</td></tr>";
+        $lists .= "<tr><td>".$no."</td><td>".$key->hari."</td><td>".$key->nama_mapel."</td><td>".$key->jam."</td><td>".$key->nama_kelas."</td><td>".$key->nama_ruang."</td></tr>";
         $no++;
       }
 

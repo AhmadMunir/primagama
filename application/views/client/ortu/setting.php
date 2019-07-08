@@ -56,16 +56,16 @@
                       </div>
 
 
-                       
+
                           <div class="form-label-group">
                            <center>  <label for="namaPanggilan">Nomor HP Ayah</label></center>
-              <center>  <input type="text" id="nohp" name="nohp" value="<?php echo $u->no_hpayah; ?>"class="form-control" placeholder="No Hp"></center>
+              <center>  <input type="text" id="nohpa" name="nohpa" value="<?php echo $u->no_hpayah; ?>"class="form-control" placeholder="No Hp"></center>
 
                           </div>
 
                           <div class="form-label-group">
                            <center>  <label for="namaPanggilan">Nomor HP Ibu</label></center>
-              <center>  <input type="text" id="nohp" name="nohp" value="<?php echo $u->no_hpibu; ?>"class="form-control" placeholder="No Hp"></center>
+              <center>  <input type="text" id="nohpi" name="nohpi" value="<?php echo $u->no_hpibu; ?>"class="form-control" placeholder="No Hp"></center>
 
                           </div>
 

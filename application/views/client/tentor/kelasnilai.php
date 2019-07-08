@@ -19,32 +19,16 @@
                     <div class="span9">
                       <div class="module">
           							<div class="module-head">
-          								<h3>Jadwal Kelas Kamu</h3>
+          								<h3>Kelas</h3>
           							</div>
-          							<div class="module-body">
                           <?php foreach ($siswa as $k){
                             $nama = $k->nama;
                             $mapel =  $k->nama_mapel;
                             $alamat = $k->alamat;
+                          } ?>
+                      </div>
 
-                          }
-                             ?>
-                             <table class="table">
-                               <tr>
-                                 <th>No</th>
-                                 <th>Hari</th>
-                                 <th>Mata Pelajaran</th>
-                                 <th>Jam</th>
-                                 <th>Kelas</th>
-                                 <th>Ruang</th>
-                               </tr>
-                               <tbody id="jadwaltetap">
-
-                               </tbody>
-                             </table>
-
-
-                        </div>
+                      <div class="btn-box-row row-fluid" id="kelas">
                       </div>
 
                     </div>
@@ -72,8 +56,8 @@
 
       			$.ajax({
       				type: "POST", // Method pengiriman data bisa dengan GET atau POST
-      				url: "<?php echo base_url("tentor/jadwalmengajar/listjadwal"); ?>", // Isi dengan url/path file php yang dituju
-      				data: {id_tentor :'<?php echo $k->id_tentor; ?>' }, // data yang aka n dikirim ke file yang dituju
+      				url: "<?php echo base_url("tentor/kelas/getkelasnilai"); ?>", // Isi dengan url/path file php yang dituju
+      				data: {username :'<?php echo $this->session->nama;; ?>' }, // data yang aka n dikirim ke file yang dituju
       				dataType: "json",
       				beforeSend: function(e) {
       					if(e && e.overrideMimeType) {
@@ -85,7 +69,7 @@
 
       					// set isi dari combobox kota
       					// lalu munculkan kembali combobox kotanya
-      					$("#jadwaltetap").html(response.jdl).show();
+      					$("#kelas").html(response.kls).show();
       				},
       				error: function (xhr, ajaxOptions, thrownError) { // Ketika ada error
       					alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError); // Munculkan alert error

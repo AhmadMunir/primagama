@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
   class M_tentor extends CI_Model{
     public function get_tentor(){
-      return $this->db->get('view_tentor');
+      return $this->db->get('view_tntr_dtl');
     }
 
     public function lht($where, $table){
@@ -26,7 +26,7 @@
       $this->db->delete($table);
     }
 
-   
+
   public function getTentorDetail($where){
     $this->db->where('username', $where);
     return $this->db->get('view_tntr_dtl');
@@ -51,5 +51,5 @@
       $this->db->update($table, $data, $where);
     }
 }
-  
+
 ?>

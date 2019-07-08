@@ -25,9 +25,9 @@
                                       $nama = $k->nama_lengkap;
                                       $program =  $k->nama_program;
                                       $kelas = $k->nama_kelas;
-                                      $foto = $k->foto;
+                                      $ft = $k->foto;
                                     } ?>
-                                    <img src="<?php echo base_url("images/foto/profile/siswa/".$foto);?>" alt=""/>
+                                    <img src="<?php echo base_url("images/foto/profile/siswa/".$ft);?>" alt=""/>
                                     <label for="nama">Nama Anak Anda : <?php echo $nama ?></label><br>
                                     <label for="nama">Program : <?php echo $program ?></label><br>
                                     <label for="nama">Kelas : <?php echo $kelas ?></label><br>

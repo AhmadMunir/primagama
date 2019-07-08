@@ -22,8 +22,10 @@ class Login_api extends CI_Controller {
 		}
 		$ceksiswa = $this->login_apimodel->Getuser(array('username' => $username, 'password' => md5($password)),'lgn_siswa');
     $cekortu = $this->login_apimodel->Getuser(array('username' => $username, 'password' => md5($password)),'lgn_ortu');
+    $cektentor = $this->login_apimodel->Getuser(array('username' => $username, 'password' => md5($password)),'lgn_tentor');
 		$hasil = $ceksiswa->result_array();
     $hasil2 = $cekortu->result_array();
+    $hasil3 = $cekortu->result_array();
 
 		if ($ceksiswa->num_rows() > 0) {
       $detail = $this->m_siswa->getSiswaDetail($username);
@@ -67,6 +69,26 @@ class Login_api extends CI_Controller {
       $response->program = $program;
       $response->kelas = $kelas;
       $response->sekolah = $sekolah;
+      die(json_encode($response));
+    }elseif ($cektentor->num_rows()>0) {
+      $where = array('username'=>$username);
+      $detail = $this->m_siswa->lht($where, 'view_tntr_dtl')->result();
+
+      foreach ($detail as $k) {
+        $username = $k->username;
+        $id_tentor = $k->id_tentor;
+        $mapel = $k->nama_mapel;
+        $foto = $k->foto;
+        $nama = $k->nama;
+      }
+      $response->success = 3;
+      $response->user = "tentor";
+      $response->id = $id_tentor;
+      $response->message = "Selamat Datang ".$nama;
+      $response->username = $username;
+      $response->nama = $nama;
+      $response->pmapel = $mapel;
+      $response->foto = $foto;
       die(json_encode($response));
     }
 		else {

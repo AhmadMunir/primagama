@@ -36,7 +36,7 @@
                                   <td >
                                     <a href="<?php echo base_url('tentor/jadwalmengajar'); ?>" class="btn-box small span5"><i class="icon-calendar"></i><b>Lihat Jadwal Mengajar</b></a>
                                     <a href="<?php echo base_url('tentor/kelas'); ?>" class="btn-box small span5"><i class="icon-pencil"></i><b>Lihat Kelas</b></a>
-                                    <a href="<?php echo base_url('tentor/nilai'); ?>" class="btn-box small span5"><i class="icon-hdd"></i><b>Lihat Nilai</b></a>
+                                    <a href="<?php echo base_url('tentor/kelas/kelasnilai'); ?>" class="btn-box small span5"><i class="icon-hdd"></i><b>Lihat Nilai</b></a>
 
                                   </td>
                                 </tr>

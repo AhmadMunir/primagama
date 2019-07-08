@@ -18,12 +18,13 @@
         'username' => $nama
       );
       $data['ortu'] = $this->m_orangtua->lht($whiri, 'view_ortu')->result();
+      $data['siswa'] = $this->m_orangtua->lht($whiri, 'view_ortu')->result();
       $where =  array('id_ortu' => $id);
       $data['tbl_ortu'] = $this->m_orangtua->lht($where, 'view_ortu')->result();
       //$data['angByID'] = $this->m_siswa->get_angsuran($where, 'view_angsuran')->result();
       $data['keles'] = $this->m_siswa->get_kelas()->result();
 
-       //$data['siswa'] = $this->m_siswa->lht($where, 'view_siswa')->result();
+       // $data['siswa'] = $this->m_siswa->lht($where, 'view_siswa_detail')->result();
       $this->load->view('client/ortu/setting', $data);
 
     }
@@ -43,7 +44,7 @@
     $kelas = $this->input->post('kelas');
     $program = $this->input->post('program');
     $jk = $this->input->post('jk');
-  
+
 
 
     $data = array(
@@ -56,7 +57,7 @@
       'id_program' => $program,
       'jenis_kelamin' => $jk,
       'alamat' => $alamat,
-      
+
       'passLama' =>$passwordlama,
       'passBaru' =>$passwordBaru,
       'passKonf' =>$passwordKonfirmasi
@@ -85,8 +86,8 @@
       $nama = $this->input->post('name');
       $email = $this->input->post('email');
       $passbaru = $this->input->post('passBaru');
-      $no = $this->input->post('no_hpayah');
-      $no2 = $this->input->post('no_hpibu');
+      $no = $this->input->post('nohpa');
+      $no2 = $this->input->post('nohpi');
       $passkon = $this->input->post('passKonf');
       $passlama = $this->input->post('passLama');
       $ide = encrypt_url($id);
@@ -107,8 +108,8 @@
             );
 
             $dataortu = array(
-            
-              'no_hpayah' => $no
+              'no_hpayah' => $no,
+              'no_hpibu' => $no2
             );
             $data_session =array(
               'id' => $id,
@@ -118,7 +119,7 @@
               'pss' => $passbaru
             );
             $this->session->set_userdata($data_session);
-            $this->m_orangtua->update_ortu($where, $dataortu, 'view_ortu');
+            $this->m_orangtua->update_ortu($where, $dataortu, 'tbl_ortu');
             $this->m_orangtua->update_ortu($where, $datalog, 'lgn_ortu');
             $this->session->set_flashdata('sukses', 'SUKSES! Perubahan Tersimpan');
             redirect('ortu/setting/index/'.$ide);
@@ -129,12 +130,12 @@
             );
 
             $dataortu = array(
-              
+
               'no_hpibu' => $no2
             );
 
-            $this->m_orangtua->update_siswa($where, $dataortu, 'tbl_ortu');
-            $this->m_orangtua->update_siswa($where, $datalog, 'lgn_ortu');
+            $this->m_siswa->update_siswa($where, $dataortu, 'tbl_ortu');
+            $this->m_siswa->update_siswa($where, $datalog, 'lgn_ortu');
             $this->session->set_flashdata('sukses', 'SUKSES! Perubahan Tersimpan');
             redirect('ortu/setting/index/'.$ide);
 

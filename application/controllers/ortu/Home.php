@@ -11,15 +11,17 @@
     public function index(){
       $nama = $this->session->nama;
       $id = $this->session->id;
+      $ank = $this->session->anak;
       $where = array(
         'username' => $nama
       );
       $wher = array(
-        'id_siswa' => $id
+        'id_siswa' => $ank
       );
       $data['siswa'] = $this->m_siswa->lht($where, 'view_ortu')->result();
       $data['foto'] = $this->m_siswa->lht($wher, 'view_siswa_detail')->result();
       $this->load->view('client/ortu/index', $data);
+
     }
 
   }
