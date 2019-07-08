@@ -45,7 +45,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="clear"></div>
 		 </div> -->
-	     <<div class="content-middle">
+	     <div class="content-middle">
 			<div class="middle-top">
 		        <h2>Kenapa Primagama?</h2>
 				 <ul id="filters" class="clearfix">

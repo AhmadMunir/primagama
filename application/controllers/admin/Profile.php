@@ -53,6 +53,7 @@
       $data["profile"] = $this->m_profile->getdata($username);
       $this->load->view('admin/profile', $data);
     }
+    
 
 
   }

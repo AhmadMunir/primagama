@@ -7,8 +7,7 @@
       <div class="cssmenu">
         <ul>
           <li class="active"><a href="<?php echo base_url('profile'); ?>">Home</a></li>
-          <li><a href="plans.html">Learning Program</a></li>
-          <li><a href="blog.html">Testimoni</a></li>
+          <!-- <li><a href="blog.html">Testimoni</a></li> -->
           <li><a href="<?php echo base_url('profile/contact') ?>">Contact</a></li>
           <li><a href="<?php echo base_url('login'); ?>">Login</a></li>
         </ul>
