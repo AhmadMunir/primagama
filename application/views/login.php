@@ -24,7 +24,14 @@
 <!--===============================================================================================-->
 </head>
 <body>
-  
+  <div class="login-form">
+    <?php if ($this->session->flashdata('gagal')): ?>
+    <div class="alert alert-danger" role="alert">
+        <?php echo $this->session->flashdata('gagal'); ?>
+    </div>
+    <?php endif; ?>
+    <form action="<?php echo base_url('login/login') ?>" method="post">
+       
   <div class="limiter">
     <div class="container-login100" style="background-image: url('images/bg1.jpg');">
       <div class="wrap-login100 p-t-190 p-b-30">
