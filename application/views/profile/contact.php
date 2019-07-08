@@ -66,7 +66,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		 </div>
 	 </div>
-	 <a href="mailto: hel000941@gmail.com?subject=titel">Pesan lewat Email</a>
+	 
      <div class="footer">
 		<div class="wrap">
 			<div class="footer-top">
