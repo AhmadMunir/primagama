@@ -36,7 +36,7 @@
       );
 
       $this->m_orangtua->update_ortu($where, $data, 'tbl_ortu');
-      redirect('admin/siswa/detail/'.encrypt_url'$id_sis');
+      redirect('admin/siswa/detail/'.encrypt_url($id_sis));
     }
   }
  ?>
