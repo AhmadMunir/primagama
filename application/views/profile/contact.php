@@ -42,10 +42,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		    </div>
 			<p>Jika ingin menghubungi kami, anda bisa mengisi dan melengkapi form berikut:</p>
 		    <div class="contatct-form">
-			   <form method="post" action="<?php echo base_url('profile/kirimEmail') ?>">
+			   <form method="post" action="<?php echo base_url('profile/kirimEmail') ?>" target="_blank">
 				  <input type="text" value="Name " name="nama" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name ';}">
 				  <input type="text" value="Email " name="email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email ';}">
-				  <input type="text" value="Phone " name="hp" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone ';}">
+				 
 				  <textarea rows="2" cols="70" name="pesan" onfocus="if(this.value == 'Message ') this.value='';" onblur="if(this.value == '') this.value='Message ';">Message </textarea>
 				  <input type="submit" value="Submit">
 			   </form>
@@ -58,8 +58,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						   		<p>Dabasah, Kec. Bondowoso, Kabupaten Bondowoso</p>
 						   		<p>Jawa Timur</p>
 				   		<p>Phone:0852-3661-0634</p>
-				 	 	<p>Email: <span>info[at]mycompany.com</span></p>
-				   		<p>Follow on: <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fid-id.facebook.com%2Fprimagama.bondowoso"><span>Facebook</span></p>
+				 	 	<p>Email: <span>primagamabondowoso@gmail.com</span></p>
+				   		<p>Follow on: <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fid-id.facebook.com%2Fprimagama.bondowoso"><span>Primagama Bondowoso</span></p>
 				   </div>
 		      </div>
 		     <div class="clear"></div>
@@ -67,64 +67,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		 </div>
 	 </div>
 	 
-     <div class="footer">
-		<div class="wrap">
-			<div class="footer-top">
-				<div class="col_1_of_footer span_1_of_footer">
-					<h3>Beranda</h3>
-					<p> Home </p>
-					<p>Kontak</p>
-				</div>
-				<div class="col_1_of_footer span_1_of_footer">
-					<h3>Home</h3>
-					<p> Primagama Siap </p>
-					<p>Kenapa Primagama</p>
-				</div>
-				<div class="col_1_of_footer span_1_of_footer">
-					<h3> Recent Testimoni </h3>
-					<div class="recent-tweet">
-						<div class="recent-tweet-icon">
-							<span> </span>
-						</div>
-						<div class="recent-tweet-info">
-							<p>Ds which don't look even slightly believable. If you are going to use nibh euismod tincidunt ut laoreet<a href="#">About 1 Hour Ago</a></p>
-						</div>
-						<div class="clear"> </div>
-					</div>
-					<div class="recent-tweet">
-						<div class="recent-tweet-icon">
-							<span> </span>
-						</div>
-						<div class="recent-tweet-info">
-							<p>Ds which don't look even slightly believable. If you are going to use nibh euismod tincidunt ut laoreet<a href="#">About 2 Hour Ago</a></p>
-						</div>
-						<div class="clear"> </div>
-					</div>
-				</div>
-				<div class="col_1_of_footer span_1_of_footer">
-					<h3>Tokoh</h3>
-					<div class="gallery">
-						<ul>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<?php echo base_url('images/g1.jpg')?>" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<?php echo base_url('images/g2.jpg')?>" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<?php echo base_url('images/g3.jpg')?>" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<?php echo base_url('images/g4.jpg')?>" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<?php echo base_url('images/g5.jpg')?>" alt=""/></a></li>
-							<li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="<?php echo base_url('images/g6.jpg')?>" alt=""/></a></li>
-							 <div id="small-dialog1" class="mfp-hide">
-								<div class="pop_up">
-								 	<img src="<?php echo base_url('images/g_zoom.jpg')?>" alt=""/>
-									<h2>Photo View</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					  			</div>
-							</div>
-						</ul>
-					</div>
-				</div>
-				<div class="clear"></div>
-			</div>
-		</div>
-	    <?php $this->load->view('profile/_partials/foot') ?>
-	</div>
+     
 </body>
 </html>
