@@ -109,7 +109,7 @@ class Siswa extends CI_Controller
     );
     $this->m_siswa->input_siswa($data,'tbl_siswa');
     $this->m_pembayaran->input($bi, 'tbl_pembayaran');
-    redirect('admin/orangtua/input/'.$id_sis);
+    redirect('admin/orangtua/input/'.encrypt_url($id_sis));
   }
 
   public function update(){
@@ -143,7 +143,7 @@ class Siswa extends CI_Controller
     );
 
     $this->m_siswa->update_siswa($where, $data, 'tbl_siswa');
-    redirect('admin/siswa/detail/'.$id_sis);
+    redirect('admin/siswa/detail/'.encrypt_url($id_sis));
   }
 
   public function updatekls(){
