@@ -69,7 +69,7 @@
                   </div>
                   </div>
                   <div class="col-md-3">
-                    <select name="jenjang" id="jenjang" style="width: 200px;">
+                    <select name="jenjang" id="jenjang" style="width: 200px;" required>
                       <option value="">Pilih</option>
                       <?php
                       foreach ($jenjang as $data) { // Lakukan looping pada variabel siswa dari controller
@@ -84,11 +84,11 @@
                   </div>
                   </div>
                   <div class="col-md-3">
-                    <select name="kelas" id="kelas" style="width: 200px;">
+                    <select name="kelas" id="kelas" style="width: 200px;" required>
                       <option value="">Pilih</option>
                     </select>
 
-                    <div id="loading" style="margin-top: 15px;">
+                    <div id="loading" style="margin-top: 15px;" required>
                       <img src="images/loading.gif" width="18"> <small>Loading...</small>
                     </div>
                   </div>
@@ -103,7 +103,7 @@
                   </div>
                   </div>
                   <div class="col-md-6">
-                    <select class="js-example-basic-single" name="sekolah" id="sekolah" style="width: 600px;">
+                    <select class="js-example-basic-single" name="sekolah" id="sekolah" style="width: 600px;" required>
                       <option value="">Pilih</option>
                     </select>
 
@@ -122,7 +122,7 @@
                   </div>
                   </div>
                   <div class="col-md-3">
-                    <select class="js-example-basic-single" name="program" id="program" style="width: 200px;">
+                    <select class="js-example-basic-single" name="program" id="program" style="width: 200px;" required>
                       <option value="">Pilih</option>
                       <?php
                       foreach ($program as $data) { // Lakukan looping pada variabel siswa dari controller

@@ -9,7 +9,7 @@
     }
 
     public function input($ids){
-      $id = encrypt_url($ids);
+      $id = decrypt_url($ids);
       $this->load->view('admin/siswa/input_ortu');
     }
 
@@ -36,7 +36,7 @@
       );
 
       $this->m_orangtua->update_ortu($where, $data, 'tbl_ortu');
-      redirect('admin/siswa/detail/'.$id_sis);
+      redirect('admin/siswa/detail/'.encrypt_url'$id_sis');
     }
   }
  ?>
