@@ -8,7 +8,8 @@
         redirect(base_url("login"));
     }
 
-    public function input($id){
+    public function input($ids){
+      $id = encrypt_url($ids);
       $this->load->view('admin/siswa/input_ortu');
     }
 
