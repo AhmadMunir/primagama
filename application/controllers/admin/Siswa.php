@@ -91,7 +91,8 @@ class Siswa extends CI_Controller
       'id_pembayaran' => $kodebia,
       'id_siswa' =>$id_sis,
       'jumlah_bayar' => 0,
-      'sisa_tagihan' => $biaya
+      'sisa_tagihan' => $biaya,
+      'id_admin' => $this->session->id;
     );
 
     $data = array(
