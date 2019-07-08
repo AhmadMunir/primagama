@@ -15,7 +15,8 @@
         <div class="container-fluid">
 
           <?php
-            $id_sis = $this->uri->segment('4');
+            $id_siss = $this->uri->segment('4');
+            $id_sis = decrypt_url($id_siss);
 
             $ortu = $this->db->query("call getOrtu('".$id_sis."')");
             $raw = $ortu->row();
