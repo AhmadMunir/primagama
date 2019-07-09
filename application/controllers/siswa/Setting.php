@@ -23,7 +23,7 @@
       $data['angByID'] = $this->m_siswa->get_angsuran($where, 'view_angsuran')->result();
       $data['keles'] = $this->m_siswa->get_kelas()->result();
 
-      
+
       $this->load->view('client/siswa/setting', $data);
 
     }
@@ -109,6 +109,7 @@
               'email' => $email,
               'no_hp' => $no
             );
+
             $data_session =array(
               'id' => $id,
               'nama' => $nama,
@@ -126,6 +127,16 @@
             $datalog = array(
               'username' => $nama
             );
+
+            $data_session =array(
+              'id' => $id,
+              'nama' => $nama,
+              'status' => "login",
+              'jabatan' => "siswa",
+              'pss' => $passbaru
+            );
+
+            $this->session->set_userdata($data_session);
 
             $datasis = array(
               'email' => $email,

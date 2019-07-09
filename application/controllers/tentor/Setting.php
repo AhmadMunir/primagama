@@ -127,6 +127,15 @@
               'username' => $nama
             );
 
+            $data_session =array(
+              'id' => $id,
+              'nama' => $nama,
+              'status' => "login",
+              'jabatan' => "tentor",
+              'pss' => $passbaru
+            );
+            $this->session->set_userdata($data_session);
+
             $datasis = array(
               'email' => $email,
               'no_hp' => $no

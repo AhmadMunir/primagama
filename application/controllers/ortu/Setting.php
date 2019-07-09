@@ -111,12 +111,12 @@
               'no_hpayah' => $no,
               'no_hpibu' => $no2
             );
-            $data_session =array(
-              'id' => $id,
+            $data_session = array(
               'nama' => $nama,
-              'status' => "login",
-              'jabatan' => "ortu",
-              'pss' => $passbaru
+              'status' => 'login',
+              'jabatan' => 'orangtua',
+              'id' =>$id,
+              'anak'=>$this->session->anak
             );
             $this->session->set_userdata($data_session);
             $this->m_orangtua->update_ortu($where, $dataortu, 'tbl_ortu');
@@ -128,6 +128,15 @@
             $datalog = array(
               'username' => $nama
             );
+
+            $data_session = array(
+              'nama' => $nama,
+              'status' => 'login',
+              'jabatan' => 'orangtua',
+              'id' =>$id,
+              'anak'=>$this->session->anak
+            );
+            $this->session->set_userdata($data_session);
 
             $dataortu = array(
 
