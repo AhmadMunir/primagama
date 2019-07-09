@@ -42,7 +42,52 @@
                                </tr>
                              </thead>
                                <tbody id="absen">
+                                <?php
+                                $no = 1;
 
+                                foreach ($absn as $k) {
+                                  $tgl = $k->tgl;
+
+                                  $tanggal = date("d-m-Y", strtotime($tgl));
+
+                                  $hari = date('l',strtotime($tgl));
+                                  switch ($hari) {
+                                    case 'Sunday':
+                                      $day = 'Minggu';
+                                      break;
+                                    case 'Monday':
+                                      $day = 'Senin';
+                                      break;
+                                    case 'Tuesday':
+                                      $day = 'Selasa';
+                                      break;
+                                    case 'Wednesday':
+                                      $day = 'Rabu';
+                                      break;
+                                    case 'Thursday':
+                                      $day = 'Kamis';
+                                      break;
+                                    case 'Friday':
+                                      $day = 'Jum`at';
+                                      break;
+                                    case 'Saturday':
+                                      $day = 'Sabtu';
+                                      break;
+                                    default:
+                                      $day = 'xxx';
+                                      break;
+                                  }
+
+                                  ?>
+                                  <tr>
+                                  <td><?php echo $no++; ?></td>
+                                  <td><?php echo $day.", ".$tanggal ?></td>
+                                  <td><?php echo $k->jam_datang; ?></td>
+                                  <td><?php echo $k->jam_pulang; ?></td>
+                                  <td><?php echo $k->keterangan; ?></td>
+                                </tr>
+                                <?php }
+                                 ?>
                                </tbody>
                                <tfoot>
                                  <tr>
@@ -77,7 +122,7 @@
 
 <script src="<?php echo base_url('js/jquery2.min.js') ?>" type="text/javascript"></script>
 
-        <script type="text/javascript">
+        <!-- <script type="text/javascript">
       	$(document).ready(function(){ // Ketika halaman sudah siap (sudah selesai di load)
 
       			$.ajax({
@@ -102,7 +147,7 @@
       				}
       			});
       		});
-      	</script>
+      	</script> -->
         <!-- script -->
         <?php $this->load->view('client/_partials/script') ?>
         <!-- /script -->

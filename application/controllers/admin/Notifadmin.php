@@ -20,7 +20,7 @@ if ($count >0) {
 
       $notif = "<a class='dropdown-item' href=''></a>";
       foreach ($ntf as $key) {
-        $notif.= "<a class='dropdown-item' href=''>Request Mapel ".$key->nama_mapel."<br> sudah cukup. Kelas Siap di buat.</a>";
+        $notif.= "<a class='dropdown-item' href='".base_url('admin/Requestjadwal/buatkelas/').$key->id_mapel."'>Request Mapel ".$key->nama_mapel."<br> sudah cukup. Kelas Siap di buat.</a>";
       }
     }else {
       $notif.= "<a class='dropdown-item' href=''>Tidak ada Pemberitahuan</a>";

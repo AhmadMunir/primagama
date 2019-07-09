@@ -28,7 +28,7 @@
                 </div>
                 </div>
                 <div class="col-md-3">
-                  <input type="text" name="mapel" value="<?php echo $mapel ?>">
+                  <input type="text" name="mapel" value="<?php echo $mapel ?>" required>
                 </div>
               </div>
             </div>
@@ -43,7 +43,7 @@
                     </div>
                   </div>
                   <div class="col-md-3">
-                      <select class="jam" name="jam">
+                      <select class="jam" name="jam" required>
                         <option value="">-----Pilih-----</option>
                         <option value="13:00-14:30">13:00-14:30</option>
                         <option value="15:00-16:30">15:00-16:30</option>
@@ -72,7 +72,7 @@
                   </div>
                   </div>
                   <div class="col-md-3">
-                    <select name="tentor" id="tentor" style="width: 200px;">
+                    <select name="tentor" id="tentor" style="width: 200px;" required>
                       <option value="">Pilih</option>
                       <?php
                       foreach ($tentor as $data) { // Lakukan looping pada variabel siswa dari controller
@@ -91,7 +91,7 @@
                   </div>
                   </div>
                   <div class="col-md-3">
-                    <select name="ruang" id="ruang" style="width: 200px;">
+                    <select name="ruang" id="ruang" style="width: 200px;" required>
                       <option value="">Pilih</option>
                       <?php
                       foreach ($ruang as $data) { // Lakukan looping pada variabel siswa dari controller

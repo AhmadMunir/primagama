@@ -25,11 +25,7 @@
 </head>
 <body>
   <div class="login-form">
-    <?php if ($this->session->flashdata('gagal')): ?>
-    <div class="alert alert-danger" role="alert">
-        <?php echo $this->session->flashdata('gagal'); ?>
-    </div>
-    <?php endif; ?>
+
     <form action="<?php echo base_url('login/login') ?>" method="post">
 
   <div class="limiter">
@@ -43,6 +39,13 @@
           <span class="login100-form-title p-t-20 p-b-45">
             Login Primagama
           </span>
+          <?php if ($this->session->flashdata('gagal')): ?>
+          <center>
+            <div class="alert alert-danger" role="alert">
+                <?php echo $this->session->flashdata('gagal'); ?>
+            </div>
+          </center>
+          <?php endif; ?>
 
           <div class="wrap-input100 validate-input m-b-10" data-validate = "Username is required">
             <input class="input100" type="text" name="username" placeholder="Username">

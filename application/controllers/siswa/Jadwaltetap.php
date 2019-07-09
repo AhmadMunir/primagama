@@ -14,7 +14,15 @@
       $where = array(
         'username' => $nama
       );
-      $data['siswa'] = $this->m_siswa->lht($where, 'view_siswa')->result();
+      $dita = $this->m_siswa->lht($where, 'view_siswa_detail')->result();
+      $data['siswa'] = $this->m_siswa->lht($where, 'view_siswa_detail')->result();
+      foreach ($dita as $s) {
+        $id_prog = $s->id_program;
+      }
+      $whir = array(
+        'id_program' => $id_prog
+      );
+      $data['req'] = $this->m_siswa->lht($whir, 'view_kelas_request')->result();
       $this->load->view('client/siswa/jadwaltetap', $data);
     }
 
@@ -26,7 +34,7 @@
       $lists = "<tr></tr>";
       $no = 1;
       foreach ($jdwl as $key) {
-        $lists .= "<tr><td>".$no."</td><td>".$key->hari."</td><td>".$key->nama_mapel."</td><td>".$key->jam."</td><td>".$key->nama."</td></tr>";
+        $lists .= "<tr><td>".$no."</td><td>".$key->hari."</td><td>".$key->nama_mapel."</td><td>".$key->jam."</td><td>".$key->nama."</td><td>".$key->nama_ruang."</td></tr>";
         $no++;
       }
 

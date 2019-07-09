@@ -15,7 +15,7 @@
       $where = array(
         'username' => $nama
       );
-      $data['siswa'] = $this->m_siswa->lht($where, 'view_siswa')->result();
+      $data['siswa'] = $this->m_siswa->lht($where, 'view_siswa_detail')->result();
       $this->load->view('client/siswa/profil', $data);
     }
 
@@ -32,7 +32,7 @@
         );
         $data['siswa'] = $this->m_siswa->lht($whare, 'view_siswa')->result();
          $this->load->view('client/siswa/profil', $data);
-        
+
   }
     public function get_biaya(){
       $kode=$this->input->post('kode');

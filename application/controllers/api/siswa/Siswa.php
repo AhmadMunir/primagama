@@ -241,5 +241,30 @@
     die(json_encode($callback));
     }
 
+    public function getreqjadwal($program){
+
+      $response = array();
+      $whir = array(
+        'id_program' => $program
+      );
+      $jdwl = $this->m_siswa->lht($whir, 'view_kelas_request')->result();
+      foreach ($jdwl as $key) {
+        // $response["hari"] = $key->hari;
+        // $response["tentor"] = $key->nama;
+        // $response["mapel"] = $key->nama_mapel;
+        // $response["jam"] = $key->jam;
+        array_push($response, array(
+          'tanggal' => $key->tanggal,
+          'tentor' => $key->nama_tentor,
+          'mapel' => $key->nama_mapel,
+          'jam' => $key->jam,
+          'ruang' => $key->nama_ruang
+        ));
+      }
+
+      $callback = array('response'=>$response);
+      die(json_encode($callback));
+    }
+
   }
  ?>

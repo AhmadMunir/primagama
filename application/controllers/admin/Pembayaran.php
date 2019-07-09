@@ -5,8 +5,27 @@
       $this->load->model('m_pembayaran');
       $this->load->library('PdfGenerator');
 
-      if($this->session->userdata('status') != "login")
+      if($this->session->userdata('status') =="login"){
+        if ($this->session->userdata('jabatan')!='admin') {
+          switch ($this->session->userdata('jabatan')) {
+            case 'siswa':
+              redirect('siswa/home');
+              break;
+              case 'ortu':
+                redirect('ortu/home');
+                break;
+                case 'tentor':
+                  redirect('tentor/home');
+                  break;
+            default:
+              // code...
+              break;
+          }
+        }
+      }else {
+
         redirect(base_url("login"));
+      }
     }
 
     public function index(){

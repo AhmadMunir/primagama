@@ -16,7 +16,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	   	     <div class="content-top">
 	   	     	<!-- <div class="middle-top">
 		        <h2>NEWS OF THE WEEK</h2>
-				 
+
 			    <div class="clear"></div>
 			</div>
 				<div class="col_1_of_4 span_1_of_4">
@@ -153,7 +153,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</script>
 	  </div>
    </div>
-   <div class="footer">
+   <!-- <div class="footer">
 		<div class="wrap">
 			<div class="footer-top">
 				<div class="col_1_of_footer span_1_of_footer">
@@ -211,6 +211,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		</div>
 	    <?php $this->load->view('profile/_partials/foot') ?>
-	</div>
+	</div> -->
 </body>
 </html>

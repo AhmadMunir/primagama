@@ -46,9 +46,50 @@
                                  <th>Mata Pelajaran</th>
                                  <th>Jam</th>
                                  <th>Tentor</th>
+                                 <th>Ruang</th>
                                </tr>
                                <tbody id="jadwaltetap">
 
+                               </tbody>
+                             </table>
+
+
+                        </div>
+                      </div>
+
+                      <div class="module">
+                        <div class="module-head">
+                          <h3>Request Jadwal</h3>
+                        </div>
+                        <div class="module-body">
+                          <?php foreach ($req as $w){
+                            $id_prog = $k->id_program;
+                            $id_sis= $k->id_siswa;
+                            $id_grade= $k->id_grade;
+                            $kls = $k->nama_kelas;
+                          }
+                             ?>
+                             <table class="table">
+                               <tr>
+                                 <th>No</th>
+                                 <th>Tanggal</th>
+                                 <th>Mata Pelajaran</th>
+                                 <th>Jam</th>
+                                 <th>Tentor</th>
+                                 <th>Ruang</th>
+                               </tr>
+                               <tbody id="jadwaltetap">
+                                 <?php
+                                 $no=1;
+                                 foreach ($req as $w){?>
+                                   <th><?php echo $no++ ?></th>
+                                   <th><?php echo $w->tanggal ?></th>
+                                   <th><?php echo $w->nama_mapel ?></th>
+                                   <th><?php echo $w->jam ?></th>
+                                   <th><?php echo $w->nama_tentor ?></th>
+                                   <th><?php echo $w->nama_ruang ?></th>
+                              <?php   }
+                                    ?>
                                </tbody>
                              </table>
 

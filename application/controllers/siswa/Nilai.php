@@ -13,7 +13,7 @@
       $where = array(
         'username' => $nama
       );
-      $data['siswa'] = $this->m_siswa->lht($where, 'view_siswa')->result();
+      $data['siswa'] = $this->m_siswa->lht($where, 'view_siswa_detail')->result();
       $this->load->view('client/siswa/nilai', $data);
     }
 

@@ -28,19 +28,7 @@
                       </div>
                       <?php endif; ?>
 
-                      <div class="module">
-                          <div class="module-head">
-                              <h3>
-                                  Chart - flot</h3>
-                          </div>
-                          <div class="module-body">
-                              <div class="chart">
-                                  <div id="placeholder" class="graph">
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-
+                    
                       <div class="module">
             							<div class="module-head">
             								<h3>Nilai Try Out Kamu</h3>
@@ -116,7 +104,7 @@
       		});
       	</script>
 
-    
+
 
 
     </body>

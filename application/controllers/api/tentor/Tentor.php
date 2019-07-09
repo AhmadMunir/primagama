@@ -28,7 +28,5 @@
       die(json_encode($callback));
     }
 
-    public function getisikelas
-
   }
  ?>
